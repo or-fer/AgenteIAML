@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+    <category><pattern>UN PEDACITO *</pattern><template><sr/></template></category> 
+    <category><pattern>MUCHO *</pattern><template><sr/></template></category> 
+    <category><pattern>UN POCO *</pattern><template><sr/></template></category> 
+    <category><pattern>MUCHOS DE *</pattern><template><sr/></template></category> 
+    <category><pattern>ARRIBA *</pattern><template><sr/></template></category> 
+    <category><pattern>AL EXTERIOR *</pattern><template><sr/></template></category> 
+    <category><pattern>PRECIPITADAMENTE *</pattern><template><sr/></template></category>
+    <category><pattern>ABSOLUTAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>ACCIDENTALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>POR CONSIGUIENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>EXACTAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>ACTIVAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>REALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>ADECUADAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>LUEGO *</pattern><template><sr/></template></category> 
+    <category><pattern>OTRA VEZ *</pattern><template><sr/></template></category> 
+    <category><pattern>A CONTINUACION *</pattern><template><sr/></template></category> 
+    <category><pattern>TODO A LA DERECHA *</pattern><template><sr/></template></category> 
+    <category><pattern>CASI *</pattern><template><sr/></template></category> 
+    <category><pattern>SOLAMENTE *</pattern><template><sr/></template></category>         
+    <category><pattern>YA *</pattern><template><sr/></template></category> 
+    <category><pattern>BIEN *</pattern><template><sr/></template></category> 
+    <category><pattern>TAMBIEN *</pattern><template><sr/></template></category> 
+    <category><pattern>ALTERNATIVAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>EN CONJUNTO *</pattern><template><sr/></template></category> 
+    <category><pattern>SIEMPRE *</pattern><template><sr/></template></category> 
+    <category><pattern>Y ASI SUCESIVAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>ANUALMENTE *</pattern><template><sr/></template></category>
+    <category><pattern>ANSIOSAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>DE TODAS FORMAS *</pattern><template><sr/></template></category> 
+    <category><pattern>DONDEQUIERA *</pattern><template><sr/></template></category> 
+    <category><pattern>APARTE *</pattern><template><sr/></template></category> 
+    <category><pattern>AL PARECER *</pattern><template><sr/></template></category> 
+    <category><pattern>APROXIMADAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>ALREDEDOR *</pattern><template><sr/></template></category> 
+    <category><pattern>COMO DE COSTUMBRE *</pattern><template><sr/></template></category> 
+    <category><pattern>HASTA AHORA *</pattern><template><sr/></template></category> 
+    <category><pattern>A UN LADO *</pattern><template><sr/></template></category> 
+    <category><pattern>EN TODOS *</pattern><template><sr/></template></category> 
+    <category><pattern>AL PRINCIPIO *</pattern><template><sr/></template></category> 
+    <category><pattern>EN EL ULTIMO *</pattern><template><sr/></template></category> 
+    <category><pattern>POR LO MENOS *</pattern><template><sr/></template></category> 
+    <category><pattern>INMEDIATAMENTE *</pattern><template><sr/></template></category>
+    <category><pattern>ACTUALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>AUTOMATICAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>AL REVES *</pattern><template><sr/></template></category> 
+    <category><pattern>GRAVEMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>APENAS *</pattern><template><sr/></template></category> 
+    <category><pattern>BASICAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>MARAVILLOSAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>ANTES *</pattern><template><sr/></template></category> 
+    <category><pattern>DETRAS *</pattern><template><sr/></template></category> 
+    <category><pattern>ABAJO *</pattern><template><sr/></template></category> 
+    <category><pattern>ADEMAS DE *</pattern><template><sr/></template></category> 
+    <category><pattern>LO MEJOR POSIBLE *</pattern><template><sr/></template></category> 
+    <category><pattern>MEJORAR *</pattern><template><sr/></template></category> 
+    <category><pattern>MAS ALLA *</pattern><template><sr/></template></category> 
+    <category><pattern>OCULTO *</pattern><template><sr/></template></category> 
+
+    <category><pattern>* PRESUMIDO</pattern><template><sr/></template></category> 
+    <category><pattern>* AMBOS</pattern><template><sr/></template></category> 
+    <category><pattern>* BREVEMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* BRILLANTEMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* AMPLIAMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* DE NINGUNA MANERA</pattern><template><sr/></template></category> 
+    <category><pattern>* AHORA</pattern><template><sr/></template></category> 
+    <category><pattern>* TRANQUILAMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* CUIDADOSAMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* CAUTELOSAMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* CIERTAMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* CLARAMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* DE CERCA</pattern><template><sr/></template></category> 
+    <category><pattern>* MAS CERCA</pattern><template><sr/></template></category> 
+    <category><pattern>* COMUNMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* TOTALMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* POR LO TANTO</pattern><template><sr/></template></category> 
+    <category><pattern>* CONSIDERABLEMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* CONSTANTEMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* CONTINUAMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* CORRECTAMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* ACTUALMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* PROFUNDAMENTE</pattern><template><sr/></template></category>  
+    <category><pattern>* DEFINITIVAMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* DELIBERADAMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* DIFERENTEMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* DIRECTAMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>* DRAMATICAMENTE</pattern><template><sr/></template></category> 
+    <category><pattern>FÁCILMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>EFICIENTEMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>EXCLUSIVAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>FINALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>GRADUALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>AFORTUNADAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>COMPLETAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>GENERALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>SUAVEMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>FELIZ *</pattern><template><sr/></template></category> 
+    <category><pattern>POR LO TANTO *</pattern><template><sr/></template></category> 
+    <category><pattern>EN GENERAL *</pattern><template><sr/></template></category> 
+    <category><pattern>DE HECHO *</pattern><template><sr/></template></category> 
+    <category><pattern>INDEPENDIENTEMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>INDIVIDUALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>INICIALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>EN LUGAR *</pattern><template><sr/></template></category> 
+    <category><pattern>EN GRAN PARTE *</pattern><template><sr/></template></category> 
+    <category><pattern>TARDE *</pattern><template><sr/></template></category>  
+    <category><pattern>MAS ADELANTE *</pattern><template><sr/></template></category> 
+    <category><pattern>LITERALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>LOCALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>PRINCIPALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>QUIZA *</pattern><template><sr/></template></category> 
+    <category><pattern>QUIZAS *</pattern><template><sr/></template></category> 
+    <category><pattern>SIMPLEMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>MAS *</pattern><template><sr/></template></category> 
+    <category><pattern>LA MAYORIA *</pattern><template><sr/></template></category> 
+    <category><pattern>NATURALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>CERCA *</pattern><template><sr/></template></category> 
+    <category><pattern>NUEVAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>NORMALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>AHORA *</pattern><template><sr/></template></category> 
+    <category><pattern>HOY EN DIA *</pattern><template><sr/></template></category> 
+    <category><pattern>OBVIAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>POR SUPUESTO *</pattern><template><sr/></template></category> 
+    <category><pattern>A MENUDO *</pattern><template><sr/></template></category> 
+    <category><pattern>UNA VEZ *</pattern><template><sr/></template></category> 
+    <category><pattern>DE NUEVO *</pattern><template><sr/></template></category> 
+    <category><pattern>ORIGINALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>SI NO *</pattern><template><sr/></template></category> 
+    <category><pattern>PERFECTAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>PERMANENTEMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>PERSONALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>POR FAVOR *</pattern><template><sr/></template></category> 
+    <category><pattern>POSIBLEMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>PRACTICAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>PROBABLEMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>PREVIAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>CORRECTAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>RAPIDAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>ALGO *</pattern><template><sr/></template></category> 
+    <category><pattern>RECIENTEMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>REGULARMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>RELATIVAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>PRONTO *</pattern><template><sr/></template></category>  
+    <category><pattern>SILENCIOSAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>SINCERAMENTE *</pattern><template><sr/></template></category>  
+    <category><pattern>LENTAMENTE *</pattern><template><sr/></template></category>
+    <category><pattern>TAN *</pattern><template><sr/></template></category> 
+    <category><pattern>A VECES *</pattern><template><sr/></template></category> 
+    <category><pattern>ESPECIALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>ESPECIFICAMENTE *</pattern><template><sr/></template></category>
+    <category><pattern>AUN *</pattern><template><sr/></template></category> 
+    <category><pattern>FUERTEMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>SEGURAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>TEMPORALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>HOY *</pattern><template><sr/></template></category> 
+    <category><pattern>JUNTO *</pattern><template><sr/></template></category> 
+    <category><pattern>ESTA NOCHE *</pattern><template><sr/></template></category> 
+    <category><pattern>DEMASIADO *</pattern><template><sr/></template></category> 
+    <category><pattern>TOTALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>TIPICAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>DESAFORTUNADAMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>MUY *</pattern><template><sr/></template></category> 
+    <category><pattern>VIRTUALMENTE *</pattern><template><sr/></template></category> 
+    <category><pattern>CON GUSTO *</pattern><template><sr/></template></category> 
+    <category><pattern>DENTRO *</pattern><template><sr/></template></category> 
+
+</aiml>

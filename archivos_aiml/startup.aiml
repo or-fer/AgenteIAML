@@ -14,6 +14,9 @@
             <learn>archivos_aiml/facturacion.aiml</learn>
             <learn>archivos_aiml/devoluciones.aiml</learn>
             <learn>archivos_aiml/fallback.aiml</learn>
+            <learn>archivos_aiml/despedidas.aiml</learn>
+            <learn>archivos_aiml/resGenerales.aiml</learn>
+
             ¡Base de conocimiento de 'Patitas pa' que las quiero' cargada correctamente!
         </template>
     </category>

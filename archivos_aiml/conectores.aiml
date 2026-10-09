@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+    <!-- Preposiciones -->
+    <category><pattern>A *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ANTE *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>CABE *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>CON *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>CONTRA *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>DE *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>DESDE *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>EN *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ENTRE *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>HACIA *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>HASTA *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>PARA *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>POR *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>SEGUN *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>SIN *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>SOBRE *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>TRAS *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>SEGUN</pattern><template>Sé más específico, ¿según qué?</template></category>
+    <category><pattern>SIN</pattern><template>¿Sin qué más?</template></category>
+
+    <!-- Artículos -->
+    <category><pattern>EL *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>LA *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>LAS *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>LOS *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>UN *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>UNA *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>UNOS *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>UNAS *</pattern><template><srai><star/></srai></template></category>
+
+    <!-- Demostrativos -->
+    <category><pattern>ESTE *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ESTA *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ESTOS *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ESTAS *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ESA *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ESO *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ESAS *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ESOS *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>AQUEL *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>AQUELLA *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>AQUELLOS *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>AQUELLAS *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ALGUN *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ALGUNA *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ALGUNOS *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ALGUNAS *</pattern><template><srai><star/></srai></template></category>
+
+    <!-- Posesivos -->
+    <category><pattern>MI *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>TU *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>SU *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>NUESTRA *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>NUESTRO *</pattern><template><srai><star/></srai></template></category>
+
+    <!-- Pronombres Personales -->
+    <category><pattern>YO *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>TU *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>EL *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ELLA *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>NOSOTROS *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ELLOS *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ELLAS *</pattern><template><srai><star/></srai></template></category>
+
+    <!-- Pronombres Clíticos -->
+    <category><pattern>ME *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>TE *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>SE *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>NOS *</pattern><template><srai><star/></srai></template></category>
+
+    <!-- Conectores Lógicos y Adverbios de Tiempo/Lugar -->
+    <category><pattern>PUES *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>CREO QUE *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>QUE *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>Y *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ENTONCES *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>DESPUES *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>MANANA *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>NOCHE *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>DIA *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>PASADO MANANA *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>AQUI *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ALLI *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>LEJOS *</pattern><template><srai><star/></srai></template></category>
+
+    <!-- Frases Hechas -->
+    <category><pattern>DIGO QUE *</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>ASI QUE *</pattern><template><srai><star/></srai></template></category>
+
+</aiml>

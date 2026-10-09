@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+    <!-- Redirecciones de Preguntas hacia NOSE -->
+    <category><pattern>COMO *</pattern><template><srai>NOSE</srai></template></category>
+    <category><pattern>CUANDO *</pattern><template><srai>NOSE</srai></template></category>
+    <category><pattern>CUANTO *</pattern><template><srai>NOSE</srai></template></category>
+    <category><pattern>CUANTA *</pattern><template><srai>NOSE</srai></template></category>
+    <category><pattern>PORQUE *</pattern><template><srai>NOSE</srai></template></category>
+    <category><pattern>DONDE *</pattern><template><srai>NOSE</srai></template></category>
+    <category><pattern>QUIEN *</pattern><template><srai>NOSE</srai></template></category>
+    <category><pattern>QUIENES *</pattern><template><srai>NOSE</srai></template></category>
+    <category><pattern>CUANTAS *</pattern><template><srai>NOSE</srai></template></category>
+    <category><pattern>CUANTOS *</pattern><template><srai>NOSE</srai></template></category>
+
+    <category>
+        <pattern>NOSE</pattern>
+        <template>
+            <random>
+                <li>Siento decirte que no lo sé. </li>
+                <li>No tengo esa información en mi sistema. </li>
+                <li>Lo desconozco. </li>
+                <li>No estoy seguro de ello. </li>
+            </random>
+            <random>
+                <li>¿Deseas que te ayude a rastrear un pedido mejor?</li>
+                <li>¿Te gustaría consultar nuestro catálogo de tenis?</li>
+                <li>¿Tienes alguna pregunta sobre métodos de pago o envíos?</li>
+            </random>
+        </template>
+    </category>
+
+    <!-- Opinión y Conocimiento General -->
+    <category><pattern>QUE OPINAS *</pattern><template>No sabría darte una opinión exacta sobre eso, pero si gustas te puedo opinar sobre tenis deportivos jeje.</template></category>
+    <category><pattern>_ CUAL ES TU OPINION *</pattern><template><srai>QUE OPINAS <star index="2"/></srai></template></category>
+    <category><pattern>QUE SABES *</pattern><template>Sé mucho sobre tenis, envíos, métodos de pago y cambios de talla. ¿Qué te gustaría consultar?</template></category>
+    <category><pattern>QUE CREES *</pattern><template><srai>QUE OPINAS <star/></srai></template></category>
+
+    <!-- Ubicación y Precios Generales -->
+    <category><pattern>DONDE ESTA *</pattern><template>No tengo registrada esa ubicación. Pero nuestra tienda principal envía a todo México.</template></category>
+    <category><pattern>DONDE ESTAN *</pattern><template>No lo sé con certeza, ¡pero tus próximos tenis están en nuestra tienda en línea!</template></category>
+
+    <category>
+        <pattern>CUANTO CUESTA *</pattern>
+        <template>
+            <random>
+                <li>Manejamos precios muy accesibles desde $1,199 MXN. Revisa el catálogo para ver el modelo <star/>.</li>
+                <li>El precio depende del modelo. ¿Buscas alguna marca en específico como Nike, Adidas o Puma?</li>
+            </random>
+        </template>
+    </category>
+
+    <category><pattern>CUANTO CUESTAN *</pattern><template><srai>CUANTO CUESTA <star/></srai></template></category>
+
+    <!-- Fallback Principal cuando no hay coincidencia directa -->
+    <category>
+        <pattern>*</pattern>
+        <template>
+            <random>
+                <li>Disculpa, no logré comprender tu mensaje. Recuerda que puedo ayudarte con: rastreo de pedido, envíos a provincia, métodos de pago o catálogo de tenis.</li>
+                <li>No estoy seguro de haber entendido. Prueba preguntando: "¿Cómo rastreo mi pedido?", "¿Aceptan tarjeta?" o "¿Cuál es su política de cambios?".</li>
+                <li>Como asistente de 'Patitas pa' que las quiero', aún no reconozco esa frase. ¿Podrías replantear tu consulta?</li>
+                <li>Aún estoy aprendiendo. Escribe "Hola" para mostrarte las opciones de atención principales.</li>
+            </random>
+        </template>
+    </category>
+
+</aiml>
