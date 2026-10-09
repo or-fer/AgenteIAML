@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+    <!-- Métodos generales -->
+    <category>
+        <pattern>METODOS DE PAGO</pattern>
+        <template>Aceptamos tarjetas de crédito y débito (Visa, Mastercard, American Express), PayPal, Mercado Pago, transferencia SPEI y pagos en efectivo en tiendas OXXO.</template>
+    </category>
+
+    <category><pattern>FORMAS DE PAGO</pattern><template><srai>METODOS DE PAGO</srai></template></category>
+    <category><pattern>* FORMAS DE PAGO *</pattern><template><srai>METODOS DE PAGO</srai></template></category>
+    <category><pattern>* COMO PUEDO PAGAR *</pattern><template><srai>METODOS DE PAGO</srai></template></category>
+
+    <!-- Métodos específicos -->
+    <category>
+        <pattern>ACEPTAN TARJETA *</pattern>
+        <template>Sí, aceptamos tarjetas de débito y crédito <star/> a través de nuestra pasarela de pago segura.</template>
+    </category>
+
+    <category>
+        <pattern>ACEPTAN PAYPAL</pattern>
+        <template>¡Sí! Puedes pagar de forma segura con PayPal directamente en el checkout.</template>
+    </category>
+    <category><pattern>* PAYPAL *</pattern><template><srai>ACEPTAN PAYPAL</srai></template></category>
+
+    <category>
+        <pattern>PAGO EN OXXO</pattern>
+        <template>Al seleccionar pago en OXXO se generará un código de barras de 14 dígitos. Tienes 24 horas para realizar tu pago antes de que se cancele la orden.</template>
+    </category>
+    <category><pattern>* OXXO *</pattern><template><srai>PAGO EN OXXO</srai></template></category>
+
+    <category>
+        <pattern>MESES SIN INTERESES</pattern>
+        <template>Ofrecemos 3 y 6 Meses Sin Intereses (MSI) en compras mayores a $2,500 MXN con tarjetas participante Visa, Mastercard y AMEX.</template>
+    </category>
+    <category><pattern>* MESES SIN INTERESES *</pattern><template><srai>MESES SIN INTERESES</srai></template></category>
+    <category><pattern>* MSI *</pattern><template><srai>MESES SIN INTERESES</srai></template></category>
+</aiml>

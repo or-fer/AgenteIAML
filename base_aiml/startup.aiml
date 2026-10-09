@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>CARGAR BOT</pattern>
+        <template>
+            <learn>archivos_aiml/saludos.aiml</learn>
+            <learn>archivos_aiml/horarios.aiml</learn>
+            <learn>archivos_aiml/ubicacion.aiml</learn>
+            <learn>archivos_aiml/pagos.aiml</learn>
+            <learn>archivos_aiml/productos.aiml</learn>
+            <learn>archivos_aiml/precios.aiml</learn>
+            <learn>archivos_aiml/promos.aiml</learn>
+            <learn>archivos_aiml/pedidos.aiml</learn>
+            <learn>archivos_aiml/facturacion.aiml</learn>
+            <learn>archivos_aiml/devoluciones.aiml</learn>
+            <learn>archivos_aiml/fallback.aiml</learn>
+            ¡Base de conocimiento de 'Patitas pa' que las quiero' cargada correctamente!
+        </template>
+    </category>
+
+    <category>
+        <pattern>INIT</pattern>
+        <template><srai>CARGAR BOT</srai></template>
+    </category>
+</aiml>

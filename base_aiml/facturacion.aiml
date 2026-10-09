@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+    <category>
+        <pattern>FACTURACION</pattern>
+        <template>Puedes emitir tu factura electrónica (CFDI) dentro del mes de tu compra ingresando tu número de ticket y RFC en nuestro portal: www.tiendatenis.com/facturacion.</template>
+    </category>
+
+    <category><pattern>COMO FACTURO</pattern><template><srai>FACTURACION</srai></template></category>
+    <category><pattern>QUIERO FACTURA</pattern><template><srai>FACTURACION</srai></template></category>
+    <category><pattern>* FACTURA *</pattern><template><srai>FACTURACION</srai></template></category>
+    <category><pattern>* FACTURAR *</pattern><template><srai>FACTURACION</srai></template></category>
+
+    <category>
+        <pattern>REQUISITOS PARA FACTURAR</pattern>
+        <template>Necesitas: 1) Número de folio del ticket/pedido, 2) RFC con homoclave, 3) Régimen fiscal y Código Postal registrado en el SAT.</template>
+    </category>
+</aiml>

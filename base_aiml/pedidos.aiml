@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+    <!-- Rastreo de pedido -->
+    <category>
+        <pattern>COMO RASTREO MI PEDIDO</pattern>
+        <template>Para rastrear tu pedido necesitamos tu número de guía (ejemplo: GUIA12345). ¿Tienes a la mano tu número de guía?</template>
+    </category>
+
+    <!-- Redirecciones de sinónimos -->
+    <category><pattern>DONDE ESTA MI PEDIDO</pattern><template><srai>COMO RASTREO MI PEDIDO</srai></template></category>
+    <category><pattern>DONDE ESTAN MIS TENIS</pattern><template><srai>COMO RASTREO MI PEDIDO</srai></template></category>
+    <category><pattern>* RASTREAR * PEDIDO</pattern><template><srai>COMO RASTREO MI PEDIDO</srai></template></category>
+    <category><pattern>* RASTREO *</pattern><template><srai>COMO RASTREO MI PEDIDO</srai></template></category>
+    <category><pattern>* SEGUIMIENTO *</pattern><template><srai>COMO RASTREO MI PEDIDO</srai></template></category>
+    <category><pattern>MI PAQUETE NO LLEGA</pattern><template><srai>COMO RASTREO MI PEDIDO</srai></template></category>
+
+    <!-- Contexto conversacional con <that> -->
+    <category>
+        <pattern>SI</pattern>
+        <that>PARA RASTREAR TU PEDIDO NECESITAMOS TU NUMERO DE GUIA EJEMPLO GUIA12345 TIENES A LA MANO TU NUMERO DE GUIA</that>
+        <template>Por favor escribe tu número de guía antecedido por la palabra GUIA (ejemplo: GUIA98765) para consultarlo.</template>
+    </category>
+
+    <category>
+        <pattern>NO</pattern>
+        <that>PARA RASTREAR TU PEDIDO NECESITAMOS TU NUMERO DE GUIA EJEMPLO GUIA12345 TIENES A LA MANO TU NUMERO DE GUIA</that>
+        <template>No te preocupes. Revisa el correo electrónico con el que realizaste la compra, allí te enviamos el número de guía de DHL/FedEx.</template>
+    </category>
+
+    <!-- Guardado de variable <set> -->
+    <category>
+        <pattern>GUIA *</pattern>
+        <template>
+            <set name="num_pedido"><star/></set>
+            Hemos consultado la guía número <get name="num_pedido"/>. Tu pedido se encuentra en camino con el servicio express de paquetería. Tiempo estimado de entrega: 24 a 48 horas.
+        </template>
+    </category>
+
+    <category>
+        <pattern>ESTADO DE MI PEDIDO</pattern>
+        <template>
+            <condition name="num_pedido">
+                <li value="unknown">Aún no has registrado un número de guía. Por favor escribe: GUIA seguido de tus dígitos.</li>
+                <li>Tu número de guía en memoria es <get name="num_pedido"/> y su estado actual es: EN TRANSITO.</li>
+            </condition>
+        </template>
+    </category>
+
+    <!-- Envíos a provincia -->
+    <category>
+        <pattern>TIENEN ENVIOS A PROVINCIA</pattern>
+        <template>¡Sí, por supuesto! Hacemos envíos a todos los estados de la República Mexicana mediante DHL, FedEx y Estafeta.</template>
+    </category>
+
+    <category><pattern>* ENVIOS A PROVINCIA *</pattern><template><srai>TIENEN ENVIOS A PROVINCIA</srai></template></category>
+    <category><pattern>ENVIAN A *</pattern><template>Sí, realizamos entregas en <star/> y en todo el territorio nacional.</template></category>
+    <category><pattern>HACEN ENVIOS A *</pattern><template><srai>ENVIAN A <star/></srai></template></category>
+
+    <!-- Captura simplificada de orden en chat -->
+    <category>
+        <pattern>QUIERO COMPRAR TENIS * TALLA *</pattern>
+        <template>
+            Anotado: <set name="modelo_compra"><star index="1"/></set> en talla <set name="talla_compra"><star index="2"/></set> MX. ¿Confirmas la orden para enviarte la liga de pago? (SI/NO)
+        </template>
+    </category>
+
+    <category>
+        <pattern>SI</pattern>
+        <that>CONFIRMAS LA ORDEN PARA ENVIARTE LA LIGA DE PAGO SI NO</that>
+        <template>¡Perfecto! Hemos registrado tu orden de <get name="modelo_compra"/> talla <get name="talla_compra"/> MX. Te redirigimos al checkout seguro para completar la compra.</template>
+    </category>
+
+    <category>
+        <pattern>NO</pattern>
+        <that>CONFIRMAS LA ORDEN PARA ENVIARTE LA LIGA DE PAGO SI NO</that>
+        <template>Orden cancelada. No te preocupes, puedes seguir explorando otros modelos en nuestro catálogo.</template>
+    </category>
+</aiml>

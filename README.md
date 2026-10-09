@@ -7,12 +7,11 @@
 
 ---
 
-## 1. Descripción del Proyecto
+## ## 1. Descripción del Proyecto
 
-Este proyecto consiste en el desarrollo de un agente conversacional (chatbot) de dominio cerrado basado en reglas utilizando **AIML (Artificial Intelligence Markup Language) 2.0**. El objetivo principal es estructurar una base de conocimientos modular y robusta capaz de gestionar interacciones deterministas mediante el procesamiento de patrones, comodines, control de contexto, gestión de memoria de sesión y redirección lógica.
+Este proyecto consiste en el desarrollo de un agente conversacional (chatbot) de dominio cerrado basado en reglas utilizando **AIML 2.0**. El objetivo principal es estructurar una base de conocimientos modular y robusta capaz de gestionar interacciones deterministas mediante el procesamiento de patrones, comodines, control de contexto, memoria de sesión y redirección lógica.
 
-El dominio seleccionado para esta implementación es el **[Indicar el sector elegido, ej. Sector E-Commerce / Soporte Técnico]**, simulando un asistente virtual de primera línea capaz de resolver consultas frecuentes de manera autónoma y estandarizada.
-
+El dominio seleccionado es el **5.1. Sector E-Commerce: "Dudas repetitivas"**, implementando un asistente virtual de primera línea para la tienda en línea de calzado deportivo **"Patitas pa' que las quiero"**. El bot atiende de forma autónoma el 70% de las consultas frecuentes del negocio (rastreo de pedidos, envíos a provincia, métodos de pago, catálogo por disciplina y políticas de cambio).
 ---
 
 ## 2. Etiquetas AIML Empleadas
@@ -35,21 +34,21 @@ Para la construcción del "cerebro" del chatbot se hizo uso de las siguientes et
 El proyecto se encuentra organizado de forma modular por jerarquías y temáticas en el directorio `aiml/`:
 
 ```text
-practica02-aiml/
-│
-├── aiml/
-│   ├── startup.aiml          # Archivo de arranque y carga de módulos (<learn>)
-│   ├── saludos.aiml          # Interacciones iniciales y bienvenidas
-│   ├── horarios.aiml         # Consultas de disponibilidad y tiempos de atención
-│   ├── ubicacion.aiml        # Referencias geográficas y de llegada
-│   ├── pagos.aiml            # Métodos de pago aceptados y pasarelas
-│   ├── productos.aiml        # Disponibilidad de catálogo y alternativas
-│   ├── precios.aiml          # Tarifas y costos específicos
-│   ├── promos.aiml           # Ofertas y descuentos vigentes
-│   ├── pedidos.aiml          # Lógica de pedidos, variables y confirmación (<that>)
-│   ├── facturacion.aiml      # Requisitos y procesos fiscales
-│   ├── devoluciones.aiml     # Políticas y plazos de devolución
-│   └── fallback.aiml         # Manejo de entradas no reconocidas (comodín '*')
-│
-├── README.md                 # Documentación técnica del proyecto
-└── [Opcional: Capturas o scripts de ejecución]
+AgenteIAML/
+├── main.py
+└── archivos_aiml/
+    ├── startup.aiml
+    ├── saludos.aiml
+    ├── envios.aiml
+    ├── pagos.aiml
+    ├── cambios.aiml
+    ├── horarios.aiml
+    ├── ubicacion.aiml
+    ├── productos.aiml
+    ├── precios.aiml
+    ├── promos.aiml
+    ├── pedidos.aiml
+    ├── facturacion.aiml
+    ├── devoluciones.aiml
+    └── fallback.aiml
+```

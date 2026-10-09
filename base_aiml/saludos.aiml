@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <!-- Saludos Iniciales -->
+    <category>
+        <pattern>HOLA</pattern>
+        <template>
+            <condition name="usuario">
+                <li value="unknown">
+                    <random>
+                        <li>¡Hola! Bienvenido a 'Patitas pa' que las quiero', tu tienda especialista en calzado deportivo. ¿Cómo te llamas?</li>
+                        <li>¡Qué gusto tenerte aquí! Soy el asistente virtual de 'Patitas pa' que las quiero'. ¿Cuál es tu nombre?</li>
+                    </random>
+                </li>
+                <li>
+                    <random>
+                        <li>¡Hola de nuevo, <get name="usuario"/>! ¿En qué te ayudamos hoy en 'Patitas pa' que las quiero'?</li>
+                        <li>¡Qué bueno verte por aquí, <get name="usuario"/>! ¿Buscas tenis para correr, rastrear un pedido o solicitar un cambio?</li>
+                    </random>
+                </li>
+            </condition>
+        </template>
+    </category>
+
+    <category><pattern>HOLA *</pattern><template><srai>HOLA</srai></template></category>
+    <category><pattern>BUENAS *</pattern><template><srai>HOLA</srai></template></category>
+    <category><pattern>BUENOS DIAS</pattern><template><srai>HOLA</srai></template></category>
+    <category><pattern>BUENAS TARDES</pattern><template><srai>HOLA</srai></template></category>
+    <category><pattern>BUENAS NOCHES</pattern><template><srai>HOLA</srai></template></category>
+    <category><pattern>HEY</pattern><template><srai>HOLA</srai></template></category>
+    <category><pattern>QUE TAL</pattern><template><srai>HOLA</srai></template></category>
+
+    <!-- Asignación de Nombre -->
+    <category>
+        <pattern>ME LLAMO *</pattern>
+        <template>
+            <set name="usuario"><star/></set>, ¡un placer atenderte! En 'Patitas pa' que las quiero' puedo ayudarte con:
+            1. Rastreo y envíos de pedidos.
+            2. Catálogo de tenis y disponibilidad.
+            3. Métodos de pago y facturación.
+            4. Cambios y devoluciones.
+        </template>
+    </category>
+
+    <category><pattern>MI NOMBRE ES *</pattern><template><srai>ME LLAMO <star/></srai></template></category>
+    <category><pattern>SOY *</pattern><template><srai>ME LLAMO <star/></srai></template></category>
+
+    <!-- Identidad del Bot -->
+    <category>
+        <pattern>QUIEN ERES</pattern>
+        <template>Soy el asistente virtual de 'Patitas pa' que las quiero', listo para ayudarte a encontrar el par de tenis perfecto para tus pies.</template>
+    </category>
+
+    <category><pattern>COMO TE LLAMAS</pattern><template><srai>QUIEN ERES</srai></template></category>
+    <category><pattern>QUE ERES</pattern><template><srai>QUIEN ERES</srai></template></category>
+
+    <category>
+        <pattern>COMO ESTAS</pattern>
+        <template>
+            <random>
+                <li>¡Al 100% y listo para ponerte a correr! ¿En qué te puedo servir?</li>
+                <li>¡Muy bien! Procesando mensajes y listo para atender a tus patitas.</li>
+            </random>
+        </template>
+    </category>
+
+    <category><pattern>COMO TE VA</pattern><template><srai>COMO ESTAS</srai></template></category>
+
+    <!-- Despedidas -->
+    <category>
+        <pattern>ADIOS</pattern>
+        <template>
+            <condition name="usuario">
+                <li value="unknown">¡Hasta luego! Gracias por visitar 'Patitas pa' que las quiero'. ¡A darle duro al entrenamiento!</li>
+                <li>¡Hasta pronto, <get name="usuario"/>! Esperamos que disfrutes tus nuevos tenis de 'Patitas pa' que las quiero'.</li>
+            </condition>
+        </template>
+    </category>
+
+    <category><pattern>CHAO</pattern><template><srai>ADIOS</srai></template></category>
+    <category><pattern>HASTA LUEGO</pattern><template><srai>ADIOS</srai></template></category>
+    <category><pattern>BYE</pattern><template><srai>ADIOS</srai></template></category>
+</aiml>

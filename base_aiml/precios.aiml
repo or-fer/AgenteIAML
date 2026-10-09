@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+    <category>
+        <pattern>RANGO DE PRECIOS</pattern>
+        <template>Manejamos opciones desde $1,199 MXN en modelos casuales básicos hasta $4,999 MXN en tenis de alta gama para competencia.</template>
+    </category>
+
+    <category><pattern>CUANTO CUESTAN</pattern><template><srai>RANGO DE PRECIOS</srai></template></category>
+    <category><pattern>* PRECIOS *</pattern><template><srai>RANGO DE PRECIOS</srai></template></category>
+
+    <category>
+        <pattern>COSTO DE ENVIO</pattern>
+        <template>El envío es completamente GRATIS en compras a partir de $1,499 MXN. En compras menores, el envío estándar a todo México cuesta $120 MXN.</template>
+    </category>
+
+    <category><pattern>CUANTO CUESTA EL ENVIO</pattern><template><srai>COSTO DE ENVIO</srai></template></category>
+    <category><pattern>* CUANTO CUESTA EL ENVIO *</pattern><template><srai>COSTO DE ENVIO</srai></template></category>
+    <category><pattern>ENVIO GRATIS</pattern><template><srai>COSTO DE ENVIO</srai></template></category>
+</aiml>

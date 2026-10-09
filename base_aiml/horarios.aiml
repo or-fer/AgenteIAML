@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+    <category>
+        <pattern>HORARIO DE ATENCION</pattern>
+        <template>Nuestro bot automatizado responde las 24 horas del día. El equipo humano atiende de Lunes a Viernes de 9:00 a 18:00 hrs y Sábados de 10:00 a 14:00 hrs.</template>
+    </category>
+
+    <!-- Variantes -->
+    <category><pattern>HORARIO</pattern><template><srai>HORARIO DE ATENCION</srai></template></category>
+    <category><pattern>HORARIOS</pattern><template><srai>HORARIO DE ATENCION</srai></template></category>
+    <category><pattern>* HORARIOS *</pattern><template><srai>HORARIO DE ATENCION</srai></template></category>
+    <category><pattern>A QUE HORA ABREN</pattern><template><srai>HORARIO DE ATENCION</srai></template></category>
+    <category><pattern>A QUE HORA CIERRAN</pattern><template><srai>HORARIO DE ATENCION</srai></template></category>
+    <category><pattern>ESTAN ABIERTOS LOS DOMINGOS</pattern><template>Los domingos la atención humana está cerrada, pero puedes realizar tus compras en la tienda en línea en cualquier momento.</template></category>
+    <category><pattern>ATIENDEN DIAS FESTIVOS</pattern><template>En días festivos procesamos pedidos automáticamente en línea, pero el envío físico se programa para el siguiente día hábil.</template></category>
+</aiml>

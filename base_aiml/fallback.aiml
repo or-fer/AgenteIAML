@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+    <category>
+        <pattern>*</pattern>
+        <template>
+            <random>
+                <li>Disculpa, no entendí tu consulta. En 'Patitas pa' que las quiero' puedo ayudarte con: rastrear pedido, envíos a provincia, métodos de pago, catálogo de tenis o políticas de cambio.</li>
+                <li>No estoy seguro de haber comprendido. Prueba preguntando: "¿Cómo rastreo mi pedido?", "¿Aceptan tarjeta?" o "¿Cuál es su política de cambios?".</li>
+                <li>Como asistente de 'Patitas pa' que las quiero', aún no reconozco esa frase. ¿Podrías replantear tu duda sobre nuestros productos o servicios?</li>
+            </random>
+        </template>
+    </category>
+</aiml>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>UBICACION</pattern>
+        <template>Nuestra bodega principal se encuentra en la Ciudad de México, pero operamos principalmente como tienda en línea con envíos a todo México.</template>
+    </category>
+
+    <!-- Variantes de ubicación y sucursales -->
+    <category><pattern>DONDE ESTAN UBICADOS</pattern><template><srai>UBICACION</srai></template></category>
+    <category><pattern>DONDE SE ENCUENTRAN</pattern><template><srai>UBICACION</srai></template></category>
+    <category><pattern>DONDE ES SU TIENDA</pattern><template><srai>UBICACION</srai></template></category>
+    <category><pattern>DIRECCION</pattern><template><srai>UBICACION</srai></template></category>
+    <category><pattern>* DIRECCION *</pattern><template><srai>UBICACION</srai></template></category>
+
+    <category>
+        <pattern>TIENEN TIENDA FISICA</pattern>
+        <template>Contamos con un showroom para probar tallas en Av. Insurgentes Sur 1200, CDMX. La venta de todo el catálogo completo es a través de nuestra web.</template>
+    </category>
+
+    <category><pattern>PUEDO RECOGER EN TIENDA</pattern><template>Sí, al finalizar tu compra elige la opción "Pickup en Showroom Insurgentes" sin costo de envío.</template></category>
+    <category><pattern>* RECOGER EN SUCURSAL *</pattern><template><srai>PUEDO RECOGER EN TIENDA</srai></template></category>
+</aiml>
