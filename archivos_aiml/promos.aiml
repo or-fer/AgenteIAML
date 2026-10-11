@@ -6,9 +6,11 @@
         <template>Actualmente tenemos hasta 30% de descuento en la sección Outlet y envío gratis en compras mayores a $1,499 MXN. Además, usa el cupón SNEAKER10 para un 10% adicional en tu primera compra.</template>
     </category>
 
-    <category><pattern>PROMOS</pattern><template><srai>PROMOCIONES</srai></template></category>
+    <category><pattern>* PROMOCIONES *</pattern><template><srai>PROMOCIONES</srai></template></category>
+    <category><pattern>* PROMOCIONES</pattern><template><srai>PROMOCIONES</srai></template></category>
+    <category><pattern>TIENES PROMOCIONES</pattern><template><srai>PROMOCIONES</srai></template></category>
     <category><pattern>* PROMOS *</pattern><template><srai>PROMOCIONES</srai></template></category>
-    <category><pattern>TIENEN DESCUENTOS</pattern><template><srai>PROMOCIONES</srai></template></category>
-    <category><pattern>* DESCUENTO *</pattern><template><srai>PROMOCIONES</srai></template></category>
     <category><pattern>CUPON DE DESCUENTO</pattern><template>Aplica el cupón SNEAKER10 en tu carrito de compras antes de pagar para obtener 10% de descuento de bienvenida.</template></category>
 </aiml>
+
+

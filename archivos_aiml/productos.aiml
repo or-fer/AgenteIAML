@@ -2,43 +2,58 @@
 <aiml version="2.0">
 
     <!-- Catálogo General -->
+    <category><pattern>QUE PRODUCTOS TIENES</pattern><template><srai>CATALOGO DE PRODUCTOS</srai></template></category>
+    <category><pattern>QUE VENDEN</pattern><template><srai>CATALOGO DE PRODUCTOS</srai></template></category>
+    <category><pattern>VER CATALOGO</pattern><template><srai>CATALOGO DE PRODUCTOS</srai></template></category>
+    
     <category>
         <pattern>CATALOGO DE PRODUCTOS</pattern>
-        <template>Ofrecemos calzado deportivo original de las mejores marcas: Nike, Adidas, Puma, Jordan, New Balance y Asics. Manejamos líneas para Running, Básquetbol, Casual, Training y Fútbol.</template>
+        <template>Tenemos un gran surtido de tenis deportivos originales: Nike, Adidas, Puma, Jordan y Asics. Manejamos líneas de Running, Básquetbol, Casual y variados colores (negros, blancos, verdes, rosas, rojos).</template>
     </category>
 
-    <category><pattern>QUE VENDEN</pattern><template><srai>CATALOGO DE PRODUCTOS</srai></template></category>
-    <category><pattern>* CATALOGO *</pattern><template><srai>CATALOGO DE PRODUCTOS</srai></template></category>
-
-    <!-- Por marcas -->
+    <!-- Manejo de Colores Específicos (Evita que se confundan con marcas) -->
     <category>
-        <pattern>TIENEN TENIS *</pattern>
-        <template>Sí, contamos con un amplio surtido de tenis marca <star/>. ¿Buscas alguna disciplina en particular (Running, Casual, Básquetbol)?</template>
+        <pattern>* TENIS VERDES</pattern>
+        <template>¡Sí tenemos tenis color verde! Manejamos modelos para running y moda urbana en tonos verde olivo, menta y fosforescente.</template>
     </category>
+    <category><pattern>TENIS VERDES</pattern><template><srai>UNOS TENIS VERDES</srai></template></category>
+    <category><pattern>* TENIS COLOR VERDE</pattern><template><srai>UNOS TENIS VERDES</srai></template></category>
 
-    <category><pattern>TIENEN NIKE</pattern><template><srai>TIENEN TENIS NIKE</srai></template></category>
-    <category><pattern>TIENEN ADIDAS</pattern><template><srai>TIENEN TENIS ADIDAS</srai></template></category>
-    <category><pattern>TIENEN PUMA</pattern><template><srai>TIENEN TENIS PUMA</srai></template></category>
-    <category><pattern>TIENEN JORDAN</pattern><template><srai>TIENEN TENIS JORDAN</srai></template></category>
+    <category>
+        <pattern>* TENIS ROSAS</pattern>
+        <template>¡Claro! Contamos con tenis rosas en marcas como Nike, Adidas y Puma para running y uso casual.</template>
+    </category>
+    <category><pattern>TENIS ROSAS</pattern><template><srai>UNOS TENIS ROSAS</srai></template></category>
+    <category><pattern>* TENIS COLOR ROSA</pattern><template><srai>UNOS TENIS ROSAS</srai></template></category>
+    <category><pattern>* Y ROSAS</pattern><template><srai>UNOS TENIS ROSAS</srai></template></category>
 
-    <!-- Por disciplinas -->
+    <!-- Corrección de Typo: Runing -> Running -->
+    <category><pattern>RUNING *</pattern><template><srai>TENIS DE RUNNING</srai></template></category>
+
     <category>
         <pattern>TENIS DE RUNNING</pattern>
-        <template>Para Running te recomendamos modelos con buena amortiguación como la saga Pegasus de Nike, Ultraboost de Adidas o Gel-Nimbus de Asics.</template>
+        <template>Para Running te recomendamos modelos con excelente amortiguación como la saga Pegasus de Nike, Ultraboost de Adidas o Gel-Nimbus de Asics.</template>
     </category>
+
     <category><pattern>* RUNNING *</pattern><template><srai>TENIS DE RUNNING</srai></template></category>
+    <category><pattern>DE RUNNING *</pattern><template><srai>TENIS DE RUNNING</srai></template></category>
+
+    <!-- Marcas Generales (Evaluado solo si no es un color) -->
+    <category>
+        <pattern>TIENEN TENIS *</pattern>
+        <template>Sí, contamos con un amplio surtido de tenis marca/estilo <star/>. ¿Buscas alguna disciplina en particular (Running, Casual, Básquetbol)?</template>
+    </category>
+    
+    <category>
+        <pattern>CATALOGO DE PRODUCTOS</pattern>
+        <template>Ofrecemos calzado deportivo original de Nike, Adidas, Puma, Jordan y Asics para Running, Básquetbol, Casual y Training.</template>
+    </category>
+
+    <category><pattern>* STOCK *</pattern><template>Todos los modelos y tallas disponibles los puedes consultar en tiempo real en nuestro catálogo web.</template></category>
+    <category><pattern>* DISPONIBILIDAD *</pattern><template><srai>CATALOGO DE PRODUCTOS</srai></template></category>
 
     <category>
-        <pattern>TENIS DE BASQUETBOL</pattern>
-        <template>Para Básquetbol contamos con las líneas Jordan, Lebron, Giannis y Curry con excelente soporte de tobillo y agarre para duela o asfalto.</template>
+        <pattern>* ULTRABOOST *</pattern>
+        <template>¡Sí! Contamos con la línea Adidas Ultraboost para running con excelente amortiguación en varias tallas.</template>
     </category>
-    <category><pattern>* BASQUETBOL *</pattern><template><srai>TENIS DE BASQUETBOL</srai></template></category>
-
-    <!-- Guía de Tallas -->
-    <category>
-        <pattern>GUIA DE TALLAS</pattern>
-        <template>Manejamos numeración mexicana (MX en centímetros). Si calzas del 27, corresponde a 27 cm (9 US). Te sugerimos pedir medio número más en modelos para correr.</template>
-    </category>
-    <category><pattern>* TALLAS *</pattern><template><srai>GUIA DE TALLAS</srai></template></category>
-    <category><pattern>* NUMEROS *</pattern><template><srai>GUIA DE TALLAS</srai></template></category>
 </aiml>

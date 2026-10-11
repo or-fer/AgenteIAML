@@ -154,3 +154,9 @@ python main.py
 ## 7. Licencia y Créditos
 
 Este software ha sido desarrollado con fines académicos bajo la licencia **GNU General Public License v3.0 (GPL-3.0)** como parte de los entregables de la asignatura de Inteligencia Artificial de la Facultad de Ingeniería, UNAM.
+
+
+
+
+de las referencias proncipales
+https://github.com/MyRobotLab/pyrobotlab/tree/master

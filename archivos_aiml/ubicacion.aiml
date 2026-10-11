@@ -11,6 +11,9 @@
     <category><pattern>DONDE ES SU TIENDA</pattern><template><srai>UBICACION</srai></template></category>
     <category><pattern>DIRECCION</pattern><template><srai>UBICACION</srai></template></category>
     <category><pattern>* DIRECCION *</pattern><template><srai>UBICACION</srai></template></category>
+    <category><pattern>* SUCURSALES *</pattern><template><srai>UBICACION</srai></template></category>
+    <category><pattern>* SUCURSAL *</pattern><template><srai>UBICACION</srai></template></category>
+    <category><pattern>* SUCURSALES FISICAS *</pattern><template><srai>UBICACION</srai></template></category>
 
     <category>
         <pattern>TIENEN TIENDA FISICA</pattern>
