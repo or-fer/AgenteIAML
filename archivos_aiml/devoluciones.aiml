@@ -5,35 +5,23 @@
         <pattern>CUAL ES SU POLITICA DE CAMBIOS</pattern>
         <template>
             <set name="topic">CAMBIOS</set>
-            Cuentas con 30 días naturales a partir de la recepción para solicitar cambios de talla o modelo sin costo adicional. El calzado debe estar sin usar y en su caja original. ¿Deseas saber los REQUISITOS, INICIAR CAMBIO o SALIR?
+            Cuentas con 30 días naturales a partir de la recepción para solicitar cambios de talla o modelo sin costo adicional. El calzado debe estar sin usar. ¿Deseas consultar REQUISITOS, INICIAR CAMBIO o SALIR?
         </template>
     </category>
 
-    <category><pattern>POLITICA DE CAMBIOS</pattern><template><srai>CUAL ES SU POLITICA DE CAMBIOS</srai></template></category>
+    <category><pattern>* POLITICA DE CAMBIOS *</pattern><template><srai>CUAL ES SU POLITICA DE CAMBIOS</srai></template></category>
+    <category><pattern>* POLITICA DE CAMBIOS</pattern><template><srai>CUAL ES SU POLITICA DE CAMBIOS</srai></template></category>
+    <category><pattern>COMO ES LA POLITICA DE CAMBIOS</pattern><template><srai>CUAL ES SU POLITICA DE CAMBIOS</srai></template></category>
     <category><pattern>* CAMBIOS *</pattern><template><srai>CUAL ES SU POLITICA DE CAMBIOS</srai></template></category>
-    <category><pattern>* DEVOLUCION *</pattern><template><srai>CUAL ES SU POLITICA DE CAMBIOS</srai></template></category>
-    <category><pattern>* CAMBIAR MIS TENIS *</pattern><template><srai>CUAL ES SU POLITICA DE CAMBIOS</srai></template></category>
-    <category><pattern>ME QUEDARON CHICOS</pattern><template><srai>CUAL ES SU POLITICA DE CAMBIOS</srai></template></category>
-    <category><pattern>ME QUEDARON GRANDES</pattern><template><srai>CUAL ES SU POLITICA DE CAMBIOS</srai></template></category>
 
-    <!-- Contexto por TEMA: CAMBIOS -->
     <topic name="CAMBIOS">
         <category>
             <pattern>REQUISITOS</pattern>
-            <template>Los requisitos son: 1) Producto sin muestra de uso, 2) Empaque y caja original intactos, 3) Comprobante de compra o número de pedido.</template>
+            <template>Los requisitos son: 1) Calzado sin muestras de uso, 2) Caja original en buen estado, 3) Comprobante de compra.</template>
         </category>
-
-        <category>
-            <pattern>INICIAR CAMBIO</pattern>
-            <template>Para iniciar el proceso, envía una foto de la suela de los tenis y tu número de pedido al correo cambios@tiendatenis.com para enviarte la guía prepagada de retorno.</template>
-        </category>
-
         <category>
             <pattern>SALIR</pattern>
-            <template>
-                <set name="topic">ALL</set>
-                Has salido de la sección de cambios. ¿En qué más te puedo asistir hoy?
-            </template>
+            <template><set name="topic">ALL</set>Has salido del menú de cambios. ¿En qué más te puedo ayudar?</template>
         </category>
     </topic>
 </aiml>

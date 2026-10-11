@@ -3,75 +3,26 @@
 
     <category><pattern>HOLA</pattern><template><srai>ATENDER SALUDO</srai></template></category>
     <category><pattern>HOLA *</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>BUEN DIA</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>BUEN DIA *</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>BUENOS DIAS</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>BUENOS DIAS *</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>BUENAS</pattern><template><srai>ATENDER SALUDO</srai></template></category>
     <category><pattern>BUENAS *</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>BUENAS TARDES</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>BUENAS TARDES *</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>BUENAS NOCHES</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>BUENAS NOCHES *</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>HEY</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>HEY *</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>QUE TAL</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>QUE TAL *</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>QUE ONDA</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>QUE ONDA *</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>QUIUBO</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>QUIUBO *</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>QUE HAY</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>ALO</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>HOLI</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>HELLO</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>HI</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-
+    <category><pattern>BUENOS DIAS *</pattern><template><srai>ATENDER SALUDO</srai></template></category>
 
     <category>
         <pattern>ATENDER SALUDO</pattern>
         <template>
             <condition name="usuario">
                 <li value="unknown"><srai>SALUDO ANONIMO</srai></li>
-                <li><srai>SALUDO PERSONALIZADO</srai></li>
+                <li value=""><srai>SALUDO ANONIMO</srai></li>
+                <li>¡Hola de nuevo, <get name="usuario"/>! ¿En qué te ayudamos hoy en 'Patitas pa' que las quiero'?</li>
             </condition>
         </template>
     </category>
-
 
     <category>
         <pattern>SALUDO ANONIMO</pattern>
         <template>
             <random>
-                <li>¡Hola! Qué gusto saludarte. Te doy la bienvenida a 'Patitas pa' que las quiero', tu tienda de calzado deportivo. ¿Cómo te llamas?</li>
-                <li>¡Qué onda! Bienvenido a 'Patitas pa' que las quiero'. ¿Con quién tengo el gusto de hablar hoy?</li>
-                <li>¡Hola, hola! Qué bueno verte por aquí. Soy el asistente virtual de 'Patitas pa' que las quiero'. ¿Cuál es tu nombre?</li>
-                <li>¡Buenas! Bienvenido a 'Patitas pa' que las quiero'. Platícame, ¿cómo te llamas para poder atenderte mejor?</li>
-                <li>¡Ey, qué tal! Bienvenido a la tienda. ¿Cómo te llamas amigo(a)?</li>
-            </random>
-        </template>
-    </category>
-
-    <category>
-        <pattern>SALUDO PERSONALIZADO</pattern>
-        <template>
-            <random>
-                <li>¡Hola de nuevo, <get name="usuario"/>! Qué gusto volverte a ver en 'Patitas pa' que las quiero'. <srai>OFRECER AYUDA DIVERSIFICADA</srai></li>
-                <li>¡Qué milagro, <get name="usuario"/>! Qué bueno tenerte por aquí otra vez. <srai>OFRECER AYUDA DIVERSIFICADA</srai></li>
-                <li>¡Ey, <get name="usuario"/>! Listo para amarrarnos las agujetas. <srai>OFRECER AYUDA DIVERSIFICADA</srai></li>
-                <li>¡Hola, <get name="usuario"/>! Qué bueno saludarte de nuevo en 'Patitas pa' que las quiero'. <srai>OFRECER AYUDA DIVERSIFICADA</srai></li>
-            </random>
-        </template>
-    </category>
-
-    <category>
-        <pattern>OFRECER AYUDA DIVERSIFICADA</pattern>
-        <template>
-            <random>
-                <li>¿En qué te echamos la mano hoy? ¿Buscas tenis nuevos, rastrear un paquete o hacer un cambio?</li>
-                <li>Platícame, ¿buscas algún modelo en especial o vienes a revisar el estado de un pedido?</li>
-                <li>¿Qué se te ofrece el día de hoy? (Rastreo, envíos a provincia, métodos de pago o catálogo).</li>
-                <li>¿En qué te podemos servir hoy? Cuéntame qué necesitas.</li>
+                <li>¡Hola! Bienvenido a 'Patitas pa' que las quiero'. ¿Cómo te llamas?</li>
+                <li>¡Qué onda! Bienvenido a la tienda. ¿Cuál es tu nombre?</li>
             </random>
         </template>
     </category>
@@ -79,63 +30,10 @@
     <category>
         <pattern>ME LLAMO *</pattern>
         <template>
-            <set name="usuario"><star/></set>
-            <srai>REACCION AL NOMBRE</srai>
+            <set name="usuario"><star/></set>, ¡un gusto atenderte! Platícame, ¿qué tenis buscas o qué trámite necesitas realizar hoy?
         </template>
     </category>
 
     <category><pattern>MI NOMBRE ES *</pattern><template><srai>ME LLAMO <star/></srai></template></category>
     <category><pattern>SOY *</pattern><template><srai>ME LLAMO <star/></srai></template></category>
-    <category><pattern>ME DICEN *</pattern><template><srai>ME LLAMO <star/></srai></template></category>
-
-    <category>
-        <pattern>REACCION AL NOMBRE</pattern>
-        <template>
-            <random>
-                <li>, ¡mucho gusto! Qué buen nombre. En 'Patitas pa' que las quiero' te podemos ayudar con:
-- 1. Rastreo de tu pedido
-- 2. Envíos a provincia y fletes
-- 3. Formas de pago y MSI
-- 4. Catálogo de tenis deportivos
-- 5. Cambios de talla y devoluciones
-
-¿Con qué consulta te gustaría empezar?</li>
-                <li>, ¡un placer conocerte! Bienvenido(a) a la familia de 'Patitas pa' que las quiero'. Platícame, ¿qué se te ofrece hoy?</li>
-                <li>, ¡qué gusto saludarte! Ya quedaste registrado(a). Cuéntame, ¿buscas algún par de tenis o necesitas consultar un pedido?</li>
-            </random>
-        </template>
-    </category>
-
-    <category><pattern>_ TE VA</pattern><template><srai>QUE TAL TU DIA</srai></template></category>
-    <category><pattern>_ TE VA _</pattern><template><srai>QUE TAL TU DIA</srai></template></category>
-    <category><pattern>COMO ESTAS</pattern><template><srai>QUE TAL TU DIA</srai></template></category>
-    <category><pattern>COMO TE VA</pattern><template><srai>QUE TAL TU DIA</srai></template></category>
-    <category><pattern>COMO ANDAS</pattern><template><srai>QUE TAL TU DIA</srai></template></category>
-
-    <category>
-        <pattern>QUE TAL TU DIA</pattern>
-        <template>
-            <random>
-                <li>¡Al 100% y listo para poner a amarrar las agujetas! ¿Tú qué tal?</li>
-                <li>¡Con toda la actitud deportiva! Procesando respuestas al instante para consentir a tus patitas. ¿Y tú cómo andas?</li>
-                <li>¡De maravilla! Aquí feliz asistiendo en la tienda. ¿Cómo va tu día?</li>
-                <li>¡Muy bien, gracias por preguntar! ¿En qué te puedo servir hoy?</li>
-            </random>
-        </template>
-    </category>
-
-    <category>
-        <pattern>BIEN</pattern>
-        <template>
-            <random>
-                <li>¡Me da muchísimo gusto! Platícame, ¿en qué te puedo ayudar hoy?</li>
-                <li>¡Excelente! Cuéntame si buscas tenis para correr, básquetbol, moda urbana o rastrear un envío.</li>
-                <li>¡Qué bueno! Estoy listo para asistirte.</li>
-            </random>
-        </template>
-    </category>
-
-    <category><pattern>BIEN TAMBIEN</pattern><template><srai>BIEN</srai></template></category>
-    <category><pattern>TODO BIEN</pattern><template><srai>BIEN</srai></template></category>
-
 </aiml>

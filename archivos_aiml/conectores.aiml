@@ -91,4 +91,10 @@
     <category><pattern>DIGO QUE *</pattern><template><srai><star/></srai></template></category>
     <category><pattern>ASI QUE *</pattern><template><srai><star/></srai></template></category>
 
+    <!-- Palabras magicas-->
+    <!-- Remoción de Muletillas y Cortesía al final de la frase -->
+    <category><pattern>* PORFA</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>* PORFAVOR</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>* POR FAVOR</pattern><template><srai><star/></srai></template></category>
+    <category><pattern>* DE FAVOR</pattern><template><srai><star/></srai></template></category>
 </aiml>

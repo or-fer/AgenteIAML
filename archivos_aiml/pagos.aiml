@@ -4,12 +4,13 @@
     <!-- Métodos generales -->
     <category>
         <pattern>METODOS DE PAGO</pattern>
-        <template>Aceptamos tarjetas de crédito y débito (Visa, Mastercard, American Express), PayPal, Mercado Pago, transferencia SPEI y pagos en efectivo en tiendas OXXO.</template>
+        <template>Aceptamos tarjetas de crédito y débito (Visa, Mastercard, American Express), PayPal, Mercado Pago, transferencia SPEI y pago en efectivo en OXXO.</template>
     </category>
 
-    <category><pattern>FORMAS DE PAGO</pattern><template><srai>METODOS DE PAGO</srai></template></category>
-    <category><pattern>* FORMAS DE PAGO *</pattern><template><srai>METODOS DE PAGO</srai></template></category>
-    <category><pattern>* COMO PUEDO PAGAR *</pattern><template><srai>METODOS DE PAGO</srai></template></category>
+    <category><pattern>* TARJETAS *</pattern><template><srai>METODOS DE PAGO</srai></template></category>
+    <category><pattern>* TARJETA *</pattern><template><srai>METODOS DE PAGO</srai></template></category>
+    <category><pattern>ACEPTAS TARJETAS</pattern><template><srai>METODOS DE PAGO</srai></template></category>
+    <category><pattern>QUE TARJETAS ACEPTAS</pattern><template><srai>METODOS DE PAGO</srai></template></category>
 
     <!-- Métodos específicos -->
     <category>
