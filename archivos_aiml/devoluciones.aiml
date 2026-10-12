@@ -1,27 +1,1367 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 
-    <category>
-        <pattern>CUAL ES SU POLITICA DE CAMBIOS</pattern>
-        <template>
-            <set name="topic">CAMBIOS</set>
-            Cuentas con 30 días naturales a partir de la recepción para solicitar cambios de talla o modelo sin costo adicional. El calzado debe estar sin usar. ¿Deseas consultar REQUISITOS, INICIAR CAMBIO o SALIR?
-        </template>
-    </category>
+<!-- Cambios y devoluciones con <topic> CAMBIOS, REQUISITOS, INICIAR CAMBIO, SALIR, garantía y reembolsos -->
 
-    <category><pattern>* POLITICA DE CAMBIOS *</pattern><template><srai>CUAL ES SU POLITICA DE CAMBIOS</srai></template></category>
-    <category><pattern>* POLITICA DE CAMBIOS</pattern><template><srai>CUAL ES SU POLITICA DE CAMBIOS</srai></template></category>
-    <category><pattern>COMO ES LA POLITICA DE CAMBIOS</pattern><template><srai>CUAL ES SU POLITICA DE CAMBIOS</srai></template></category>
-    <category><pattern>* CAMBIOS *</pattern><template><srai>CUAL ES SU POLITICA DE CAMBIOS</srai></template></category>
 
-    <topic name="CAMBIOS">
-        <category>
-            <pattern>REQUISITOS</pattern>
-            <template>Los requisitos son: 1) Calzado sin muestras de uso, 2) Caja original en buen estado, 3) Comprobante de compra.</template>
-        </category>
-        <category>
-            <pattern>SALIR</pattern>
-            <template><set name="topic">ALL</set>Has salido del menú de cambios. ¿En qué más te puedo ayudar?</template>
-        </category>
-    </topic>
+<category><pattern>INTENCION CAMBIOS</pattern><template><think><set name="topic">CAMBIOS</set><set name="fallos">0</set></think>Cuentas con <srai>INFO PLAZO CAMBIOS</srai> a partir de la recepción para solicitar cambios de talla o modelo sin costo adicional. El calzado debe estar sin usar. ¿Deseas consultar REQUISITOS, INICIAR CAMBIO o SALIR?</template></category>
+<category><pattern>CAMBIOS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIOS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIOS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIOS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIO *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIO *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>LOS CAMBIOS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>LOS CAMBIOS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* LOS CAMBIOS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* LOS CAMBIOS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>EL CAMBIO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>EL CAMBIO *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* EL CAMBIO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* EL CAMBIO *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>UN CAMBIO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>UN CAMBIO *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* UN CAMBIO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* UN CAMBIO *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIOS CUANTOS DIAS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIOS CUANTOS DIAS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIOS CUANTOS DIAS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIOS CUANTOS DIAS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIOS DE TALLA</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIOS DE TALLA *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIOS DE TALLA</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIOS DE TALLA *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>POLITICA DE CAMBIOS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>POLITICA DE CAMBIOS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* POLITICA DE CAMBIOS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* POLITICA DE CAMBIOS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>POLITICA DE CAMBIO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>POLITICA DE CAMBIO *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* POLITICA DE CAMBIO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* POLITICA DE CAMBIO *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>POLITICA DE DEVOLUCIONES</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>POLITICA DE DEVOLUCIONES *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* POLITICA DE DEVOLUCIONES</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* POLITICA DE DEVOLUCIONES *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>POLITICA DE DEVOLUCION</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>POLITICA DE DEVOLUCION *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* POLITICA DE DEVOLUCION</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* POLITICA DE DEVOLUCION *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIOS Y DEVOLUCIONES</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIOS Y DEVOLUCIONES *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIOS Y DEVOLUCIONES</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIOS Y DEVOLUCIONES *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>ACEPTAN CAMBIOS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>ACEPTAN CAMBIOS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* ACEPTAN CAMBIOS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* ACEPTAN CAMBIOS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>ACEPTAN DEVOLUCIONES</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>ACEPTAN DEVOLUCIONES *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* ACEPTAN DEVOLUCIONES</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* ACEPTAN DEVOLUCIONES *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CUAL ES SU POLITICA DE CAMBIOS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CUAL ES SU POLITICA DE CAMBIOS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CUAL ES SU POLITICA DE CAMBIOS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CUAL ES SU POLITICA DE CAMBIOS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>COMO ES LA POLITICA DE CAMBIOS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>COMO ES LA POLITICA DE CAMBIOS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* COMO ES LA POLITICA DE CAMBIOS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* COMO ES LA POLITICA DE CAMBIOS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR MIS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR MIS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIAR MIS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIAR MIS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR UN</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR UN *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIAR UN</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIAR UN *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR UNOS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR UNOS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIAR UNOS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIAR UNOS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR EL</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR EL *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIAR EL</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIAR EL *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR LOS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR LOS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIAR LOS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIAR LOS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR POR OTRO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR POR OTRO *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIAR POR OTRO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIAR POR OTRO *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR POR OTRA</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR POR OTRA *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIAR POR OTRA</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIAR POR OTRA *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR POR OTROS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR POR OTROS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIAR POR OTROS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CAMBIAR POR OTROS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CUANTOS DIAS TENGO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CUANTOS DIAS TENGO *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CUANTOS DIAS TENGO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CUANTOS DIAS TENGO *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CUANTO TIEMPO TENGO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CUANTO TIEMPO TENGO *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CUANTO TIEMPO TENGO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* CUANTO TIEMPO TENGO *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>DIAS PARA CAMBIAR</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>DIAS PARA CAMBIAR *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* DIAS PARA CAMBIAR</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* DIAS PARA CAMBIAR *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>DIAS PARA DEVOLVER</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>DIAS PARA DEVOLVER *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* DIAS PARA DEVOLVER</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* DIAS PARA DEVOLVER *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>PLAZO PARA CAMBIAR</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>PLAZO PARA CAMBIAR *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* PLAZO PARA CAMBIAR</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* PLAZO PARA CAMBIAR *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>PLAZO PARA DEVOLVER</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>PLAZO PARA DEVOLVER *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* PLAZO PARA DEVOLVER</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* PLAZO PARA DEVOLVER *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>PLAZO DE CAMBIO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>PLAZO DE CAMBIO *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* PLAZO DE CAMBIO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* PLAZO DE CAMBIO *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>PLAZO DE DEVOLUCION</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>PLAZO DE DEVOLUCION *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* PLAZO DE DEVOLUCION</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* PLAZO DE DEVOLUCION *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>HASTA CUANDO PUEDO CAMBIAR</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>HASTA CUANDO PUEDO CAMBIAR *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* HASTA CUANDO PUEDO CAMBIAR</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* HASTA CUANDO PUEDO CAMBIAR *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>HASTA CUANDO PUEDO DEVOLVER</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>HASTA CUANDO PUEDO DEVOLVER *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* HASTA CUANDO PUEDO DEVOLVER</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>* HASTA CUANDO PUEDO DEVOLVER *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR PRODUCTO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR PEDIDO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR MI PEDIDO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR MI PRODUCTO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>CAMBIAR MI COMPRA</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+
+<!-- REQUISITOS CAMBIO  [tema: CAMBIOS] -->
+<category><pattern>INTENCION REQUISITOS CAMBIO</pattern><template><think><set name="topic">CAMBIOS</set><set name="fallos">0</set></think>Los requisitos son: 1) Calzado sin muestras de uso, 2) Caja original en buen estado, 3) Comprobante de compra.</template></category>
+<category><pattern>REQUISITOS PARA EL CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS PARA EL CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS PARA EL CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS PARA EL CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS PARA MI CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS PARA MI CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS PARA MI CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS PARA MI CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS PARA LA DEVOLUCION</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS PARA LA DEVOLUCION *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS PARA LA DEVOLUCION</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS PARA LA DEVOLUCION *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS PARA EL REEMBOLSO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS PARA EL REEMBOLSO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS PARA EL REEMBOLSO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS PARA EL REEMBOLSO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS DEL CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS DEL CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS DEL CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS DEL CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS DE LA DEVOLUCION</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS DE LA DEVOLUCION *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS DE LA DEVOLUCION</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS DE LA DEVOLUCION *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE PAPELES NECESITO PARA UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE PAPELES NECESITO PARA UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE PAPELES NECESITO PARA UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE PAPELES NECESITO PARA UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE PAPELES NECESITO PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE PAPELES NECESITO PARA CAMBIAR *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE PAPELES NECESITO PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE PAPELES NECESITO PARA CAMBIAR *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE PAPELES NECESITO PARA HACER UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE PAPELES NECESITO PARA HACER UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE PAPELES NECESITO PARA HACER UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE PAPELES NECESITO PARA HACER UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE PAPELES NECESITO PARA DEVOLVER</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE PAPELES NECESITO PARA DEVOLVER *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE PAPELES NECESITO PARA DEVOLVER</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE PAPELES NECESITO PARA DEVOLVER *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE PAPELES NECESITO PARA UNA DEVOLUCION</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE PAPELES NECESITO PARA UNA DEVOLUCION *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE PAPELES NECESITO PARA UNA DEVOLUCION</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE PAPELES NECESITO PARA UNA DEVOLUCION *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE DOCUMENTOS NECESITO PARA UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE DOCUMENTOS NECESITO PARA UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE DOCUMENTOS NECESITO PARA UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE DOCUMENTOS NECESITO PARA UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE DOCUMENTOS NECESITO PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE DOCUMENTOS NECESITO PARA CAMBIAR *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE DOCUMENTOS NECESITO PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE DOCUMENTOS NECESITO PARA CAMBIAR *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE DOCUMENTOS NECESITO PARA HACER UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE DOCUMENTOS NECESITO PARA HACER UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE DOCUMENTOS NECESITO PARA HACER UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE DOCUMENTOS NECESITO PARA HACER UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE DOCUMENTOS NECESITO PARA DEVOLVER</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE DOCUMENTOS NECESITO PARA DEVOLVER *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE DOCUMENTOS NECESITO PARA DEVOLVER</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE DOCUMENTOS NECESITO PARA DEVOLVER *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE DOCUMENTOS NECESITO PARA UNA DEVOLUCION</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE DOCUMENTOS NECESITO PARA UNA DEVOLUCION *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE DOCUMENTOS NECESITO PARA UNA DEVOLUCION</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE DOCUMENTOS NECESITO PARA UNA DEVOLUCION *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE REQUISITOS NECESITO PARA UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE REQUISITOS NECESITO PARA UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE REQUISITOS NECESITO PARA UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE REQUISITOS NECESITO PARA UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE REQUISITOS NECESITO PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE REQUISITOS NECESITO PARA CAMBIAR *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE REQUISITOS NECESITO PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE REQUISITOS NECESITO PARA CAMBIAR *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE REQUISITOS NECESITO PARA HACER UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE REQUISITOS NECESITO PARA HACER UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE REQUISITOS NECESITO PARA HACER UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE REQUISITOS NECESITO PARA HACER UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE REQUISITOS NECESITO PARA DEVOLVER</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE REQUISITOS NECESITO PARA DEVOLVER *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE REQUISITOS NECESITO PARA DEVOLVER</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE REQUISITOS NECESITO PARA DEVOLVER *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE REQUISITOS NECESITO PARA UNA DEVOLUCION</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE REQUISITOS NECESITO PARA UNA DEVOLUCION *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE REQUISITOS NECESITO PARA UNA DEVOLUCION</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE REQUISITOS NECESITO PARA UNA DEVOLUCION *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE COSAS NECESITO PARA UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE COSAS NECESITO PARA UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE COSAS NECESITO PARA UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE COSAS NECESITO PARA UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE COSAS NECESITO PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE COSAS NECESITO PARA CAMBIAR *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE COSAS NECESITO PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE COSAS NECESITO PARA CAMBIAR *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE COSAS NECESITO PARA HACER UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE COSAS NECESITO PARA HACER UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE COSAS NECESITO PARA HACER UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE COSAS NECESITO PARA HACER UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE COSAS NECESITO PARA DEVOLVER</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE COSAS NECESITO PARA DEVOLVER *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE COSAS NECESITO PARA DEVOLVER</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE COSAS NECESITO PARA DEVOLVER *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE COSAS NECESITO PARA UNA DEVOLUCION</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE COSAS NECESITO PARA UNA DEVOLUCION *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE COSAS NECESITO PARA UNA DEVOLUCION</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE COSAS NECESITO PARA UNA DEVOLUCION *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE NECESITO PARA HACER UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE NECESITO PARA HACER UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE NECESITO PARA HACER UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE NECESITO PARA HACER UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE NECESITO PARA DEVOLVER</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE NECESITO PARA DEVOLVER *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE NECESITO PARA DEVOLVER</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE NECESITO PARA DEVOLVER *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE NECESITO PARA CAMBIAR MIS TENIS</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE NECESITO PARA CAMBIAR MIS TENIS *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE NECESITO PARA CAMBIAR MIS TENIS</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE NECESITO PARA CAMBIAR MIS TENIS *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE REQUISITOS</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE REQUISITOS *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE REQUISITOS</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE REQUISITOS *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE REQUISITOS PIDEN PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE REQUISITOS PIDEN PARA CAMBIAR *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE REQUISITOS PIDEN PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE REQUISITOS PIDEN PARA CAMBIAR *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE SE NECESITA PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE SE NECESITA PARA CAMBIAR *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE SE NECESITA PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE SE NECESITA PARA CAMBIAR *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS PARA CAMBIAR *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS PARA CAMBIAR *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS PARA UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS PARA UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS PARA UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS PARA UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS DE CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS DE CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS DE CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS DE CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS DE CAMBIOS</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS DE CAMBIOS *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS DE CAMBIOS</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS DE CAMBIOS *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS PARA DEVOLVER</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS PARA DEVOLVER *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS PARA DEVOLVER</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS PARA DEVOLVER *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS DE DEVOLUCION</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS DE DEVOLUCION *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS DE DEVOLUCION</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS DE DEVOLUCION *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE NECESITO PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE NECESITO PARA CAMBIAR *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE NECESITO PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE NECESITO PARA CAMBIAR *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE NECESITO PARA UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE NECESITO PARA UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE NECESITO PARA UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE NECESITO PARA UN CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>CONDICIONES DE CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>CONDICIONES DE CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* CONDICIONES DE CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* CONDICIONES DE CAMBIO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>CONDICIONES PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>CONDICIONES PARA CAMBIAR *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* CONDICIONES PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* CONDICIONES PARA CAMBIAR *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+
+<!-- INICIAR CAMBIO  [tema: CAMBIOS] -->
+<category><pattern>INTENCION INICIAR CAMBIO</pattern><template><think><set name="topic">CAMBIOS</set><set name="fallos">0</set></think>Para iniciar tu cambio entra a <srai>INFO SITIO</srai>/cambios con tu número de pedido y tu ticket, elige la talla o modelo nuevo y sigue las instrucciones de envío. Recuerda tener el calzado sin usar y en su caja original.</template></category>
+<category><pattern>COMO TRAMITO MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO TRAMITO MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO TRAMITO MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO TRAMITO MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO TRAMITO UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO TRAMITO UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO TRAMITO UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO TRAMITO UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO TRAMITO EL CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO TRAMITO EL CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO TRAMITO EL CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO TRAMITO EL CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO TRAMITO CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO TRAMITO CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO TRAMITO CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO TRAMITO CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO HAGO MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO HAGO MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO HAGO MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO HAGO MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO HAGO UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO HAGO UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO HAGO UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO HAGO UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO HAGO EL CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO HAGO EL CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO HAGO EL CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO HAGO EL CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO HAGO CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO HAGO CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO HAGO CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO HAGO CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO SOLICITO MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO SOLICITO MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO SOLICITO MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO SOLICITO MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO SOLICITO UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO SOLICITO UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO SOLICITO UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO SOLICITO UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO SOLICITO EL CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO SOLICITO EL CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO SOLICITO EL CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO SOLICITO EL CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO SOLICITO CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO SOLICITO CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO SOLICITO CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO SOLICITO CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PROCEDO MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PROCEDO MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PROCEDO MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PROCEDO MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PROCEDO UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PROCEDO UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PROCEDO UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PROCEDO UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PROCEDO EL CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PROCEDO EL CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PROCEDO EL CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PROCEDO EL CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PROCEDO CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PROCEDO CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PROCEDO CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PROCEDO CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO INICIO MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO INICIO MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO INICIO MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO INICIO MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO INICIO UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO INICIO UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO INICIO UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO INICIO UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO INICIO EL CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO INICIO EL CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO INICIO EL CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO INICIO EL CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO INICIO CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO INICIO CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO INICIO CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO INICIO CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO REALIZO MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO REALIZO MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO REALIZO MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO REALIZO MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO REALIZO UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO REALIZO UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO REALIZO UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO REALIZO UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO REALIZO EL CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO REALIZO EL CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO REALIZO EL CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO REALIZO EL CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO REALIZO CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO REALIZO CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO REALIZO CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO REALIZO CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO HACER MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO HACER MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO HACER MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO HACER MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO HACER UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO HACER UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO HACER UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO HACER UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO HACER EL CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO HACER EL CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO HACER EL CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO HACER EL CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO HACER CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO HACER CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO HACER CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO HACER CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO TRAMITAR MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO TRAMITAR MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO TRAMITAR MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO TRAMITAR MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO TRAMITAR UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO TRAMITAR UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO TRAMITAR UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO TRAMITAR UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO TRAMITAR EL CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO TRAMITAR EL CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO TRAMITAR EL CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO TRAMITAR EL CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO TRAMITAR CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO TRAMITAR CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO TRAMITAR CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO TRAMITAR CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO SOLICITAR MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO SOLICITAR MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO SOLICITAR MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO SOLICITAR MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO SOLICITAR UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO SOLICITAR UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO SOLICITAR UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO SOLICITAR UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO SOLICITAR EL CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO SOLICITAR EL CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO SOLICITAR EL CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO SOLICITAR EL CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO SOLICITAR CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO SOLICITAR CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO SOLICITAR CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO SOLICITAR CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO HAGO PARA CAMBIAR</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO HAGO PARA CAMBIAR *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO HAGO PARA CAMBIAR</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO HAGO PARA CAMBIAR *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO CAMBIAR</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO PUEDO CAMBIAR *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO CAMBIAR</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO PUEDO CAMBIAR *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO SE HACE UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO SE HACE UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO SE HACE UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO SE HACE UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO HAGO PARA CAMBIAR MIS TENIS</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO HAGO PARA CAMBIAR MIS TENIS *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO HAGO PARA CAMBIAR MIS TENIS</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO HAGO PARA CAMBIAR MIS TENIS *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO CAMBIAR MIS TENIS</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO CAMBIAR MIS TENIS *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO CAMBIAR MIS TENIS</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO CAMBIAR MIS TENIS *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>QUIERO CAMBIAR MIS TENIS</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>QUIERO CAMBIAR MIS TENIS *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* QUIERO CAMBIAR MIS TENIS</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* QUIERO CAMBIAR MIS TENIS *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>INICIAR CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>INICIAR CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* INICIAR CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* INICIAR CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>INICIAR UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>INICIAR UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* INICIAR UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* INICIAR UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>INICIAR MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>INICIAR MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* INICIAR MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* INICIAR MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>SOLICITAR CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>SOLICITAR CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* SOLICITAR CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* SOLICITAR CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>SOLICITAR UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>SOLICITAR UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* SOLICITAR UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* SOLICITAR UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>SOLICITAR MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>SOLICITAR MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* SOLICITAR MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* SOLICITAR MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>HACER UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>HACER UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* HACER UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* HACER UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>HACER MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>HACER MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* HACER MI CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* HACER MI CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>TRAMITAR CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>TRAMITAR CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* TRAMITAR CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* TRAMITAR CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>TRAMITAR UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>TRAMITAR UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* TRAMITAR UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* TRAMITAR UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO SOLICITAR UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO SOLICITAR UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO SOLICITAR UN CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO SOLICITAR UN CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO CAMBIO MIS TENIS</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO CAMBIO MIS TENIS *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO CAMBIO MIS TENIS</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO CAMBIO MIS TENIS *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+
+<!-- Dentro del tema CAMBIOS, las respuestas cortas del menú (REQUISITOS / INICIAR CAMBIO / SALIR) se interpretan en contexto -->
+
+<!-- CAMBIO TALLA  [tema: CAMBIOS] -->
+<category><pattern>INTENCION CAMBIO TALLA</pattern><template><think><set name="topic">CAMBIOS</set><set name="fallos">0</set></think>Si tu talla no te queda, puedes cambiarla sin costo adicional dentro de <srai>INFO PLAZO CAMBIOS</srai> a partir de la recepción, con el calzado sin usar y en su caja original. Inicia el trámite en <srai>INFO SITIO</srai>/cambios con tu número de pedido; el cambio está sujeto a disponibilidad de la talla.</template></category>
+<category><pattern>CAMBIO DE TALLA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIO DE TALLA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIO DE TALLA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIO DE TALLA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR DE TALLA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR DE TALLA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR DE TALLA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR DE TALLA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR TALLA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR TALLA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR TALLA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR TALLA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR LA TALLA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR LA TALLA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR LA TALLA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR LA TALLA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR MI TALLA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR MI TALLA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR MI TALLA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR MI TALLA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR POR OTRA TALLA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR POR OTRA TALLA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR POR OTRA TALLA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR POR OTRA TALLA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR POR UNA TALLA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR POR UNA TALLA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR POR UNA TALLA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR POR UNA TALLA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>TALLA EQUIVOCADA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>TALLA EQUIVOCADA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* TALLA EQUIVOCADA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* TALLA EQUIVOCADA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>TALLA INCORRECTA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>TALLA INCORRECTA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* TALLA INCORRECTA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* TALLA INCORRECTA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME EQUIVOQUE DE TALLA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME EQUIVOQUE DE TALLA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME EQUIVOQUE DE TALLA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME EQUIVOQUE DE TALLA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>NO ME QUEDA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>NO ME QUEDA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* NO ME QUEDA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* NO ME QUEDA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>NO ME QUEDAN</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>NO ME QUEDAN *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* NO ME QUEDAN</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* NO ME QUEDAN *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>NO ME QUEDARON</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>NO ME QUEDARON *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* NO ME QUEDARON</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* NO ME QUEDARON *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDA GRANDE</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDA GRANDE *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDA GRANDE</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDA GRANDE *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDA CHICO</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDA CHICO *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDA CHICO</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDA CHICO *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDA CHICA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDA CHICA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDA CHICA</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDA CHICA *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDA APRETADO</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDA APRETADO *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDA APRETADO</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDA APRETADO *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDAN GRANDES</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDAN GRANDES *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDAN GRANDES</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDAN GRANDES *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDAN CHICOS</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDAN CHICOS *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDAN CHICOS</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDAN CHICOS *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDAN APRETADOS</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDAN APRETADOS *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDAN APRETADOS</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDAN APRETADOS *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDO GRANDE</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDO GRANDE *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDO GRANDE</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDO GRANDE *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDO CHICO</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDO CHICO *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDO CHICO</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDO CHICO *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDARON GRANDES</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDARON GRANDES *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDARON GRANDES</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDARON GRANDES *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDARON CHICOS</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDARON CHICOS *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDARON CHICOS</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDARON CHICOS *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDARON APRETADOS</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ME QUEDARON APRETADOS *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDARON APRETADOS</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ME QUEDARON APRETADOS *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ESTA GRANDE</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ESTA GRANDE *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ESTA GRANDE</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ESTA GRANDE *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ESTA CHICO</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>ESTA CHICO *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ESTA CHICO</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* ESTA CHICO *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR DE MODELO</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR DE MODELO *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR DE MODELO</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR DE MODELO *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR EL MODELO</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR EL MODELO *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR EL MODELO</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR EL MODELO *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR DE COLOR</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR DE COLOR *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR DE COLOR</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR DE COLOR *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR EL COLOR</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>CAMBIAR EL COLOR *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR EL COLOR</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+<category><pattern>* CAMBIAR EL COLOR *</pattern><template><srai>INTENCION CAMBIO TALLA</srai></template></category>
+
+<!-- DEVOLUCION  [tema: CAMBIOS] -->
+<category><pattern>INTENCION DEVOLUCION</pattern><template><think><set name="topic">CAMBIOS</set><set name="fallos">0</set></think>Para devolver tu pedido entra a <srai>INFO SITIO</srai>/cambios, elige Devolución e indica el motivo. Te enviamos las instrucciones de entrega y, cuando recibimos y revisamos el calzado, hacemos el reembolso en <srai>INFO PLAZO REEMBOLSO</srai>. Debe estar sin usar, en su caja original y solicitarse dentro de <srai>INFO PLAZO CAMBIOS</srai>.</template></category>
+<category><pattern>REGRESAR LOS TENIS</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR LOS TENIS *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR LOS TENIS</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR LOS TENIS *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR LOS</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR LOS *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR LOS</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR LOS *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR EL</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR EL *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR EL</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR EL *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR MI</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR MI *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR MI</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR MI *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR MIS</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR MIS *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR MIS</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR MIS *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLVERLOS</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLVERLOS *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLVERLOS</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLVERLOS *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLVERLO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLVERLO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLVERLO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLVERLO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLVERLAS</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLVERLAS *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLVERLAS</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLVERLAS *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLVERLA</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLVERLA *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLVERLA</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLVERLA *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>NO ME GUSTARON</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>NO ME GUSTARON *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* NO ME GUSTARON</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* NO ME GUSTARON *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>NO ME GUSTO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>NO ME GUSTO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* NO ME GUSTO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* NO ME GUSTO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>NO ME CONVENCIERON</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>NO ME CONVENCIERON *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* NO ME CONVENCIERON</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* NO ME CONVENCIERON *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>NO LOS QUIERO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>NO LOS QUIERO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* NO LOS QUIERO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* NO LOS QUIERO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>ME ARREPENTI DE MI COMPRA</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>ME ARREPENTI DE MI COMPRA *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* ME ARREPENTI DE MI COMPRA</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* ME ARREPENTI DE MI COMPRA *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLVER MI PEDIDO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLVER MI PEDIDO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLVER MI PEDIDO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLVER MI PEDIDO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLVER EL PRODUCTO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLVER EL PRODUCTO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLVER EL PRODUCTO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLVER EL PRODUCTO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLVER MIS TENIS</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLVER MIS TENIS *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLVER MIS TENIS</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLVER MIS TENIS *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLVER UN PRODUCTO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLVER UN PRODUCTO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLVER UN PRODUCTO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLVER UN PRODUCTO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR EL PRODUCTO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR EL PRODUCTO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR EL PRODUCTO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR EL PRODUCTO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR MI PEDIDO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR MI PEDIDO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR MI PEDIDO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR MI PEDIDO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR MIS TENIS</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR MIS TENIS *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR MIS TENIS</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR MIS TENIS *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR UN PRODUCTO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>REGRESAR UN PRODUCTO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR UN PRODUCTO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* REGRESAR UN PRODUCTO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>HACER UNA DEVOLUCION</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>HACER UNA DEVOLUCION *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* HACER UNA DEVOLUCION</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* HACER UNA DEVOLUCION *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>SOLICITAR UNA DEVOLUCION</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>SOLICITAR UNA DEVOLUCION *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* SOLICITAR UNA DEVOLUCION</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* SOLICITAR UNA DEVOLUCION *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>SOLICITAR DEVOLUCION</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>SOLICITAR DEVOLUCION *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* SOLICITAR DEVOLUCION</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* SOLICITAR DEVOLUCION *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLUCION</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLUCION *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLUCION</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLUCION *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLUCIONES</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLUCIONES *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLUCIONES</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLUCIONES *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLVER</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>DEVOLVER *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLVER</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* DEVOLVER *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>PUEDO DEVOLVER</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>PUEDO DEVOLVER *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* PUEDO DEVOLVER</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>* PUEDO DEVOLVER *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+
+<!-- DEFECTO  [tema: CAMBIOS] -->
+<category><pattern>INTENCION DEFECTO</pattern><template><think><set name="topic">CAMBIOS</set><set name="fallos">0</set></think>Si tu calzado tiene un defecto de fabricación (por ejemplo, suela despegada o costuras abiertas), lo cubre nuestra garantía de <srai>INFO GARANTIA</srai>. Envía a <srai>INFO CORREO</srai> fotos del defecto y tu número de pedido; si procede, lo cambiamos o reembolsamos sin costo de envío. El desgaste normal por uso no está cubierto.</template></category>
+<category><pattern>SE ESTA DESPEGANDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ESTA DESPEGANDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ESTA DESPEGANDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ESTA DESPEGANDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ESTA ROMPIENDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ESTA ROMPIENDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ESTA ROMPIENDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ESTA ROMPIENDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ESTA ABRIENDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ESTA ABRIENDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ESTA ABRIENDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ESTA ABRIENDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ESTA DESCOSIENDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ESTA DESCOSIENDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ESTA DESCOSIENDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ESTA DESCOSIENDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DESPEGANDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DESPEGANDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DESPEGANDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DESPEGANDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>ROMPIENDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>ROMPIENDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* ROMPIENDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* ROMPIENDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DESCOSIENDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DESCOSIENDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DESCOSIENDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DESCOSIENDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SUELA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SUELA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SUELA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SUELA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>COSTURA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>COSTURA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* COSTURA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* COSTURA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>COSTURAS</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>COSTURAS *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* COSTURAS</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* COSTURAS *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DESCOSIDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DESCOSIDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DESCOSIDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DESCOSIDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DESCOSIDOS</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DESCOSIDOS *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DESCOSIDOS</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DESCOSIDOS *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ME DESPEGO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ME DESPEGO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ME DESPEGO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ME DESPEGO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DESPEGARON</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DESPEGARON *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DESPEGARON</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DESPEGARON *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE DESPEGARON</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE DESPEGARON *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE DESPEGARON</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE DESPEGARON *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>ROMPIERON</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>ROMPIERON *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* ROMPIERON</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* ROMPIERON *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ROMPIERON</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ROMPIERON *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ROMPIERON</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ROMPIERON *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>VIENEN DEFECTUOSOS</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>VIENEN DEFECTUOSOS *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* VIENEN DEFECTUOSOS</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* VIENEN DEFECTUOSOS *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>VIENEN DEFECTUOSAS</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>VIENEN DEFECTUOSAS *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* VIENEN DEFECTUOSAS</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* VIENEN DEFECTUOSAS *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>VINIERON DEFECTUOSOS</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>VINIERON DEFECTUOSOS *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* VINIERON DEFECTUOSOS</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* VINIERON DEFECTUOSOS *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DEFECTO DE FABRICA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DEFECTO DE FABRICA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DEFECTO DE FABRICA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DEFECTO DE FABRICA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>FALLA DE FABRICA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>FALLA DE FABRICA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* FALLA DE FABRICA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* FALLA DE FABRICA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE DESPEGO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE DESPEGO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE DESPEGO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE DESPEGO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ROMPIO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ROMPIO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ROMPIO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ROMPIO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ROMPEN</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ROMPEN *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ROMPEN</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ROMPEN *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ROMPE</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ROMPE *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ROMPE</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ROMPE *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ABRIO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE ABRIO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ABRIO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE ABRIO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE DESCOSIO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE DESCOSIO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE DESCOSIO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE DESCOSIO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE DESPEGA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SE DESPEGA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE DESPEGA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SE DESPEGA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SUELA DESPEGADA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SUELA DESPEGADA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SUELA DESPEGADA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SUELA DESPEGADA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SUELA ROTA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>SUELA ROTA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SUELA ROTA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* SUELA ROTA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>GARANTIA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>GARANTIA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* GARANTIA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* GARANTIA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DEFECTO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DEFECTO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DEFECTO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DEFECTO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DEFECTUOSO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DEFECTUOSO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DEFECTUOSO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DEFECTUOSO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DEFECTUOSA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DEFECTUOSA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DEFECTUOSA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DEFECTUOSA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DEFECTUOSOS</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DEFECTUOSOS *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DEFECTUOSOS</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DEFECTUOSOS *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DEFECTUOSAS</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DEFECTUOSAS *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DEFECTUOSAS</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DEFECTUOSAS *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DESPEGADA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DESPEGADA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DESPEGADA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DESPEGADA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DESPEGADO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>DESPEGADO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DESPEGADO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>* DESPEGADO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+
+<!-- CAMBIO TIEMPO  [tema: CAMBIOS] -->
+<category><pattern>INTENCION CAMBIO TIEMPO</pattern><template><think><set name="topic">CAMBIOS</set><set name="fallos">0</set></think>Cuando recibimos tu producto en bodega lo revisamos en 1 a 3 días hábiles; después enviamos el cambio (con el mismo tiempo de entrega de cualquier pedido) o hacemos el reembolso, que tarda <srai>INFO PLAZO REEMBOLSO</srai>.</template></category>
+<category><pattern>CUANTO TARDA EL CAMBIO</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDA EL CAMBIO *</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA EL CAMBIO</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA EL CAMBIO *</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDA EN LLEGAR EL CAMBIO</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDA EN LLEGAR EL CAMBIO *</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA EN LLEGAR EL CAMBIO</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA EN LLEGAR EL CAMBIO *</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDA MI CAMBIO</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDA MI CAMBIO *</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA MI CAMBIO</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA MI CAMBIO *</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDA LA DEVOLUCION</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDA LA DEVOLUCION *</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA LA DEVOLUCION</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA LA DEVOLUCION *</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+
+<!-- CAMBIO COSTO  [tema: CAMBIOS] -->
+<category><pattern>INTENCION CAMBIO COSTO</pattern><template><think><set name="topic">CAMBIOS</set><set name="fallos">0</set></think>Los cambios de talla o modelo no tienen costo adicional, y si el motivo es un defecto o un error nuestro, tampoco. En devoluciones por arrepentimiento se descuenta del reembolso el costo de la guía de recolección.</template></category>
+<category><pattern>QUIEN PAGA EL ENVIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>QUIEN PAGA EL ENVIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* QUIEN PAGA EL ENVIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* QUIEN PAGA EL ENVIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>QUIEN PAGA EL ENVIO SI CAMBIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>QUIEN PAGA EL ENVIO SI CAMBIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* QUIEN PAGA EL ENVIO SI CAMBIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* QUIEN PAGA EL ENVIO SI CAMBIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>QUIEN PAGA EL ENVIO DE UN CAMBIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>QUIEN PAGA EL ENVIO DE UN CAMBIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* QUIEN PAGA EL ENVIO DE UN CAMBIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* QUIEN PAGA EL ENVIO DE UN CAMBIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>QUIEN PAGA EL ENVIO SI DEVUELVO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>QUIEN PAGA EL ENVIO SI DEVUELVO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* QUIEN PAGA EL ENVIO SI DEVUELVO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* QUIEN PAGA EL ENVIO SI DEVUELVO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>QUIEN PAGA EL ENVIO DE LA DEVOLUCION</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>QUIEN PAGA EL ENVIO DE LA DEVOLUCION *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* QUIEN PAGA EL ENVIO DE LA DEVOLUCION</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* QUIEN PAGA EL ENVIO DE LA DEVOLUCION *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>QUIEN PAGA EL ENVIO DEL CAMBIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>QUIEN PAGA EL ENVIO DEL CAMBIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* QUIEN PAGA EL ENVIO DEL CAMBIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* QUIEN PAGA EL ENVIO DEL CAMBIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>QUIEN PAGA LA DEVOLUCION</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>QUIEN PAGA LA DEVOLUCION *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* QUIEN PAGA LA DEVOLUCION</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* QUIEN PAGA LA DEVOLUCION *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>QUIEN PAGA EL CAMBIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>QUIEN PAGA EL CAMBIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* QUIEN PAGA EL CAMBIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* QUIEN PAGA EL CAMBIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>COSTO DE LA DEVOLUCION</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>COSTO DE LA DEVOLUCION *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* COSTO DE LA DEVOLUCION</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* COSTO DE LA DEVOLUCION *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>COSTO DEL CAMBIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>COSTO DEL CAMBIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* COSTO DEL CAMBIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* COSTO DEL CAMBIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>TIENE COSTO EL CAMBIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>TIENE COSTO EL CAMBIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* TIENE COSTO EL CAMBIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* TIENE COSTO EL CAMBIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>TIENE COSTO LA DEVOLUCION</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>TIENE COSTO LA DEVOLUCION *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* TIENE COSTO LA DEVOLUCION</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* TIENE COSTO LA DEVOLUCION *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>CUESTA EL CAMBIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>CUESTA EL CAMBIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* CUESTA EL CAMBIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* CUESTA EL CAMBIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>CUANTO CUESTA EL CAMBIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>CUANTO CUESTA EL CAMBIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* CUANTO CUESTA EL CAMBIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* CUANTO CUESTA EL CAMBIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>CUANTO CUESTA DEVOLVER</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>CUANTO CUESTA DEVOLVER *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* CUANTO CUESTA DEVOLVER</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* CUANTO CUESTA DEVOLVER *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+
+<!-- REEMBOLSO  [tema: CAMBIOS] -->
+<category><pattern>INTENCION REEMBOLSO</pattern><template><think><set name="topic">CAMBIOS</set><set name="fallos">0</set></think>Los reembolsos se hacen al mismo método de pago de tu compra: con tarjeta tardan <srai>INFO PLAZO REEMBOLSO</srai> en reflejarse (según tu banco); en SPEI u OXXO te pedimos una cuenta para depositarte. Iniciamos el reembolso cuando recibimos y revisamos el producto.</template></category>
+<category><pattern>ME REEMBOLSAN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>ME REEMBOLSAN *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* ME REEMBOLSAN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* ME REEMBOLSAN *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>ME REEMBOLSARAN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>ME REEMBOLSARAN *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* ME REEMBOLSARAN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* ME REEMBOLSARAN *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>ME DEVUELVEN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>ME DEVUELVEN *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* ME DEVUELVEN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* ME DEVUELVEN *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>ME REGRESAN EL DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>ME REGRESAN EL DINERO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* ME REGRESAN EL DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* ME REGRESAN EL DINERO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>REEMBOLSAN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>REEMBOLSAN *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* REEMBOLSAN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* REEMBOLSAN *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>EN CUANTO TIEMPO ME REEMBOLSAN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>EN CUANTO TIEMPO ME REEMBOLSAN *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* EN CUANTO TIEMPO ME REEMBOLSAN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* EN CUANTO TIEMPO ME REEMBOLSAN *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANDO ME REEMBOLSAN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANDO ME REEMBOLSAN *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* CUANDO ME REEMBOLSAN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* CUANDO ME REEMBOLSAN *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANDO ME REEMBOLSARAN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANDO ME REEMBOLSARAN *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* CUANDO ME REEMBOLSARAN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* CUANDO ME REEMBOLSARAN *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>DEVOLUCION DE MI DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>DEVOLUCION DE MI DINERO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* DEVOLUCION DE MI DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* DEVOLUCION DE MI DINERO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>DEVUELVAN MI DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>DEVUELVAN MI DINERO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* DEVUELVAN MI DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* DEVUELVAN MI DINERO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>REGRESEN MI DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>REGRESEN MI DINERO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* REGRESEN MI DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* REGRESEN MI DINERO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>QUIERO MI DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>QUIERO MI DINERO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* QUIERO MI DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* QUIERO MI DINERO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANDO ME REGRESAN EL DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANDO ME REGRESAN EL DINERO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* CUANDO ME REGRESAN EL DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* CUANDO ME REGRESAN EL DINERO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANDO ME DEVUELVEN EL DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANDO ME DEVUELVEN EL DINERO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* CUANDO ME DEVUELVEN EL DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* CUANDO ME DEVUELVEN EL DINERO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TARDA EL REEMBOLSO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TARDA EL REEMBOLSO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* CUANTO TARDA EL REEMBOLSO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* CUANTO TARDA EL REEMBOLSO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TARDA EN LLEGAR MI REEMBOLSO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TARDA EN LLEGAR MI REEMBOLSO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* CUANTO TARDA EN LLEGAR MI REEMBOLSO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* CUANTO TARDA EN LLEGAR MI REEMBOLSO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TARDA LA DEVOLUCION DEL DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TARDA LA DEVOLUCION DEL DINERO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* CUANTO TARDA LA DEVOLUCION DEL DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* CUANTO TARDA LA DEVOLUCION DEL DINERO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>DONDE ESTA MI REEMBOLSO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>DONDE ESTA MI REEMBOLSO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* DONDE ESTA MI REEMBOLSO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* DONDE ESTA MI REEMBOLSO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>NO ME HAN REEMBOLSADO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>NO ME HAN REEMBOLSADO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* NO ME HAN REEMBOLSADO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* NO ME HAN REEMBOLSADO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>NO HE RECIBIDO MI REEMBOLSO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>NO HE RECIBIDO MI REEMBOLSO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* NO HE RECIBIDO MI REEMBOLSO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* NO HE RECIBIDO MI REEMBOLSO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>REEMBOLSO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>REEMBOLSO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* REEMBOLSO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* REEMBOLSO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>REEMBOLSOS</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>REEMBOLSOS *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* REEMBOLSOS</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* REEMBOLSOS *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>REEMBOLSAR</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>REEMBOLSAR *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* REEMBOLSAR</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* REEMBOLSAR *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>REINTEGRO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>REINTEGRO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* REINTEGRO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>* REINTEGRO *</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>QUE * PARA UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE * PARA CAMBIAR</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE * PARA HACER UN CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE * PARA EL CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE * PARA MI CAMBIO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE * PARA DEVOLVER</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE * PARA UNA DEVOLUCION</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE * PARA HACER UNA DEVOLUCION</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE * PARA CAMBIAR MIS TENIS</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE * PARA DEVOLVER MIS TENIS</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>EN CUANTO TIEMPO * REEMBOLSO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>EN CUANTO TIEMPO * REEMBOLSAN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>EN CUANTO TIEMPO * REEMBOLSAR</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>EN CUANTO TIEMPO * MI DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>EN CUANTO TIEMPO * EL DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TARDA * REEMBOLSO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TARDA * REEMBOLSAN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TARDA * REEMBOLSAR</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TARDA * MI DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TARDA * EL DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANDO * REEMBOLSO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANDO * REEMBOLSAN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANDO * REEMBOLSAR</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANDO * MI DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANDO * EL DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TIEMPO * REEMBOLSO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TIEMPO * REEMBOLSAN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TIEMPO * REEMBOLSAR</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TIEMPO * MI DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TIEMPO * EL DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TARDAN * REEMBOLSO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TARDAN * REEMBOLSAN</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TARDAN * REEMBOLSAR</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TARDAN * MI DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+<category><pattern>CUANTO TARDAN * EL DINERO</pattern><template><srai>INTENCION REEMBOLSO</srai></template></category>
+
+<topic name="CAMBIOS">
+<category><pattern>REQUISITOS</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>REQUISITOS *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* REQUISITOS *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>LOS REQUISITOS</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>LOS REQUISITOS *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* LOS REQUISITOS</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* LOS REQUISITOS *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE NECESITO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE NECESITO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE NECESITO</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE NECESITO *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE SE NECESITA</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>QUE SE NECESITA *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE SE NECESITA</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* QUE SE NECESITA *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>CONDICIONES</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>CONDICIONES *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* CONDICIONES</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>* CONDICIONES *</pattern><template><srai>INTENCION REQUISITOS CAMBIO</srai></template></category>
+<category><pattern>INICIAR</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>INICIAR *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* INICIAR</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* INICIAR *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>QUIERO INICIAR</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>QUIERO INICIAR *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* QUIERO INICIAR</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* QUIERO INICIAR *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>INICIAR CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>INICIAR CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* INICIAR CAMBIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* INICIAR CAMBIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>SI QUIERO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>SI QUIERO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* SI QUIERO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* SI QUIERO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO INICIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO INICIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO INICIO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO INICIO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO LO HAGO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO LO HAGO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO LO HAGO</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO LO HAGO *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO SE HACE</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>COMO SE HACE *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO SE HACE</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* COMO SE HACE *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>PROCEDER</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>PROCEDER *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* PROCEDER</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* PROCEDER *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>CONTINUAR</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>CONTINUAR *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* CONTINUAR</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* CONTINUAR *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>TRAMITAR</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>TRAMITAR *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* TRAMITAR</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>* TRAMITAR *</pattern><template><srai>INTENCION INICIAR CAMBIO</srai></template></category>
+<category><pattern>SALIR</pattern><template><think><set name="topic"></set></think>Has salido del menú de cambios. ¿En qué más te puedo ayudar?</template></category>
+<category><pattern>NADA MAS</pattern><template><think><set name="topic"></set></think>Has salido del menú de cambios. ¿En qué más te puedo ayudar?</template></category>
+<category><pattern>YA NO</pattern><template><think><set name="topic"></set></think>Has salido del menú de cambios. ¿En qué más te puedo ayudar?</template></category>
+<category><pattern>ES TODO</pattern><template><think><set name="topic"></set></think>Has salido del menú de cambios. ¿En qué más te puedo ayudar?</template></category>
+<category><pattern>ESO ES TODO</pattern><template><think><set name="topic"></set></think>Has salido del menú de cambios. ¿En qué más te puedo ayudar?</template></category>
+<category><pattern>NO GRACIAS</pattern><template><think><set name="topic"></set></think>Has salido del menú de cambios. ¿En qué más te puedo ayudar?</template></category>
+<category><pattern>TERMINAR</pattern><template><think><set name="topic"></set></think>Has salido del menú de cambios. ¿En qué más te puedo ayudar?</template></category>
+<category><pattern>CANCELAR</pattern><template><think><set name="topic"></set></think>Has salido del menú de cambios. ¿En qué más te puedo ayudar?</template></category>
+<category><pattern>REGRESAR</pattern><template><think><set name="topic"></set></think>Has salido del menú de cambios. ¿En qué más te puedo ayudar?</template></category>
+<category><pattern>VOLVER</pattern><template><think><set name="topic"></set></think>Has salido del menú de cambios. ¿En qué más te puedo ayudar?</template></category>
+<category><pattern>MENU</pattern><template><think><set name="topic"></set></think>Has salido del menú de cambios. ¿En qué más te puedo ayudar?</template></category>
+<category><pattern>CUANTO TARDA</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDA *</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA *</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TIEMPO TARDA</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TIEMPO TARDA *</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TIEMPO TARDA</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TIEMPO TARDA *</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDAN</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDAN *</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDAN</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDAN *</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>CUANTO DEMORA</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>CUANTO DEMORA *</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO DEMORA</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO DEMORA *</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TIEMPO</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TIEMPO *</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TIEMPO</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TIEMPO *</pattern><template><srai>INTENCION CAMBIO TIEMPO</srai></template></category>
+<category><pattern>CUANTO CUESTA</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>CUANTO CUESTA *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* CUANTO CUESTA</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* CUANTO CUESTA *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>CUANTO CUESTA EL ENVIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>CUANTO CUESTA EL ENVIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* CUANTO CUESTA EL ENVIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* CUANTO CUESTA EL ENVIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>TIENE COSTO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>TIENE COSTO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* TIENE COSTO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* TIENE COSTO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>ES GRATIS</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>ES GRATIS *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* ES GRATIS</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* ES GRATIS *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>CUANTO COBRAN</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>CUANTO COBRAN *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* CUANTO COBRAN</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* CUANTO COBRAN *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>QUIEN PAGA EL ENVIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>QUIEN PAGA EL ENVIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* QUIEN PAGA EL ENVIO</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+<category><pattern>* QUIEN PAGA EL ENVIO *</pattern><template><srai>INTENCION CAMBIO COSTO</srai></template></category>
+</topic>
+
+<topic name="PAGOS">
+<category><pattern>CUANTO TARDA</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDA *</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA *</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TIEMPO TARDA</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TIEMPO TARDA *</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TIEMPO TARDA</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TIEMPO TARDA *</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDAN</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDAN *</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDAN</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDAN *</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>CUANTO DEMORA</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>CUANTO DEMORA *</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO DEMORA</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO DEMORA *</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TIEMPO</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TIEMPO *</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TIEMPO</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TIEMPO *</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>NO FUNCIONA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO FUNCIONA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO FUNCIONA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO FUNCIONA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO PASA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO PASA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO PASA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO PASA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO ME DEJA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO ME DEJA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO ME DEJA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO ME DEJA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>ME MARCA ERROR</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>ME MARCA ERROR *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* ME MARCA ERROR</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* ME MARCA ERROR *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>ME SALE ERROR</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>ME SALE ERROR *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* ME SALE ERROR</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* ME SALE ERROR *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>DA ERROR</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>DA ERROR *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* DA ERROR</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* DA ERROR *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+</topic>
+
+<topic name="RASTREO">
+<category><pattern>NO APARECE</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO APARECE *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO APARECE</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO APARECE *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO FUNCIONA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO FUNCIONA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO FUNCIONA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO FUNCIONA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO CARGA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO CARGA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO CARGA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO CARGA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>ME DICE ERROR</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>ME DICE ERROR *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* ME DICE ERROR</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* ME DICE ERROR *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>ME MARCA ERROR</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>ME MARCA ERROR *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* ME MARCA ERROR</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* ME MARCA ERROR *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>ME SALE ERROR</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>ME SALE ERROR *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* ME SALE ERROR</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* ME SALE ERROR *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME DA INFORMACION</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME DA INFORMACION *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME DA INFORMACION</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME DA INFORMACION *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+</topic>
 </aiml>

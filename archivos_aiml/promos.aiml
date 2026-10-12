@@ -1,16 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 
-    <category>
-        <pattern>PROMOCIONES</pattern>
-        <template>Actualmente tenemos hasta 30% de descuento en la sección Outlet y envío gratis en compras mayores a $1,499 MXN. Además, usa el cupón SNEAKER10 para un 10% adicional en tu primera compra.</template>
-    </category>
+<!-- Promociones y cupones -->
 
-    <category><pattern>* PROMOCIONES *</pattern><template><srai>PROMOCIONES</srai></template></category>
-    <category><pattern>* PROMOCIONES</pattern><template><srai>PROMOCIONES</srai></template></category>
-    <category><pattern>TIENES PROMOCIONES</pattern><template><srai>PROMOCIONES</srai></template></category>
-    <category><pattern>* PROMOS *</pattern><template><srai>PROMOCIONES</srai></template></category>
-    <category><pattern>CUPON DE DESCUENTO</pattern><template>Aplica el cupón SNEAKER10 en tu carrito de compras antes de pagar para obtener 10% de descuento de bienvenida.</template></category>
+<!-- PROMOCIONES -->
+<category><pattern>INTENCION PROMOCIONES</pattern><template><think><set name="topic">PROMOS</set><set name="fallos">0</set></think>Actualmente tenemos hasta 30% de descuento en la sección Outlet y envío gratis en compras mayores a <srai>INFO ENVIO GRATIS MINIMO</srai>. Además, usa el cupón <srai>INFO CUPON</srai> para un 10% adicional en tu primera compra.</template></category>
+<category><pattern>TIENES PROMOCIONES</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>TIENES PROMOCIONES *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* TIENES PROMOCIONES</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* TIENES PROMOCIONES *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>HAY PROMOCIONES</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>HAY PROMOCIONES *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* HAY PROMOCIONES</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* HAY PROMOCIONES *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>TIENEN PROMOCIONES</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>TIENEN PROMOCIONES *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* TIENEN PROMOCIONES</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* TIENEN PROMOCIONES *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>HAY OFERTAS</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>HAY OFERTAS *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* HAY OFERTAS</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* HAY OFERTAS *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>BUEN FIN</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>BUEN FIN *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* BUEN FIN</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* BUEN FIN *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>HOT SALE</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>HOT SALE *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* HOT SALE</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* HOT SALE *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>TIENEN OUTLET</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>TIENEN OUTLET *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* TIENEN OUTLET</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* TIENEN OUTLET *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>SECCION OUTLET</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>SECCION OUTLET *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* SECCION OUTLET</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* SECCION OUTLET *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>ESTUDIANTES</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>ESTUDIANTES *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* ESTUDIANTES</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* ESTUDIANTES *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>DESCUENTO ESTUDIANTE</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>DESCUENTO ESTUDIANTE *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* DESCUENTO ESTUDIANTE</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* DESCUENTO ESTUDIANTE *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>PROMOCIONES</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>PROMOCIONES *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* PROMOCIONES</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* PROMOCIONES *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>PROMOCION</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>PROMOCION *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* PROMOCION</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* PROMOCION *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>PROMOS</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>PROMOS *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* PROMOS</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* PROMOS *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>PROMO</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>PROMO *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* PROMO</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* PROMO *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>OFERTA</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>OFERTA *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* OFERTA</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* OFERTA *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>OFERTAS</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>OFERTAS *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* OFERTAS</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* OFERTAS *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>OUTLET</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>OUTLET *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* OUTLET</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* OUTLET *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>DESCUENTOS</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>DESCUENTOS *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* DESCUENTOS</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* DESCUENTOS *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>DESCUENTO</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>DESCUENTO *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* DESCUENTO</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* DESCUENTO *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>REBAJAS</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>REBAJAS *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* REBAJAS</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* REBAJAS *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>LIQUIDACION</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>LIQUIDACION *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* LIQUIDACION</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>* LIQUIDACION *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+
+<!-- CUPON -->
+<category><pattern>INTENCION CUPON</pattern><template><think><set name="topic">PROMOS</set><set name="fallos">0</set></think>Aplica el cupón <srai>INFO CUPON</srai> en tu carrito de compras antes de pagar para obtener 10% de descuento de bienvenida en tu primera compra. Un cupón puede tener vigencia y no siempre se combina con otras promociones; si no te funciona, escríbenos a <srai>INFO CORREO</srai>.</template></category>
+<category><pattern>PRIMERA COMPRA</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>PRIMERA COMPRA *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* PRIMERA COMPRA</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* PRIMERA COMPRA *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>DESCUENTO PRIMERA COMPRA</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>DESCUENTO PRIMERA COMPRA *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* DESCUENTO PRIMERA COMPRA</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* DESCUENTO PRIMERA COMPRA *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>DESCUENTO DE BIENVENIDA</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>DESCUENTO DE BIENVENIDA *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* DESCUENTO DE BIENVENIDA</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* DESCUENTO DE BIENVENIDA *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CODIGO PARA</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CODIGO PARA *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CODIGO PARA</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CODIGO PARA *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CODIGO DE</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CODIGO DE *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CODIGO DE</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CODIGO DE *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CODIGOS DE DESCUENTO</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CODIGOS DE DESCUENTO *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CODIGOS DE DESCUENTO</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CODIGOS DE DESCUENTO *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CUPON DE DESCUENTO</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CUPON DE DESCUENTO *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CUPON DE DESCUENTO</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CUPON DE DESCUENTO *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CODIGO DE DESCUENTO</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CODIGO DE DESCUENTO *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CODIGO DE DESCUENTO</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CODIGO DE DESCUENTO *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CODIGO PROMOCIONAL</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CODIGO PROMOCIONAL *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CODIGO PROMOCIONAL</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CODIGO PROMOCIONAL *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CODIGO PROMO</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CODIGO PROMO *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CODIGO PROMO</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CODIGO PROMO *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>APLICAR CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>APLICAR CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* APLICAR CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* APLICAR CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>APLICAR UN CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>APLICAR UN CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* APLICAR UN CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* APLICAR UN CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>USAR CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>USAR CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* USAR CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* USAR CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>USAR UN CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>USAR UN CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* USAR UN CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* USAR UN CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CUPON NO FUNCIONA</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CUPON NO FUNCIONA *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CUPON NO FUNCIONA</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CUPON NO FUNCIONA *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>NO FUNCIONA EL CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>NO FUNCIONA EL CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* NO FUNCIONA EL CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* NO FUNCIONA EL CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>NO ME FUNCIONA EL CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>NO ME FUNCIONA EL CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* NO ME FUNCIONA EL CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* NO ME FUNCIONA EL CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>NO ME DEJA USAR EL CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>NO ME DEJA USAR EL CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* NO ME DEJA USAR EL CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* NO ME DEJA USAR EL CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>DONDE PONGO EL CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>DONDE PONGO EL CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* DONDE PONGO EL CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* DONDE PONGO EL CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>DONDE USO EL CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>DONDE USO EL CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* DONDE USO EL CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* DONDE USO EL CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CUPON</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CUPON *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CUPONES</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CUPONES *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CUPONES</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CUPONES *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>SNEAKER10</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>SNEAKER10 *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* SNEAKER10</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* SNEAKER10 *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CODIGO</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CODIGO *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CODIGO</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CODIGO *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CODIGOS</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>CODIGOS *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CODIGOS</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>* CODIGOS *</pattern><template><srai>INTENCION CUPON</srai></template></category>
 </aiml>
-
-

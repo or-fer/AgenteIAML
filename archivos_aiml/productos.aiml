@@ -1,59 +1,634 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 
-    <!-- Catálogo General -->
-    <category><pattern>QUE PRODUCTOS TIENES</pattern><template><srai>CATALOGO DE PRODUCTOS</srai></template></category>
-    <category><pattern>QUE VENDEN</pattern><template><srai>CATALOGO DE PRODUCTOS</srai></template></category>
-    <category><pattern>VER CATALOGO</pattern><template><srai>CATALOGO DE PRODUCTOS</srai></template></category>
-    
-    <category>
-        <pattern>CATALOGO DE PRODUCTOS</pattern>
-        <template>Tenemos un gran surtido de tenis deportivos originales: Nike, Adidas, Puma, Jordan y Asics. Manejamos líneas de Running, Básquetbol, Casual y variados colores (negros, blancos, verdes, rosas, rojos).</template>
-    </category>
+<!-- Catálogo: marcas, colores, disciplinas y búsqueda de tenis (con <topic> PRODUCTOS) -->
 
-    <!-- Manejo de Colores Específicos (Evita que se confundan con marcas) -->
-    <category>
-        <pattern>* TENIS VERDES</pattern>
-        <template>¡Sí tenemos tenis color verde! Manejamos modelos para running y moda urbana en tonos verde olivo, menta y fosforescente.</template>
-    </category>
-    <category><pattern>TENIS VERDES</pattern><template><srai>UNOS TENIS VERDES</srai></template></category>
-    <category><pattern>* TENIS COLOR VERDE</pattern><template><srai>UNOS TENIS VERDES</srai></template></category>
+<!-- CATALOGO -->
+<category><pattern>INTENCION CATALOGO</pattern><template><think><set name="topic">PRODUCTOS</set><set name="fallos">0</set></think>Ofrecemos calzado deportivo original de Nike, Adidas, Puma, Jordan y Asics para Running, Básquetbol, Casual y Training, en varios colores (negros, blancos, verdes, rosas, rojos). ¿Qué estilo o marca te interesa?</template></category>
+<category><pattern>QUE PRODUCTOS TIENES</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE PRODUCTOS TIENES *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE PRODUCTOS TIENES</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE PRODUCTOS TIENES *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE PRODUCTOS MANEJAS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE PRODUCTOS MANEJAS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE PRODUCTOS MANEJAS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE PRODUCTOS MANEJAS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE PRODUCTOS VENDEN</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE PRODUCTOS VENDEN *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE PRODUCTOS VENDEN</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE PRODUCTOS VENDEN *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>CON QUE PRODUCTOS CUENTAS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>CON QUE PRODUCTOS CUENTAS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* CON QUE PRODUCTOS CUENTAS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* CON QUE PRODUCTOS CUENTAS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>CON QUE PRODUCTOS CUENTAN</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>CON QUE PRODUCTOS CUENTAN *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* CON QUE PRODUCTOS CUENTAN</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* CON QUE PRODUCTOS CUENTAN *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE VENDEN</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE VENDEN *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE VENDEN</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE VENDEN *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE VENDES</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE VENDES *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE VENDES</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE VENDES *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE MANEJAN</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE MANEJAN *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE MANEJAN</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE MANEJAN *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>VER CATALOGO</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>VER CATALOGO *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* VER CATALOGO</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* VER CATALOGO *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>CATALOGO DE PRODUCTOS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>CATALOGO DE PRODUCTOS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* CATALOGO DE PRODUCTOS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* CATALOGO DE PRODUCTOS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE MARCAS MANEJAS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE MARCAS MANEJAS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE MARCAS MANEJAS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE MARCAS MANEJAS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE MARCAS MANEJAN</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE MARCAS MANEJAN *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE MARCAS MANEJAN</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE MARCAS MANEJAN *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE MARCAS TIENEN</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE MARCAS TIENEN *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE MARCAS TIENEN</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE MARCAS TIENEN *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE MARCAS VENDEN</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE MARCAS VENDEN *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE MARCAS VENDEN</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE MARCAS VENDEN *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE MARCAS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>QUE MARCAS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE MARCAS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* QUE MARCAS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>MARCAS DISPONIBLES</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>MARCAS DISPONIBLES *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* MARCAS DISPONIBLES</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* MARCAS DISPONIBLES *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>CON QUE MARCAS TRABAJAN</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>CON QUE MARCAS TRABAJAN *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* CON QUE MARCAS TRABAJAN</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* CON QUE MARCAS TRABAJAN *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>SON ORIGINALES</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>SON ORIGINALES *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* SON ORIGINALES</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* SON ORIGINALES *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>SON ORIGINAL</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>SON ORIGINAL *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* SON ORIGINAL</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* SON ORIGINAL *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>SON ORIGINALES LOS TENIS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>SON ORIGINALES LOS TENIS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* SON ORIGINALES LOS TENIS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* SON ORIGINALES LOS TENIS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>NUEVOS MODELOS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>NUEVOS MODELOS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* NUEVOS MODELOS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* NUEVOS MODELOS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>NUEVOS LANZAMIENTOS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>NUEVOS LANZAMIENTOS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* NUEVOS LANZAMIENTOS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* NUEVOS LANZAMIENTOS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>CATALOGO</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>CATALOGO *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* CATALOGO</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* CATALOGO *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>MARCAS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>MARCAS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* MARCAS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* MARCAS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>PRODUCTOS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>PRODUCTOS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* PRODUCTOS</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* PRODUCTOS *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>MARCA</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>MARCA *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* MARCA</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* MARCA *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>ORIGINALES</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>ORIGINALES *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* ORIGINALES</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* ORIGINALES *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>ORIGINAL</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>ORIGINAL *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* ORIGINAL</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
+<category><pattern>* ORIGINAL *</pattern><template><srai>INTENCION CATALOGO</srai></template></category>
 
-    <category>
-        <pattern>* TENIS ROSAS</pattern>
-        <template>¡Claro! Contamos con tenis rosas en marcas como Nike, Adidas y Puma para running y uso casual.</template>
-    </category>
-    <category><pattern>TENIS ROSAS</pattern><template><srai>UNOS TENIS ROSAS</srai></template></category>
-    <category><pattern>* TENIS COLOR ROSA</pattern><template><srai>UNOS TENIS ROSAS</srai></template></category>
-    <category><pattern>* Y ROSAS</pattern><template><srai>UNOS TENIS ROSAS</srai></template></category>
+<!-- MARCA NIKE-->
+<category><pattern>INTENCION MARCA NIKE</pattern><template><think><set name="topic">PRODUCTOS</set><set name="fallos">0</set></think>¡Sí! Manejamos Nike original, por ejemplo la saga Pegasus para running. Consulta modelos y tallas disponibles en tiempo real en <srai>INFO SITIO</srai>. ¿Buscas running, básquetbol, casual o training?</template></category>
+<category><pattern>NIKE</pattern><template><srai>INTENCION MARCA NIKE</srai></template></category>
+<category><pattern>* NIKE</pattern><template><srai>INTENCION MARCA NIKE</srai></template></category>
+<category><pattern>* NIKE *</pattern><template><srai>INTENCION MARCA NIKE</srai></template></category>
+<category><pattern>PEGASUS</pattern><template><srai>INTENCION MARCA NIKE</srai></template></category>
+<category><pattern>* PEGASUS</pattern><template><srai>INTENCION MARCA NIKE</srai></template></category>
+<category><pattern>* PEGASUS *</pattern><template><srai>INTENCION MARCA NIKE</srai></template></category>
 
-    <!-- Corrección de Typo: Runing -> Running -->
-    <category><pattern>RUNING *</pattern><template><srai>TENIS DE RUNNING</srai></template></category>
+<!-- MARCA ADIDAS -->
+<category><pattern>INTENCION MARCA ADIDAS</pattern><template><think><set name="topic">PRODUCTOS</set><set name="fallos">0</set></think>¡Sí! Manejamos Adidas original, por ejemplo la línea Ultraboost para running con excelente amortiguación. Consulta modelos y tallas disponibles en tiempo real en <srai>INFO SITIO</srai>. ¿Buscas running, básquetbol, casual o training?</template></category>
+<category><pattern>ADIDAS</pattern><template><srai>INTENCION MARCA ADIDAS</srai></template></category>
+<category><pattern>* ADIDAS</pattern><template><srai>INTENCION MARCA ADIDAS</srai></template></category>
+<category><pattern>* ADIDAS *</pattern><template><srai>INTENCION MARCA ADIDAS</srai></template></category>
+<category><pattern>ULTRABOOST</pattern><template><srai>INTENCION MARCA ADIDAS</srai></template></category>
+<category><pattern>* ULTRABOOST</pattern><template><srai>INTENCION MARCA ADIDAS</srai></template></category>
+<category><pattern>* ULTRABOOST *</pattern><template><srai>INTENCION MARCA ADIDAS</srai></template></category>
+<category><pattern>ULTRA BOOST</pattern><template><srai>INTENCION MARCA ADIDAS</srai></template></category>
+<category><pattern>* ULTRA BOOST</pattern><template><srai>INTENCION MARCA ADIDAS</srai></template></category>
+<category><pattern>* ULTRA BOOST *</pattern><template><srai>INTENCION MARCA ADIDAS</srai></template></category>
 
-    <category>
-        <pattern>TENIS DE RUNNING</pattern>
-        <template>Para Running te recomendamos modelos con excelente amortiguación como la saga Pegasus de Nike, Ultraboost de Adidas o Gel-Nimbus de Asics.</template>
-    </category>
+<!-- MARCA PUMA -->
+<category><pattern>INTENCION MARCA PUMA</pattern><template><think><set name="topic">PRODUCTOS</set><set name="fallos">0</set></think>¡Sí! Manejamos Puma original, por ejemplo modelos para running y moda urbana. Consulta modelos y tallas disponibles en tiempo real en <srai>INFO SITIO</srai>. ¿Buscas running, básquetbol, casual o training?</template></category>
+<category><pattern>PUMA</pattern><template><srai>INTENCION MARCA PUMA</srai></template></category>
+<category><pattern>* PUMA</pattern><template><srai>INTENCION MARCA PUMA</srai></template></category>
+<category><pattern>* PUMA *</pattern><template><srai>INTENCION MARCA PUMA</srai></template></category>
 
-    <category><pattern>* RUNNING *</pattern><template><srai>TENIS DE RUNNING</srai></template></category>
-    <category><pattern>DE RUNNING *</pattern><template><srai>TENIS DE RUNNING</srai></template></category>
+<!-- MARCA JORDAN -->
+<category><pattern>INTENCION MARCA JORDAN</pattern><template><think><set name="topic">PRODUCTOS</set><set name="fallos">0</set></think>¡Sí! Manejamos Jordan original, por ejemplo modelos para básquetbol y casual. Consulta modelos y tallas disponibles en tiempo real en <srai>INFO SITIO</srai>. ¿Buscas running, básquetbol, casual o training?</template></category>
+<category><pattern>JORDAN</pattern><template><srai>INTENCION MARCA JORDAN</srai></template></category>
+<category><pattern>* JORDAN</pattern><template><srai>INTENCION MARCA JORDAN</srai></template></category>
+<category><pattern>* JORDAN *</pattern><template><srai>INTENCION MARCA JORDAN</srai></template></category>
 
-    <!-- Marcas Generales (Evaluado solo si no es un color) -->
-    <category>
-        <pattern>TIENEN TENIS *</pattern>
-        <template>Sí, contamos con un amplio surtido de tenis marca/estilo <star/>. ¿Buscas alguna disciplina en particular (Running, Casual, Básquetbol)?</template>
-    </category>
-    
-    <category>
-        <pattern>CATALOGO DE PRODUCTOS</pattern>
-        <template>Ofrecemos calzado deportivo original de Nike, Adidas, Puma, Jordan y Asics para Running, Básquetbol, Casual y Training.</template>
-    </category>
+<!-- MARCA ASICS -->
+<category><pattern>INTENCION MARCA ASICS</pattern><template><think><set name="topic">PRODUCTOS</set><set name="fallos">0</set></think>¡Sí! Manejamos Asics original, por ejemplo la línea Gel-Nimbus para running. Consulta modelos y tallas disponibles en tiempo real en <srai>INFO SITIO</srai>. ¿Buscas running, básquetbol, casual o training?</template></category>
+<category><pattern>ASICS</pattern><template><srai>INTENCION MARCA ASICS</srai></template></category>
+<category><pattern>* ASICS</pattern><template><srai>INTENCION MARCA ASICS</srai></template></category>
+<category><pattern>* ASICS *</pattern><template><srai>INTENCION MARCA ASICS</srai></template></category>
+<category><pattern>GEL NIMBUS</pattern><template><srai>INTENCION MARCA ASICS</srai></template></category>
+<category><pattern>* GEL NIMBUS</pattern><template><srai>INTENCION MARCA ASICS</srai></template></category>
+<category><pattern>* GEL NIMBUS *</pattern><template><srai>INTENCION MARCA ASICS</srai></template></category>
+<category><pattern>NIMBUS</pattern><template><srai>INTENCION MARCA ASICS</srai></template></category>
+<category><pattern>* NIMBUS</pattern><template><srai>INTENCION MARCA ASICS</srai></template></category>
+<category><pattern>* NIMBUS *</pattern><template><srai>INTENCION MARCA ASICS</srai></template></category>
 
-    <category><pattern>* STOCK *</pattern><template>Todos los modelos y tallas disponibles los puedes consultar en tiempo real en nuestro catálogo web.</template></category>
-    <category><pattern>* DISPONIBILIDAD *</pattern><template><srai>CATALOGO DE PRODUCTOS</srai></template></category>
+<!-- MARCA NEW BALANCE -->
+<category><pattern>INTENCION MARCA NEW BALANCE</pattern><template><think><set name="topic">PRODUCTOS</set><set name="fallos">0</set></think>Por ahora no manejamos New Balance. Nuestras marcas son Nike, Adidas, Puma, Jordan y Asics. ¿Te muestro opciones de alguna de ellas?</template></category>
+<category><pattern>NEW BALANCE</pattern><template><srai>INTENCION MARCA NEW BALANCE</srai></template></category>
+<category><pattern>NEW BALANCE *</pattern><template><srai>INTENCION MARCA NEW BALANCE</srai></template></category>
+<category><pattern>* NEW BALANCE</pattern><template><srai>INTENCION MARCA NEW BALANCE</srai></template></category>
+<category><pattern>* NEW BALANCE *</pattern><template><srai>INTENCION MARCA NEW BALANCE</srai></template></category>
 
-    <category>
-        <pattern>* ULTRABOOST *</pattern>
-        <template>¡Sí! Contamos con la línea Adidas Ultraboost para running con excelente amortiguación en varias tallas.</template>
-    </category>
+<!-- BUSCAR TENIS -->
+<category><pattern>INTENCION BUSCAR TENIS</pattern><template><think><set name="topic">PRODUCTOS</set><set name="fallos">0</set></think>¡Claro! Tenemos un amplio surtido de tenis deportivos originales (Nike, Adidas, Puma, Jordan y Asics). ¿Buscas alguna disciplina en particular: Running, Básquetbol, Casual o Training?</template></category>
+<category><pattern>TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>ZAPATOS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>ZAPATILLAS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>CALZADO</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>DEPORTIVOS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>SNEAKERS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>TENNIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>BUSCO TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>BUSCO UNOS TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>QUIERO UNOS TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>QUIERO TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>TIENEN TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>HAY TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>NECESITO TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>ANDO BUSCANDO TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>ESTOY BUSCANDO TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>QUIERO COMPRAR TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>QUIERO HABLAR DE TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>HABLAR DE TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>ME RECOMIENDAS UNOS TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RECOMIENDAME TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>TENIS DEPORTIVOS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>TIENEN UNOS TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>UNOS TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+
+<!-- RUNNING -->
+<category><pattern>INTENCION RUNNING</pattern><template><think><set name="topic">PRODUCTOS</set><set name="fallos">0</set></think>Para Running te recomendamos modelos con excelente amortiguación como la saga Pegasus de Nike, Ultraboost de Adidas o Gel-Nimbus de Asics.</template></category>
+<category><pattern>TENIS DE RUNNING</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>TENIS DE RUNNING *</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>* TENIS DE RUNNING</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>* TENIS DE RUNNING *</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>PARA CORRER</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>PARA CORRER *</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>* PARA CORRER</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>* PARA CORRER *</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>TENIS PARA CORRER</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>TENIS PARA CORRER *</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>* TENIS PARA CORRER</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>* TENIS PARA CORRER *</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>DE RUNNING</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>DE RUNNING *</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>* DE RUNNING</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>* DE RUNNING *</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>RUNNING</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>RUNNING *</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>* RUNNING</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>* RUNNING *</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>RUNING</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>RUNING *</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>* RUNING</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>* RUNING *</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>CORRER</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>CORRER *</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>* CORRER</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>* CORRER *</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>MARATON</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>MARATON *</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>* MARATON</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+<category><pattern>* MARATON *</pattern><template><srai>INTENCION RUNNING</srai></template></category>
+
+<!-- BASQUETBOL -->
+<category><pattern>INTENCION BASQUETBOL</pattern><template><think><set name="topic">PRODUCTOS</set><set name="fallos">0</set></think>Para Básquetbol tenemos modelos Jordan, Nike y Puma con buen soporte de tobillo y tracción. Consulta tallas y colores disponibles en <srai>INFO SITIO</srai>.</template></category>
+<category><pattern>TENIS DE BASQUETBOL</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>TENIS DE BASQUETBOL *</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>* TENIS DE BASQUETBOL</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>* TENIS DE BASQUETBOL *</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>PARA JUGAR BASQUETBOL</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>PARA JUGAR BASQUETBOL *</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>* PARA JUGAR BASQUETBOL</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>* PARA JUGAR BASQUETBOL *</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>BASQUETBOL</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>BASQUETBOL *</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>* BASQUETBOL</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>* BASQUETBOL *</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>BASQUET</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>BASQUET *</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>* BASQUET</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>* BASQUET *</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>BASKET</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>BASKET *</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>* BASKET</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>* BASKET *</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>BASKETBALL</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>BASKETBALL *</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>* BASKETBALL</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>* BASKETBALL *</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>BALONCESTO</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>BALONCESTO *</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>* BALONCESTO</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+<category><pattern>* BALONCESTO *</pattern><template><srai>INTENCION BASQUETBOL</srai></template></category>
+
+<!-- CASUAL -->
+<category><pattern>INTENCION CASUAL</pattern><template><think><set name="topic">PRODUCTOS</set><set name="fallos">0</set></think>En línea Casual tenemos modelos de Nike, Adidas, Puma y Jordan para el día a día, en varios colores. Consulta opciones y tallas en <srai>INFO SITIO</srai>.</template></category>
+<category><pattern>TENIS CASUALES</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>TENIS CASUALES *</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>* TENIS CASUALES</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>* TENIS CASUALES *</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>PARA USO DIARIO</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>PARA USO DIARIO *</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>* PARA USO DIARIO</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>* PARA USO DIARIO *</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>PARA TODOS LOS DIAS</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>PARA TODOS LOS DIAS *</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>* PARA TODOS LOS DIAS</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>* PARA TODOS LOS DIAS *</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>CASUAL</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>CASUAL *</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>* CASUAL</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>* CASUAL *</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>CASUALES</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>CASUALES *</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>* CASUALES</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>* CASUALES *</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>URBANOS</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>URBANOS *</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>* URBANOS</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>* URBANOS *</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>MODA URBANA</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>MODA URBANA *</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>* MODA URBANA</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+<category><pattern>* MODA URBANA *</pattern><template><srai>INTENCION CASUAL</srai></template></category>
+
+<!-- TRAINING -->
+<category><pattern>INTENCION TRAINING</pattern><template><think><set name="topic">PRODUCTOS</set><set name="fallos">0</set></think>Para Training contamos con modelos estables y ligeros para gimnasio y entrenamiento funcional de Nike, Adidas y Puma. Consulta tallas y colores en <srai>INFO SITIO</srai>.</template></category>
+<category><pattern>TENIS DE TRAINING</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>TENIS DE TRAINING *</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>* TENIS DE TRAINING</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>* TENIS DE TRAINING *</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>PARA ENTRENAR</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>PARA ENTRENAR *</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>* PARA ENTRENAR</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>* PARA ENTRENAR *</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>PARA EL GYM</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>PARA EL GYM *</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>* PARA EL GYM</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>* PARA EL GYM *</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>PARA EL GIMNASIO</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>PARA EL GIMNASIO *</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>* PARA EL GIMNASIO</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>* PARA EL GIMNASIO *</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>TRAINING</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>TRAINING *</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>* TRAINING</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>* TRAINING *</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>ENTRENAMIENTO</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>ENTRENAMIENTO *</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>* ENTRENAMIENTO</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>* ENTRENAMIENTO *</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>GYM</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>GYM *</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>* GYM</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>* GYM *</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>GIMNASIO</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>GIMNASIO *</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>* GIMNASIO</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>* GIMNASIO *</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>CROSSFIT</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>CROSSFIT *</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>* CROSSFIT</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+<category><pattern>* CROSSFIT *</pattern><template><srai>INTENCION TRAINING</srai></template></category>
+
+<!-- TENIS VERDES -->
+<category><pattern>INTENCION TENIS VERDES</pattern><template><think><set name="topic">PRODUCTOS</set><set name="fallos">0</set></think>¡Sí tenemos tenis color verde! Manejamos modelos para running y moda urbana en tonos verde olivo, menta y fosforescente.</template></category>
+<category><pattern>TENIS COLOR VERDE</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>TENIS COLOR VERDE *</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>* TENIS COLOR VERDE</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>* TENIS COLOR VERDE *</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>TENIS VERDES</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>TENIS VERDES *</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>* TENIS VERDES</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>* TENIS VERDES *</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>COLOR VERDE</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>COLOR VERDE *</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>* COLOR VERDE</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>* COLOR VERDE *</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>VERDE</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>VERDE *</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>* VERDE</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>* VERDE *</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>VERDES</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>VERDES *</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>* VERDES</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+<category><pattern>* VERDES *</pattern><template><srai>INTENCION TENIS VERDES</srai></template></category>
+
+<!-- TENIS ROSAS -->
+<category><pattern>INTENCION TENIS ROSAS</pattern><template><think><set name="topic">PRODUCTOS</set><set name="fallos">0</set></think>¡Claro! Contamos con tenis rosas en marcas como Nike, Adidas y Puma para running y uso casual.</template></category>
+<category><pattern>TENIS COLOR ROSA</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>TENIS COLOR ROSA *</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>* TENIS COLOR ROSA</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>* TENIS COLOR ROSA *</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>TENIS ROSAS</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>TENIS ROSAS *</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>* TENIS ROSAS</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>* TENIS ROSAS *</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>COLOR ROSA</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>COLOR ROSA *</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>* COLOR ROSA</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>* COLOR ROSA *</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>ROSA</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>ROSA *</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>* ROSA</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>* ROSA *</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>ROSAS</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>ROSAS *</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>* ROSAS</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>* ROSAS *</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>ROSADO</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>ROSADO *</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>* ROSADO</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>* ROSADO *</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>ROSADOS</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>ROSADOS *</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>* ROSADOS</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+<category><pattern>* ROSADOS *</pattern><template><srai>INTENCION TENIS ROSAS</srai></template></category>
+
+<!-- COLORES -->
+<category><pattern>INTENCION COLORES</pattern><template><think><set name="topic">PRODUCTOS</set><set name="fallos">0</set></think>Manejamos varios colores: negros, blancos, verdes, rosas y rojos, según la marca y el modelo. Puedes filtrar por color en el catálogo de <srai>INFO SITIO</srai>.</template></category>
+<category><pattern>QUE COLORES</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>QUE COLORES *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* QUE COLORES</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* QUE COLORES *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>QUE COLORES TIENEN</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>QUE COLORES TIENEN *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* QUE COLORES TIENEN</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* QUE COLORES TIENEN *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>QUE COLORES MANEJAN</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>QUE COLORES MANEJAN *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* QUE COLORES MANEJAN</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* QUE COLORES MANEJAN *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>OTROS COLORES</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>OTROS COLORES *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* OTROS COLORES</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* OTROS COLORES *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>COLORES</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>COLORES *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* COLORES</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* COLORES *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>COLOR</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>COLOR *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* COLOR</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* COLOR *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>NEGROS</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>NEGROS *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* NEGROS</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* NEGROS *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>NEGRO</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>NEGRO *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* NEGRO</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* NEGRO *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>BLANCOS</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>BLANCOS *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* BLANCOS</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* BLANCOS *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>BLANCO</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>BLANCO *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* BLANCO</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* BLANCO *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>ROJOS</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>ROJOS *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* ROJOS</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* ROJOS *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>ROJO</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>ROJO *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* ROJO</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* ROJO *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>AZUL</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>AZUL *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* AZUL</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* AZUL *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>AZULES</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>AZULES *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* AZULES</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* AZULES *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>GRISES</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>GRISES *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* GRISES</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* GRISES *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>GRIS</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>GRIS *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* GRIS</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* GRIS *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>AMARILLOS</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>AMARILLOS *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* AMARILLOS</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* AMARILLOS *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>AMARILLO</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>AMARILLO *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* AMARILLO</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* AMARILLO *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>MORADOS</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>MORADOS *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* MORADOS</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* MORADOS *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>NARANJA</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>NARANJA *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* NARANJA</pattern><template><srai>INTENCION COLORES</srai></template></category>
+<category><pattern>* NARANJA *</pattern><template><srai>INTENCION COLORES</srai></template></category>
+
+<!-- DISPONIBILIDAD -->
+<category><pattern>INTENCION DISPONIBILIDAD</pattern><template><think><set name="topic">PRODUCTOS</set><set name="fallos">0</set></think>Todos los modelos y tallas disponibles los puedes consultar en tiempo real en nuestro catálogo web, <srai>INFO SITIO</srai>.</template></category>
+<category><pattern>HAY EXISTENCIA</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>HAY EXISTENCIA *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* HAY EXISTENCIA</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* HAY EXISTENCIA *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>HAY STOCK</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>HAY STOCK *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* HAY STOCK</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* HAY STOCK *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>ESTA DISPONIBLE</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>ESTA DISPONIBLE *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* ESTA DISPONIBLE</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* ESTA DISPONIBLE *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>ESTAN DISPONIBLES</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>ESTAN DISPONIBLES *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* ESTAN DISPONIBLES</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* ESTAN DISPONIBLES *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>TIENEN EN TALLA</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>TIENEN EN TALLA *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* TIENEN EN TALLA</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* TIENEN EN TALLA *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>DISPONIBILIDAD DE</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>DISPONIBILIDAD DE *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* DISPONIBILIDAD DE</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* DISPONIBILIDAD DE *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>TIENEN EL MODELO</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>TIENEN EL MODELO *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* TIENEN EL MODELO</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* TIENEN EL MODELO *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>SE ENCUENTRA DISPONIBLE</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>SE ENCUENTRA DISPONIBLE *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* SE ENCUENTRA DISPONIBLE</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* SE ENCUENTRA DISPONIBLE *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>HAY EN MI TALLA</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>HAY EN MI TALLA *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* HAY EN MI TALLA</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* HAY EN MI TALLA *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>TIENEN MI TALLA</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>TIENEN MI TALLA *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* TIENEN MI TALLA</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* TIENEN MI TALLA *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>EN TALLA</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>EN TALLA *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* EN TALLA</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* EN TALLA *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>EN MI TALLA</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>EN MI TALLA *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* EN MI TALLA</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* EN MI TALLA *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>EN SU TALLA</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>EN SU TALLA *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* EN SU TALLA</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* EN SU TALLA *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>STOCK</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>STOCK *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* STOCK</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* STOCK *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>EXISTENCIA</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>EXISTENCIA *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* EXISTENCIA</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* EXISTENCIA *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>EXISTENCIAS</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>EXISTENCIAS *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* EXISTENCIAS</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* EXISTENCIAS *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>DISPONIBILIDAD</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>DISPONIBILIDAD *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* DISPONIBILIDAD</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* DISPONIBILIDAD *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>AGOTADO</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>AGOTADO *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* AGOTADO</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* AGOTADO *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>AGOTADOS</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>AGOTADOS *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* AGOTADOS</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* AGOTADOS *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>DISPONIBLE</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>DISPONIBLE *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* DISPONIBLE</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+<category><pattern>* DISPONIBLE *</pattern><template><srai>INTENCION DISPONIBILIDAD</srai></template></category>
+
+<!-- TALLAS -->
+<category><pattern>INTENCION TALLAS</pattern><template><think><set name="topic">PRODUCTOS</set><set name="fallos">0</set></think>Para elegir tu talla, mide tu pie del talón al dedo más largo y consulta la tabla de tallas en la ficha de cada producto. Cada marca puede variar: si estás entre dos tallas, para running recomendamos la mayor. Y si no te queda, puedes cambiarla sin costo adicional dentro de <srai>INFO PLAZO CAMBIOS</srai>.</template></category>
+<category><pattern>GUIA DE TALLAS</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>GUIA DE TALLAS *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* GUIA DE TALLAS</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* GUIA DE TALLAS *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>TABLA DE TALLAS</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>TABLA DE TALLAS *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* TABLA DE TALLAS</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* TABLA DE TALLAS *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>TABLA DE MEDIDAS</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>TABLA DE MEDIDAS *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* TABLA DE MEDIDAS</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* TABLA DE MEDIDAS *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>QUE TALLA ME QUEDA</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>QUE TALLA ME QUEDA *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* QUE TALLA ME QUEDA</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* QUE TALLA ME QUEDA *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>QUE TALLA ELEGIR</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>QUE TALLA ELEGIR *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* QUE TALLA ELEGIR</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* QUE TALLA ELEGIR *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>QUE TALLA COMPRAR</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>QUE TALLA COMPRAR *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* QUE TALLA COMPRAR</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* QUE TALLA COMPRAR *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>COMO SE QUE TALLA</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>COMO SE QUE TALLA *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* COMO SE QUE TALLA</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* COMO SE QUE TALLA *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>COMO SABER MI TALLA</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>COMO SABER MI TALLA *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* COMO SABER MI TALLA</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* COMO SABER MI TALLA *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>COMO MEDIR MI PIE</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>COMO MEDIR MI PIE *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* COMO MEDIR MI PIE</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* COMO MEDIR MI PIE *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>EQUIVALENCIA DE TALLAS</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>EQUIVALENCIA DE TALLAS *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* EQUIVALENCIA DE TALLAS</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* EQUIVALENCIA DE TALLAS *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>TALLA MEXICANA</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>TALLA MEXICANA *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* TALLA MEXICANA</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* TALLA MEXICANA *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>TALLA EN CM</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>TALLA EN CM *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* TALLA EN CM</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* TALLA EN CM *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>TALLAS</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* TALLAS</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* TALLAS *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>TALLA</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* TALLA</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* TALLA *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>MEDIDAS</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* MEDIDAS</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>* MEDIDAS *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+
+<topic name="PRODUCTOS">
+<category><pattern>CUANTO CUESTA</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>CUANTO CUESTA *</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>* CUANTO CUESTA</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>* CUANTO CUESTA *</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>CUANTO CUESTAN</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>CUANTO CUESTAN *</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>* CUANTO CUESTAN</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>* CUANTO CUESTAN *</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>CUANTO VALEN</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>CUANTO VALEN *</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>* CUANTO VALEN</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>* CUANTO VALEN *</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>CUANTO VALE</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>CUANTO VALE *</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>* CUANTO VALE</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>* CUANTO VALE *</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+</topic>
 </aiml>

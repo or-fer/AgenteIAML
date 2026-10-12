@@ -1,17 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 
-    <category>
-        <pattern>HORARIO DE ATENCION</pattern>
-        <template>Nuestro bot automatizado responde las 24 horas del día. El equipo humano atiende de Lunes a Viernes de 9:00 a 18:00 hrs y Sábados de 10:00 a 14:00 hrs.</template>
-    </category>
+<!-- Horarios de atención humana, domingos y días festivos -->
 
-    <!-- Variantes -->
-    <category><pattern>HORARIO</pattern><template><srai>HORARIO DE ATENCION</srai></template></category>
-    <category><pattern>HORARIOS</pattern><template><srai>HORARIO DE ATENCION</srai></template></category>
-    <category><pattern>* HORARIOS *</pattern><template><srai>HORARIO DE ATENCION</srai></template></category>
-    <category><pattern>A QUE HORA ABREN</pattern><template><srai>HORARIO DE ATENCION</srai></template></category>
-    <category><pattern>A QUE HORA CIERRAN</pattern><template><srai>HORARIO DE ATENCION</srai></template></category>
-    <category><pattern>ESTAN ABIERTOS LOS DOMINGOS</pattern><template>Los domingos la atención humana está cerrada, pero puedes realizar tus compras en la tienda en línea en cualquier momento.</template></category>
-    <category><pattern>ATIENDEN DIAS FESTIVOS</pattern><template>En días festivos procesamos pedidos automáticamente en línea, pero el envío físico se programa para el siguiente día hábil.</template></category>
+<!-- HORARIO ATENCION  [tema: SOPORTE] -->
+<category><pattern>INTENCION HORARIO ATENCION</pattern><template><think><set name="topic">SOPORTE</set><set name="fallos">0</set></think>Nuestro bot automatizado responde las 24 horas del día. El equipo humano atiende <srai>INFO HORARIO</srai>.</template></category>
+<category><pattern>HORARIO DE ATENCION</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>HORARIO DE ATENCION *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* HORARIO DE ATENCION</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* HORARIO DE ATENCION *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>HORARIOS DE ATENCION</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>HORARIOS DE ATENCION *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* HORARIOS DE ATENCION</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* HORARIOS DE ATENCION *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>A QUE HORA ABREN</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>A QUE HORA ABREN *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* A QUE HORA ABREN</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* A QUE HORA ABREN *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>A QUE HORA CIERRAN</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>A QUE HORA CIERRAN *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* A QUE HORA CIERRAN</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* A QUE HORA CIERRAN *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>A QUE HORA ATIENDEN</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>A QUE HORA ATIENDEN *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* A QUE HORA ATIENDEN</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* A QUE HORA ATIENDEN *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>ESTAN ABIERTOS</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>ESTAN ABIERTOS *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* ESTAN ABIERTOS</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* ESTAN ABIERTOS *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>HORARIO DE SERVICIO</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>HORARIO DE SERVICIO *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* HORARIO DE SERVICIO</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* HORARIO DE SERVICIO *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>HORARIO DE SOPORTE</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>HORARIO DE SOPORTE *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* HORARIO DE SOPORTE</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* HORARIO DE SOPORTE *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>CUANDO ABREN</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>CUANDO ABREN *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* CUANDO ABREN</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* CUANDO ABREN *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>CUANDO CIERRAN</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>CUANDO CIERRAN *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* CUANDO CIERRAN</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* CUANDO CIERRAN *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>HORARIO</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* HORARIO</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* HORARIO *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>HORARIOS</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* HORARIOS</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>* HORARIOS *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+
+<!-- DOMINGOS -->
+<category><pattern>INTENCION DOMINGOS</pattern><template><think><set name="topic">SOPORTE</set><set name="fallos">0</set></think>Los domingos la atención humana está cerrada, pero puedes realizar tus compras en la tienda en línea en cualquier momento. El sábado atendemos de 10:00 a 14:00 hrs.</template></category>
+<category><pattern>ESTAN ABIERTOS LOS DOMINGOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ESTAN ABIERTOS LOS DOMINGOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ESTAN ABIERTOS LOS DOMINGOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ESTAN ABIERTOS LOS DOMINGOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ATIENDEN LOS DOMINGOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ATIENDEN LOS DOMINGOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ATIENDEN LOS DOMINGOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ATIENDEN LOS DOMINGOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ATIENDEN DOMINGO</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ATIENDEN DOMINGO *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ATIENDEN DOMINGO</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ATIENDEN DOMINGO *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ABREN LOS DOMINGOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ABREN LOS DOMINGOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ABREN LOS DOMINGOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ABREN LOS DOMINGOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ABREN DOMINGO</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ABREN DOMINGO *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ABREN DOMINGO</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ABREN DOMINGO *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ATIENDEN LOS SABADOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ATIENDEN LOS SABADOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ATIENDEN LOS SABADOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ATIENDEN LOS SABADOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ABREN LOS SABADOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ABREN LOS SABADOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ABREN LOS SABADOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ABREN LOS SABADOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>TRABAJAN LOS SABADOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>TRABAJAN LOS SABADOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* TRABAJAN LOS SABADOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* TRABAJAN LOS SABADOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>TRABAJAN SABADOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>TRABAJAN SABADOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* TRABAJAN SABADOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* TRABAJAN SABADOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>TRABAJAN LOS DOMINGOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>TRABAJAN LOS DOMINGOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* TRABAJAN LOS DOMINGOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* TRABAJAN LOS DOMINGOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>TRABAJAN EL SABADO</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>TRABAJAN EL SABADO *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* TRABAJAN EL SABADO</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* TRABAJAN EL SABADO *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ABREN EL SABADO</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ABREN EL SABADO *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ABREN EL SABADO</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ABREN EL SABADO *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>HAY ATENCION LOS SABADOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>HAY ATENCION LOS SABADOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* HAY ATENCION LOS SABADOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* HAY ATENCION LOS SABADOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ATIENDEN EL SABADO</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ATIENDEN EL SABADO *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ATIENDEN EL SABADO</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ATIENDEN EL SABADO *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ATIENDEN SABADOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>ATIENDEN SABADOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ATIENDEN SABADOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>* ATIENDEN SABADOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>DOMINGOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>DOMINGO</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+
+<!-- FESTIVOS -->
+<category><pattern>INTENCION FESTIVOS</pattern><template><think><set name="topic">SOPORTE</set><set name="fallos">0</set></think>En días festivos procesamos pedidos automáticamente en línea, pero el envío físico se programa para el siguiente día hábil.</template></category>
+<category><pattern>ATIENDEN DIAS FESTIVOS</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>ATIENDEN DIAS FESTIVOS *</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>* ATIENDEN DIAS FESTIVOS</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>* ATIENDEN DIAS FESTIVOS *</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>ATIENDEN EN DIAS FESTIVOS</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>ATIENDEN EN DIAS FESTIVOS *</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>* ATIENDEN EN DIAS FESTIVOS</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>* ATIENDEN EN DIAS FESTIVOS *</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>ABREN DIAS FESTIVOS</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>ABREN DIAS FESTIVOS *</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>* ABREN DIAS FESTIVOS</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>* ABREN DIAS FESTIVOS *</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>ABREN EN DIAS FESTIVOS</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>ABREN EN DIAS FESTIVOS *</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>* ABREN EN DIAS FESTIVOS</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>* ABREN EN DIAS FESTIVOS *</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>HAY ATENCION EN DIAS FESTIVOS</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>HAY ATENCION EN DIAS FESTIVOS *</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>* HAY ATENCION EN DIAS FESTIVOS</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>* HAY ATENCION EN DIAS FESTIVOS *</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>FESTIVOS</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>* FESTIVOS</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>* FESTIVOS *</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>FESTIVO</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>* FESTIVO</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>* FESTIVO *</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>FERIADO</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>* FERIADO</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>* FERIADO *</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>FERIADOS</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>* FERIADOS</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
+<category><pattern>* FERIADOS *</pattern><template><srai>INTENCION FESTIVOS</srai></template></category>
 </aiml>

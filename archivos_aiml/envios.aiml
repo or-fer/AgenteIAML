@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- Envíos: cobertura nacional provincia, tiempos, costos, paqueterías y horarios de entrega -->
+
+<category><pattern>INTENCION COBERTURA</pattern><template><think><set name="topic">ENVIOS</set><set name="fallos">0</set></think>Sí, enviamos a todo México, incluidas ciudades pequeñas y zonas fuera de las áreas metropolitanas, con <srai>INFO PAQUETERIAS</srai>. Al ingresar tu código postal en el carrito verás el costo y la fecha estimada; en zonas de difícil acceso la entrega puede tardar <srai>INFO TIEMPO EXTENDIDA</srai>.</template></category>
+<category><pattern>PROVINCIA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>PROVINCIA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* PROVINCIA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* PROVINCIA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>PROVINCIAS</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>PROVINCIAS *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* PROVINCIAS</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* PROVINCIAS *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ENVIAN A</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ENVIAN A *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ENVIAN A</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ENVIAN A *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ENVIAN AL</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ENVIAN AL *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ENVIAN AL</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ENVIAN AL *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ENVIOS A</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ENVIOS A *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ENVIOS A</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ENVIOS A *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ENVIOS AL</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ENVIOS AL *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ENVIOS AL</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ENVIOS AL *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ENVIO A</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ENVIO A *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ENVIO A</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ENVIO A *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ENVIO AL</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ENVIO AL *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ENVIO AL</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ENVIO AL *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ENVIOS NACIONALES</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ENVIOS NACIONALES *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ENVIOS NACIONALES</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ENVIOS NACIONALES *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>TODO EL PAIS</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>TODO EL PAIS *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* TODO EL PAIS</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* TODO EL PAIS *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>TODA LA REPUBLICA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>TODA LA REPUBLICA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* TODA LA REPUBLICA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* TODA LA REPUBLICA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>FUERA DE LA CIUDAD</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>FUERA DE LA CIUDAD *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* FUERA DE LA CIUDAD</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* FUERA DE LA CIUDAD *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>FUERA DE CDMX</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>FUERA DE CDMX *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* FUERA DE CDMX</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* FUERA DE CDMX *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>OTROS ESTADOS</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>OTROS ESTADOS *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* OTROS ESTADOS</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* OTROS ESTADOS *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>OTRA CIUDAD</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>OTRA CIUDAD *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* OTRA CIUDAD</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* OTRA CIUDAD *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>COBERTURA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>COBERTURA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* COBERTURA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* COBERTURA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ZONA EXTENDIDA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ZONA EXTENDIDA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ZONA EXTENDIDA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ZONA EXTENDIDA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ZONAS EXTENDIDAS</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ZONAS EXTENDIDAS *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ZONAS EXTENDIDAS</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ZONAS EXTENDIDAS *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ZONAS REMOTAS</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>ZONAS REMOTAS *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ZONAS REMOTAS</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* ZONAS REMOTAS *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>LLEGAN A</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>LLEGAN A *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* LLEGAN A</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>* LLEGAN A *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+
+<!-- INTERNACIONAL  [tema: ENVIOS] -->
+<category><pattern>INTENCION INTERNACIONAL</pattern><template><think><set name="topic">ENVIOS</set><set name="fallos">0</set></think>Por ahora solo enviamos dentro de México. Si estás fuera del país, puedes comprar y enviar tu pedido a una dirección en territorio mexicano, por ejemplo la de un familiar o amigo.</template></category>
+<category><pattern>INTERNACIONAL</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>INTERNACIONAL *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* INTERNACIONAL</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* INTERNACIONAL *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS INTERNACIONALES</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS INTERNACIONALES *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS INTERNACIONALES</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS INTERNACIONALES *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO INTERNACIONAL</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO INTERNACIONAL *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO INTERNACIONAL</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO INTERNACIONAL *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>FUERA DEL PAIS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>FUERA DEL PAIS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* FUERA DEL PAIS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* FUERA DEL PAIS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ESTADOS UNIDOS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ESTADOS UNIDOS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ESTADOS UNIDOS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ESTADOS UNIDOS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>USA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>USA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* USA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* USA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>EXTRANJERO</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>EXTRANJERO *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* EXTRANJERO</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* EXTRANJERO *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>OTRO PAIS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>OTRO PAIS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* OTRO PAIS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* OTRO PAIS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>OTROS PAISES</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>OTROS PAISES *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* OTROS PAISES</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* OTROS PAISES *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>CANADA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>CANADA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* CANADA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* CANADA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ESPANA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ESPANA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ESPANA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ESPANA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>COLOMBIA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>COLOMBIA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* COLOMBIA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* COLOMBIA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>CENTROAMERICA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>CENTROAMERICA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* CENTROAMERICA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* CENTROAMERICA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>EUROPA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>EUROPA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* EUROPA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* EUROPA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A ESTADOS UNIDOS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A ESTADOS UNIDOS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A ESTADOS UNIDOS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A ESTADOS UNIDOS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A USA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A USA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A USA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A USA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A EXTRANJERO</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A EXTRANJERO *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A EXTRANJERO</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A EXTRANJERO *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A OTRO PAIS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A OTRO PAIS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A OTRO PAIS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A OTRO PAIS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A OTROS PAISES</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A OTROS PAISES *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A OTROS PAISES</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A OTROS PAISES *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A CANADA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A CANADA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A CANADA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A CANADA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A ESPANA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A ESPANA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A ESPANA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A ESPANA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A COLOMBIA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A COLOMBIA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A COLOMBIA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A COLOMBIA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A CENTROAMERICA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A CENTROAMERICA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A CENTROAMERICA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A CENTROAMERICA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A EUROPA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN A EUROPA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A EUROPA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN A EUROPA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL ESTADOS UNIDOS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL ESTADOS UNIDOS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL ESTADOS UNIDOS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL ESTADOS UNIDOS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL USA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL USA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL USA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL USA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL EXTRANJERO</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL EXTRANJERO *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL EXTRANJERO</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL EXTRANJERO *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL OTRO PAIS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL OTRO PAIS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL OTRO PAIS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL OTRO PAIS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL OTROS PAISES</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL OTROS PAISES *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL OTROS PAISES</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL OTROS PAISES *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL CANADA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL CANADA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL CANADA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL CANADA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL ESPANA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL ESPANA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL ESPANA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL ESPANA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL COLOMBIA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL COLOMBIA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL COLOMBIA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL COLOMBIA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL CENTROAMERICA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL CENTROAMERICA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL CENTROAMERICA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL CENTROAMERICA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL EUROPA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIAN AL EUROPA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL EUROPA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIAN AL EUROPA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A ESTADOS UNIDOS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A ESTADOS UNIDOS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A ESTADOS UNIDOS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A ESTADOS UNIDOS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A USA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A USA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A USA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A USA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A EXTRANJERO</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A EXTRANJERO *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A EXTRANJERO</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A EXTRANJERO *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A OTRO PAIS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A OTRO PAIS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A OTRO PAIS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A OTRO PAIS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A OTROS PAISES</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A OTROS PAISES *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A OTROS PAISES</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A OTROS PAISES *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A CANADA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A CANADA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A CANADA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A CANADA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A ESPANA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A ESPANA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A ESPANA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A ESPANA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A COLOMBIA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A COLOMBIA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A COLOMBIA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A COLOMBIA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A CENTROAMERICA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A CENTROAMERICA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A CENTROAMERICA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A CENTROAMERICA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A EUROPA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS A EUROPA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A EUROPA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS A EUROPA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL ESTADOS UNIDOS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL ESTADOS UNIDOS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL ESTADOS UNIDOS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL ESTADOS UNIDOS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL USA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL USA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL USA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL USA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL EXTRANJERO</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL EXTRANJERO *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL EXTRANJERO</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL EXTRANJERO *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL OTRO PAIS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL OTRO PAIS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL OTRO PAIS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL OTRO PAIS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL OTROS PAISES</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL OTROS PAISES *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL OTROS PAISES</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL OTROS PAISES *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL CANADA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL CANADA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL CANADA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL CANADA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL ESPANA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL ESPANA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL ESPANA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL ESPANA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL COLOMBIA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL COLOMBIA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL COLOMBIA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL COLOMBIA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL CENTROAMERICA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL CENTROAMERICA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL CENTROAMERICA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL CENTROAMERICA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL EUROPA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIOS AL EUROPA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL EUROPA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIOS AL EUROPA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A ESTADOS UNIDOS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A ESTADOS UNIDOS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A ESTADOS UNIDOS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A ESTADOS UNIDOS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A USA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A USA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A USA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A USA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A EXTRANJERO</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A EXTRANJERO *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A EXTRANJERO</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A EXTRANJERO *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A OTRO PAIS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A OTRO PAIS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A OTRO PAIS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A OTRO PAIS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A OTROS PAISES</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A OTROS PAISES *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A OTROS PAISES</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A OTROS PAISES *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A CANADA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A CANADA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A CANADA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A CANADA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A ESPANA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A ESPANA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A ESPANA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A ESPANA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A COLOMBIA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A COLOMBIA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A COLOMBIA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A COLOMBIA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A CENTROAMERICA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A CENTROAMERICA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A CENTROAMERICA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A CENTROAMERICA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A EUROPA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO A EUROPA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A EUROPA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO A EUROPA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL ESTADOS UNIDOS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL ESTADOS UNIDOS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL ESTADOS UNIDOS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL ESTADOS UNIDOS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL USA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL USA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL USA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL USA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL EXTRANJERO</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL EXTRANJERO *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL EXTRANJERO</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL EXTRANJERO *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL OTRO PAIS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL OTRO PAIS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL OTRO PAIS</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL OTRO PAIS *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL OTROS PAISES</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL OTROS PAISES *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL OTROS PAISES</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL OTROS PAISES *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL CANADA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL CANADA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL CANADA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL CANADA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL ESPANA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL ESPANA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL ESPANA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL ESPANA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL COLOMBIA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL COLOMBIA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL COLOMBIA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL COLOMBIA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL CENTROAMERICA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL CENTROAMERICA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL CENTROAMERICA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL CENTROAMERICA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL EUROPA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>ENVIO AL EUROPA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL EUROPA</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+<category><pattern>* ENVIO AL EUROPA *</pattern><template><srai>INTENCION INTERNACIONAL</srai></template></category>
+
+<!-- TIEMPOS  [tema: ENVIOS] -->
+<category><pattern>INTENCION TIEMPOS</pattern><template><think><set name="topic">ENVIOS</set><set name="fallos">0</set></think>Procesamos tu pedido en <srai>INFO PROCESAMIENTO</srai> y después el tránsito toma <srai>INFO TIEMPO LOCAL</srai> en las zonas metropolitanas de CDMX, Guadalajara y Monterrey y <srai>INFO TIEMPO NACIONAL</srai> en el resto del país; en zonas de difícil acceso, <srai>INFO TIEMPO EXTENDIDA</srai>. Al pagar verás la fecha estimada para tu código postal.</template></category>
+<category><pattern>CUANDO ME LLEGARIA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANDO ME LLEGARIA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANDO ME LLEGARIA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANDO ME LLEGARIA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANDO LLEGARIA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANDO LLEGARIA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANDO LLEGARIA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANDO LLEGARIA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANDO ME LLEGARIAN</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANDO ME LLEGARIAN *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANDO ME LLEGARIAN</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANDO ME LLEGARIAN *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>PARA CUANDO LLEGARIA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>PARA CUANDO LLEGARIA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* PARA CUANDO LLEGARIA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* PARA CUANDO LLEGARIA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>PARA CUANDO TENDRIA MI PEDIDO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>PARA CUANDO TENDRIA MI PEDIDO *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* PARA CUANDO TENDRIA MI PEDIDO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* PARA CUANDO TENDRIA MI PEDIDO *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTAS SEMANAS</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTAS SEMANAS *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTAS SEMANAS</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTAS SEMANAS *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTAS SEMANAS TARDA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTAS SEMANAS TARDA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTAS SEMANAS TARDA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTAS SEMANAS TARDA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTOS DIAS TARDA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTOS DIAS TARDA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTOS DIAS TARDA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTOS DIAS TARDA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO TARDARIA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO TARDARIA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO TARDARIA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO TARDARIA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>TARDARIA EN LLEGAR</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>TARDARIA EN LLEGAR *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* TARDARIA EN LLEGAR</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* TARDARIA EN LLEGAR *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO TIEMPO TARDARIA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO TIEMPO TARDARIA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO TIEMPO TARDARIA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO TIEMPO TARDARIA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO SE TARDA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO SE TARDA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO SE TARDA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO SE TARDA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO SE TARDAN</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO SE TARDAN *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO SE TARDAN</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO SE TARDAN *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO DEMORARIA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO DEMORARIA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO DEMORARIA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO DEMORARIA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO TARDA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO TARDA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO TARDA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO TARDA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO TIEMPO TARDA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO TIEMPO TARDA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO TIEMPO TARDA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO TIEMPO TARDA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO TARDAN</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO TARDAN *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO TARDAN</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO TARDAN *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO DEMORA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO DEMORA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO DEMORA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO DEMORA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO TIEMPO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTO TIEMPO *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO TIEMPO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTO TIEMPO *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>TIEMPO DE ENTREGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>TIEMPO DE ENTREGA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* TIEMPO DE ENTREGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* TIEMPO DE ENTREGA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>TIEMPOS DE ENTREGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>TIEMPOS DE ENTREGA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* TIEMPOS DE ENTREGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* TIEMPOS DE ENTREGA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>TIEMPO DE ENVIO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>TIEMPO DE ENVIO *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* TIEMPO DE ENVIO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* TIEMPO DE ENVIO *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANDO LLEGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANDO LLEGA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANDO LLEGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANDO LLEGA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANDO LLEGARA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANDO LLEGARA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANDO LLEGARA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANDO LLEGARA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANDO ME LLEGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANDO ME LLEGA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANDO ME LLEGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANDO ME LLEGA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANDO ME LLEGARA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANDO ME LLEGARA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANDO ME LLEGARA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANDO ME LLEGARA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTOS DIAS</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANTOS DIAS *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTOS DIAS</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* CUANTOS DIAS *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>DIAS HABILES</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>DIAS HABILES *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* DIAS HABILES</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* DIAS HABILES *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>FECHA DE ENTREGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>FECHA DE ENTREGA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* FECHA DE ENTREGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* FECHA DE ENTREGA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>FECHA ESTIMADA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>FECHA ESTIMADA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* FECHA ESTIMADA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* FECHA ESTIMADA *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>TARDA EN LLEGAR</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>TARDA EN LLEGAR *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* TARDA EN LLEGAR</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* TARDA EN LLEGAR *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>TARDAN EN LLEGAR</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>TARDAN EN LLEGAR *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* TARDAN EN LLEGAR</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* TARDAN EN LLEGAR *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>EN CUANTO TIEMPO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>EN CUANTO TIEMPO *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* EN CUANTO TIEMPO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* EN CUANTO TIEMPO *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>LLEGA EN</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>LLEGA EN *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* LLEGA EN</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* LLEGA EN *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>TIEMPO ESTIMADO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>TIEMPO ESTIMADO *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* TIEMPO ESTIMADO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>* TIEMPO ESTIMADO *</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+
+<!-- COSTO ENVIO  [tema: ENVIOS] -->
+<category><pattern>INTENCION COSTO ENVIO</pattern><template><think><set name="topic">ENVIOS</set><set name="fallos">0</set></think>El envío es completamente GRATIS en compras a partir de <srai>INFO ENVIO GRATIS MINIMO</srai>. En compras menores, el envío estándar a todo México cuesta <srai>INFO COSTO ENVIO</srai>.</template></category>
+<category><pattern>PRECIOS DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>PRECIOS DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* PRECIOS DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* PRECIOS DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>PRECIOS DE ENVIOS</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>PRECIOS DE ENVIOS *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* PRECIOS DE ENVIOS</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* PRECIOS DE ENVIOS *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>COSTOS DE ENVIOS</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>COSTOS DE ENVIOS *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* COSTOS DE ENVIOS</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* COSTOS DE ENVIOS *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO SALE EL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO SALE EL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO SALE EL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO SALE EL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO SALE ENVIAR</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO SALE ENVIAR *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO SALE ENVIAR</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO SALE ENVIAR *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>SALE EL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>SALE EL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* SALE EL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* SALE EL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO PAGO DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO PAGO DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO PAGO DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO PAGO DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO ES DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO ES DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO ES DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO ES DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>COSTO DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>COSTO DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* COSTO DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* COSTO DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>COSTO DEL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>COSTO DEL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* COSTO DEL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* COSTO DEL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>COSTOS DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>COSTOS DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* COSTOS DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* COSTOS DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>COSTO DE ENVIOS</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>COSTO DE ENVIOS *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* COSTO DE ENVIOS</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* COSTO DE ENVIOS *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO CUESTA EL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO CUESTA EL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO CUESTA EL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO CUESTA EL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO CUESTA ENVIAR</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO CUESTA ENVIAR *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO CUESTA ENVIAR</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO CUESTA ENVIAR *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO ES EL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO ES EL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO ES EL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO ES EL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO COBRAN DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO COBRAN DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO COBRAN DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO COBRAN DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>PRECIO DEL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>PRECIO DEL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* PRECIO DEL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* PRECIO DEL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>PRECIO DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>PRECIO DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* PRECIO DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* PRECIO DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO GRATIS</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO GRATIS *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* ENVIO GRATIS</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* ENVIO GRATIS *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIOS GRATIS</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIOS GRATIS *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* ENVIOS GRATIS</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* ENVIOS GRATIS *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO GRATUITO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO GRATUITO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* ENVIO GRATUITO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* ENVIO GRATUITO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO SIN COSTO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO SIN COSTO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* ENVIO SIN COSTO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* ENVIO SIN COSTO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>GASTOS DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>GASTOS DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* GASTOS DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* GASTOS DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>TARIFA DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>TARIFA DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* TARIFA DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* TARIFA DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>TARIFAS DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>TARIFAS DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* TARIFAS DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* TARIFAS DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>COBRAN ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>COBRAN ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* COBRAN ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* COBRAN ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>COBRAN POR EL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>COBRAN POR EL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* COBRAN POR EL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* COBRAN POR EL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>COBRAN DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>COBRAN DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* COBRAN DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* COBRAN DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>COBRAN POR ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>COBRAN POR ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* COBRAN POR ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* COBRAN POR ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO ME COBRAN DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO ME COBRAN DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO ME COBRAN DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO ME COBRAN DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO ME COBRAN POR EL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO ME COBRAN POR EL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO ME COBRAN POR EL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* CUANTO ME COBRAN POR EL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ME COBRAN ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ME COBRAN ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* ME COBRAN ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* ME COBRAN ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ES GRATIS EL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ES GRATIS EL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* ES GRATIS EL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* ES GRATIS EL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO ES GRATIS</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO ES GRATIS *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* ENVIO ES GRATIS</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* ENVIO ES GRATIS *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>FLETE</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>FLETE *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* FLETE</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* FLETE *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>GRATIS</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* GRATIS</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* GRATIS *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>GRATUITO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* GRATUITO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>* GRATUITO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+
+<!-- EXPRESS  [tema: ENVIOS] -->
+<category><pattern>INTENCION EXPRESS</pattern><template><think><set name="topic">ENVIOS</set><set name="fallos">0</set></think>Por ahora manejamos envío estándar a todo México. Si lo necesitas con urgencia y estás en CDMX, puedes elegir al pagar la opción Pickup en Showroom (<srai>INFO SHOWROOM</srai>) sin costo de envío.</template></category>
+<category><pattern>MAS RAPIDO</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>MAS RAPIDO *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* MAS RAPIDO</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* MAS RAPIDO *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>MAS RAPIDA</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>MAS RAPIDA *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* MAS RAPIDA</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* MAS RAPIDA *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>MAS PRONTO</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>MAS PRONTO *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* MAS PRONTO</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* MAS PRONTO *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>MANDARLO RAPIDO</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>MANDARLO RAPIDO *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* MANDARLO RAPIDO</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* MANDARLO RAPIDO *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENVIARLO RAPIDO</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENVIARLO RAPIDO *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENVIARLO RAPIDO</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENVIARLO RAPIDO *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>LLEGUE RAPIDO</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>LLEGUE RAPIDO *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* LLEGUE RAPIDO</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* LLEGUE RAPIDO *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>LLEGUE ANTES</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>LLEGUE ANTES *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* LLEGUE ANTES</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* LLEGUE ANTES *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENTREGA MAS RAPIDA</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENTREGA MAS RAPIDA *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENTREGA MAS RAPIDA</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENTREGA MAS RAPIDA *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENVIO EXPRESS</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENVIO EXPRESS *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENVIO EXPRESS</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENVIO EXPRESS *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENVIOS EXPRESS</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENVIOS EXPRESS *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENVIOS EXPRESS</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENVIOS EXPRESS *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENTREGA EXPRESS</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENTREGA EXPRESS *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENTREGA EXPRESS</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENTREGA EXPRESS *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENVIO RAPIDO</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENVIO RAPIDO *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENVIO RAPIDO</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENVIO RAPIDO *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENTREGA RAPIDA</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENTREGA RAPIDA *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENTREGA RAPIDA</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENTREGA RAPIDA *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENVIO URGENTE</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENVIO URGENTE *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENVIO URGENTE</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENVIO URGENTE *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>MISMO DIA</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>MISMO DIA *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* MISMO DIA</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* MISMO DIA *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>AL DIA SIGUIENTE</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>AL DIA SIGUIENTE *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* AL DIA SIGUIENTE</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* AL DIA SIGUIENTE *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENTREGA INMEDIATA</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENTREGA INMEDIATA *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENTREGA INMEDIATA</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENTREGA INMEDIATA *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENVIO PRIORITARIO</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>ENVIO PRIORITARIO *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENVIO PRIORITARIO</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* ENVIO PRIORITARIO *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>LO NECESITO PARA</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>LO NECESITO PARA *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* LO NECESITO PARA</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* LO NECESITO PARA *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>EXPRESS</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* EXPRESS</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* EXPRESS *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>URGENTE</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* URGENTE</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>* URGENTE *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+
+<!-- PAQUETERIA  [tema: ENVIOS] -->
+<category><pattern>INTENCION PAQUETERIA</pattern><template><think><set name="topic">ENVIOS</set><set name="fallos">0</set></think>Enviamos con <srai>INFO PAQUETERIAS</srai>. La paquetería se asigna según tu código postal y la verás en el correo que te llega con tu guía de rastreo.</template></category>
+<category><pattern>QUE PAQUETERIA</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>QUE PAQUETERIA *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* QUE PAQUETERIA</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* QUE PAQUETERIA *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>CON QUE PAQUETERIA</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>CON QUE PAQUETERIA *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* CON QUE PAQUETERIA</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* CON QUE PAQUETERIA *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>CON QUE EMPRESA</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>CON QUE EMPRESA *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* CON QUE EMPRESA</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* CON QUE EMPRESA *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>EMPRESA DE ENVIO</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>EMPRESA DE ENVIO *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* EMPRESA DE ENVIO</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* EMPRESA DE ENVIO *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>EMPRESA DE ENVIOS</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>EMPRESA DE ENVIOS *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* EMPRESA DE ENVIOS</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* EMPRESA DE ENVIOS *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>QUIEN ENTREGA</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>QUIEN ENTREGA *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* QUIEN ENTREGA</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* QUIEN ENTREGA *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>QUIEN LO ENTREGA</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>QUIEN LO ENTREGA *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* QUIEN LO ENTREGA</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* QUIEN LO ENTREGA *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>QUIEN HACE LA ENTREGA</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>QUIEN HACE LA ENTREGA *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* QUIEN HACE LA ENTREGA</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* QUIEN HACE LA ENTREGA *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>PAQUETERIA</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>PAQUETERIA *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* PAQUETERIA</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* PAQUETERIA *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>PAQUETERIAS</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>PAQUETERIAS *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* PAQUETERIAS</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* PAQUETERIAS *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>DHL</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>DHL *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* DHL</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* DHL *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>ESTAFETA</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>ESTAFETA *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* ESTAFETA</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* ESTAFETA *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>FEDEX</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>FEDEX *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* FEDEX</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* FEDEX *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>REDPACK</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>REDPACK *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* REDPACK</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+<category><pattern>* REDPACK *</pattern><template><srai>INTENCION PAQUETERIA</srai></template></category>
+
+<!-- HORARIO ENTREGA  [tema: ENVIOS] -->
+<category><pattern>INTENCION HORARIO ENTREGA</pattern><template><think><set name="topic">ENVIOS</set><set name="fallos">0</set></think>Las paqueterías entregan de lunes a sábado, aproximadamente de 9:00 a 19:00 hrs; no se puede garantizar una hora exacta, pero con tu guía puedes ver el estatus en reparto el día de la entrega. No hay entregas en domingo ni en días festivos.</template></category>
+<category><pattern>ENTREGAR EN SABADO</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAR EN SABADO *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAR EN SABADO</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAR EN SABADO *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAR EN DOMINGO</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAR EN DOMINGO *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAR EN DOMINGO</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAR EN DOMINGO *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAR LOS SABADOS</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAR LOS SABADOS *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAR LOS SABADOS</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAR LOS SABADOS *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAR EL SABADO</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAR EL SABADO *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAR EL SABADO</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAR EL SABADO *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGA EN SABADO</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGA EN SABADO *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGA EN SABADO</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGA EN SABADO *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAN EL SABADO</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAN EL SABADO *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAN EL SABADO</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAN EL SABADO *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>HORARIO DE ENTREGA</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>HORARIO DE ENTREGA *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* HORARIO DE ENTREGA</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* HORARIO DE ENTREGA *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>HORARIOS DE ENTREGA</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>HORARIOS DE ENTREGA *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* HORARIOS DE ENTREGA</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* HORARIOS DE ENTREGA *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>A QUE HORA LLEGA</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>A QUE HORA LLEGA *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* A QUE HORA LLEGA</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* A QUE HORA LLEGA *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>A QUE HORA ENTREGAN</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>A QUE HORA ENTREGAN *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* A QUE HORA ENTREGAN</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* A QUE HORA ENTREGAN *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>A QUE HORA LLEGAN</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>A QUE HORA LLEGAN *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* A QUE HORA LLEGAN</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* A QUE HORA LLEGAN *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAN LOS SABADOS</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAN LOS SABADOS *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAN LOS SABADOS</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAN LOS SABADOS *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAN SABADO</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAN SABADO *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAN SABADO</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAN SABADO *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAN EN DOMINGO</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAN EN DOMINGO *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAN EN DOMINGO</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAN EN DOMINGO *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAN LOS DOMINGOS</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAN LOS DOMINGOS *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAN LOS DOMINGOS</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAN LOS DOMINGOS *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAN DOMINGO</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAN DOMINGO *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAN DOMINGO</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAN DOMINGO *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAN EN FIN DE SEMANA</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAN EN FIN DE SEMANA *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAN EN FIN DE SEMANA</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAN EN FIN DE SEMANA *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAN LOS FINES DE SEMANA</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>ENTREGAN LOS FINES DE SEMANA *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAN LOS FINES DE SEMANA</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* ENTREGAN LOS FINES DE SEMANA *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>DIAS DE ENTREGA</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>DIAS DE ENTREGA *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* DIAS DE ENTREGA</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* DIAS DE ENTREGA *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>DIA DE ENTREGA</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>DIA DE ENTREGA *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* DIA DE ENTREGA</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* DIA DE ENTREGA *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>HORA DE ENTREGA</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>HORA DE ENTREGA *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* HORA DE ENTREGA</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+<category><pattern>* HORA DE ENTREGA *</pattern><template><srai>INTENCION HORARIO ENTREGA</srai></template></category>
+
+<!-- TEMA ENVIOS  [tema: ENVIOS] -->
+<category><pattern>INTENCION TEMA ENVIOS</pattern><template><think><set name="topic">ENVIOS</set><set name="fallos">0</set></think>Sobre envíos puedo ayudarte con cobertura (a todo México), tiempos de entrega, costos y envío gratis, paqueterías y pickup en showroom. ¿Qué te gustaría saber?</template></category>
+<category><pattern>ENVIO</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>ENVIOS</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>ENVIOS Y ENTREGAS</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>ENTREGA</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>ENTREGAS</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>LOGISTICA</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>ENVIOS A PROVINCIA</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>CUANTO * DE ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO * DE ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO * EL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO * EL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO * POR ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO * POR ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO * POR EL ENVIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO * POR EL ENVIO *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO * DE FLETE</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>CUANTO * DE FLETE *</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO A * CUANTO CUESTA</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO A * CUANTO COBRAN</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO A * CUANTO SALE</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO A * CUANTO ES</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO A * CUANTO PAGO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO A * COSTO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO A * PRECIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO A * CUANTO SE PAGA</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO A * CUANTO TARDA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIO A * CUANTO TIEMPO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIO A * CUANDO LLEGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIO A * EN CUANTO TIEMPO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIO A * CUANTOS DIAS</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIO A * CUANTO DEMORA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIOS A * CUANTO CUESTA</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIOS A * CUANTO COBRAN</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIOS A * CUANTO SALE</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIOS A * CUANTO ES</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIOS A * CUANTO PAGO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIOS A * COSTO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIOS A * PRECIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIOS A * CUANTO SE PAGA</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIOS A * CUANTO TARDA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIOS A * CUANTO TIEMPO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIOS A * CUANDO LLEGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIOS A * EN CUANTO TIEMPO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIOS A * CUANTOS DIAS</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIOS A * CUANTO DEMORA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIAN A * CUANTO CUESTA</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIAN A * CUANTO COBRAN</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIAN A * CUANTO SALE</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIAN A * CUANTO ES</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIAN A * CUANTO PAGO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIAN A * COSTO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIAN A * PRECIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIAN A * CUANTO SE PAGA</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIAN A * CUANTO TARDA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIAN A * CUANTO TIEMPO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIAN A * CUANDO LLEGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIAN A * EN CUANTO TIEMPO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIAN A * CUANTOS DIAS</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIAN A * CUANTO DEMORA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIO AL * CUANTO CUESTA</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO AL * CUANTO COBRAN</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO AL * CUANTO SALE</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO AL * CUANTO ES</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO AL * CUANTO PAGO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO AL * COSTO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO AL * PRECIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO AL * CUANTO SE PAGA</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIO AL * CUANTO TARDA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIO AL * CUANTO TIEMPO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIO AL * CUANDO LLEGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIO AL * EN CUANTO TIEMPO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIO AL * CUANTOS DIAS</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIO AL * CUANTO DEMORA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIAR A * CUANTO CUESTA</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIAR A * CUANTO COBRAN</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIAR A * CUANTO SALE</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIAR A * CUANTO ES</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIAR A * CUANTO PAGO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIAR A * COSTO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIAR A * PRECIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIAR A * CUANTO SE PAGA</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>ENVIAR A * CUANTO TARDA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIAR A * CUANTO TIEMPO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIAR A * CUANDO LLEGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIAR A * EN CUANTO TIEMPO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIAR A * CUANTOS DIAS</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>ENVIAR A * CUANTO DEMORA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>MANDAR A * CUANTO CUESTA</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>MANDAR A * CUANTO COBRAN</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>MANDAR A * CUANTO SALE</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>MANDAR A * CUANTO ES</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>MANDAR A * CUANTO PAGO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>MANDAR A * COSTO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>MANDAR A * PRECIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>MANDAR A * CUANTO SE PAGA</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>MANDAR A * CUANTO TARDA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>MANDAR A * CUANTO TIEMPO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>MANDAR A * CUANDO LLEGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>MANDAR A * EN CUANTO TIEMPO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>MANDAR A * CUANTOS DIAS</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>MANDAR A * CUANTO DEMORA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>MANDAN A * CUANTO CUESTA</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>MANDAN A * CUANTO COBRAN</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>MANDAN A * CUANTO SALE</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>MANDAN A * CUANTO ES</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>MANDAN A * CUANTO PAGO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>MANDAN A * COSTO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>MANDAN A * PRECIO</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>MANDAN A * CUANTO SE PAGA</pattern><template><srai>INTENCION COSTO ENVIO</srai></template></category>
+<category><pattern>MANDAN A * CUANTO TARDA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>MANDAN A * CUANTO TIEMPO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>MANDAN A * CUANDO LLEGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>MANDAN A * EN CUANTO TIEMPO</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>MANDAN A * CUANTOS DIAS</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>MANDAN A * CUANTO DEMORA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+</aiml>

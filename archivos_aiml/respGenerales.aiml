@@ -1,75 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 
-    <category><pattern>ASI ES</pattern><template><srai>YA</srai></template></category>
-    <category><pattern>BIEN</pattern><template><srai>OK</srai></template></category>
-    <category><pattern>CLARO</pattern><template><srai>YA</srai></template></category>
-    <category><pattern>CORRECTO</pattern><template><srai>YA</srai></template></category>
+<!-- Respuestas generales de conversación (confirmaciones, disculpas, 'no sé') adaptadas al dominio de atención al cliente -->
 
-    <category><pattern>DI ALGO</pattern><template><srai>DIME ALGO</srai></template></category>
-    <category><pattern>DIME ALGO</pattern><template>Dime tú, ¿qué tenis andas buscando hoy?</template></category>
-    <category><pattern>DIME *</pattern><template><star/>.</template></category>
+<!-- Confirmaciones: todas se reducen a CONFIRMACION -->
+<category><pattern>OK</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>VALE</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>PERFECTO</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>CLARO</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>ENTENDIDO</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>ENTIENDO</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>DE ACUERDO</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>LISTO</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>GENIAL</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>EXCELENTE</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>BIEN</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>ASI ES</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>EXACTO</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>CORRECTO</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>ESTA BIEN</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>QUE BIEN</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>ME PARECE BIEN</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>SUPER</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>BUENISIMO</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>AH OK</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>ASI ESTA BIEN</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>SIN PROBLEMA</pattern><template><srai>CONFIRMACION</srai></template></category>
+<category><pattern>BIEN *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>VALE *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>OK *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>LISTO *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>PERFECTO *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>ENTENDIDO *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>CLARO *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>VA *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>ORALE *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>SIMON *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>AH *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>AJA *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>BUENO *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>SI *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>JAJA *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>JAJAJA *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>JEJE *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>GENIAL *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>EXCELENTE *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>SUPER *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>CONFIRMACION</pattern><template><random><li>Perfecto. ¿Hay algo más en lo que pueda ayudarte?</li><li>Muy bien. Si tienes otra duda, dime.</li><li>De acuerdo. ¿Necesitas algo más?</li></random></template></category>
 
-    <category><pattern>ES BROMA</pattern><template>¡Ah, ya decía yo! Jeje.</template></category>
-    <category><pattern>ES MENTIRA</pattern><template>Cuéntame la verdad entonces.</template></category>
-    <category><pattern>ESTOY BROMEANDO</pattern><template>¡Casi me la creo!</template></category>
-    <category><pattern>ESTOY DE CONA</pattern><template><srai>ESTOY BROMEANDO</srai></template></category>
-    <category><pattern>ESTOY DICIENDO LA VERDAD</pattern><template><srai>ESTOY SEGURO</srai></template></category>
-    <category><pattern>ESTOY MINTIENDO</pattern><template>Anda, dime la verdad.</template></category>
-    <category><pattern>ESTOY SEGURO</pattern><template>Te noto muy convencido(a), ¡te creo!</template></category>
-    <category><pattern>ESTOY SEGURA</pattern><template>Te creo totalmente.</template></category>
-    <category><pattern>EXACTO</pattern><template><srai>YA</srai></template></category>
-    <category><pattern>ES VERDAD</pattern><template>Te creo.</template></category>
-    <category><pattern>IGUALMENTE</pattern><template>¡Muchas gracias!</template></category>
-    <category><pattern>JUSTO</pattern><template><srai>YA</srai></template></category>
+<!-- Disculpas -->
+<category><pattern>LO SIENTO</pattern><template><srai>RESP DISCULPAS</srai></template></category>
+<category><pattern>PERDON</pattern><template><srai>RESP DISCULPAS</srai></template></category>
+<category><pattern>DISCULPA</pattern><template><srai>RESP DISCULPAS</srai></template></category>
+<category><pattern>DISCULPAS</pattern><template><srai>RESP DISCULPAS</srai></template></category>
+<category><pattern>PERDONA</pattern><template><srai>RESP DISCULPAS</srai></template></category>
+<category><pattern>RESP DISCULPAS</pattern><template>No te preocupes. ¿En qué te puedo ayudar?</template></category>
 
-    <category><pattern>LO SE</pattern><template>Es bueno que lo sepas.</template></category>
-    <category><pattern>LO SIENTO</pattern><template>No pasa nada, no te preocupes.</template></category>
-    <category><pattern>LOGICO</pattern><template>Totalmente.</template></category>
-    <category><pattern>ME ALEGRA OIRLO</pattern><template>¡Gracias!</template></category>
-    <category><pattern>ME ALEGRO</pattern><template>¡Qué bueno!</template></category>
-    <category><pattern>ME GUSTA</pattern><template><srai>OK</srai></template></category>
-    <category><pattern>ME PARECE BIEN</pattern><template><srai>OK</srai></template></category>
-    <category><pattern>MOLA</pattern><template><srai>OK</srai></template></category>
-
-    <category><pattern>NO</pattern><template><srai>OK</srai></template></category>
-    <category><pattern>NO ESTOY DE ACUERDO</pattern><template>¿Por qué no estás de acuerdo?</template></category>
-    <category><pattern>NO ESTOY SEGURO</pattern><template>Cuéntame qué duda tienes para ayudarte a decidir.</template></category>
-    <category><pattern>NO ESTOY SEGURA</pattern><template><srai>NO ESTOY SEGURO</srai></template></category>
-    <category><pattern>NO ME SORPRENDE</pattern><template>Veo que ya te la sabes todas.</template></category>
-    <category><pattern>NO QUIERO</pattern><template><srai>OK</srai></template></category>
-    <category><pattern>NO SE</pattern><template>Si necesitas orientación sobre tenis, envíos o pagos, con gusto te ayudo.</template></category>
-    <category><pattern>NO TE LO DIGO</pattern><template>Está bien, no te preocupes, no pasa nada.</template></category>
-    <category><pattern>NO SON MUCHOS</pattern><template>La verdad es que no.</template></category>
-    <category><pattern>NUNCA NADIE ME HABIA DICHO ESO</pattern><template>Siempre hay una primera vez jeje.</template></category>
-    <category><pattern>POR QUE</pattern><template>Habría que analizarlo bien.</template></category>
-    <category><pattern>QUE GRACIOSO</pattern><template>¡Gracias!</template></category>
-    <category><pattern>QUIERO HABLAR DE *</pattern><template>¡Adelante, platícame sobre <star/>!</template></category>
-
-    <category><pattern>OK</pattern><template>¡Perfecto!</template></category>
-    <category><pattern>PERFECTO</pattern><template><srai>OK</srai></template></category>
-    <category><pattern>SEGURO</pattern><template><srai>OK</srai></template></category>
-    <category><pattern>SI</pattern><template><srai>OK</srai></template></category>
-
-    <category><pattern>SON BASTANTES</pattern><template>Sí, bastantes.</template></category>
-    <category><pattern>SON BASTANTES *</pattern><template>La verdad es que sí.</template></category>
-    <category><pattern>SON POCOS</pattern><template>A veces son suficientes.</template></category>
-    <category><pattern>SON POQUITOS</pattern><template>Tienes razón, son poquitos.</template></category>
-    <category><pattern>SOY YO</pattern><template>¡Qué gusto saludarte!</template></category>
-    <category><pattern>TE LO ACABO DE DECIR</pattern><template><srai>YA TE LO HE DICHO</srai></template></category>
-    <category><pattern>TE PARECE POCO</pattern><template>Bastante, la verdad.</template></category>
-    <category><pattern>TENGO RAZON</pattern><template>Seguro que la tienes.</template></category>
-    <category><pattern>TENGO * RAZON</pattern><template><srai>TENGO RAZON</srai></template></category>
-    <category><pattern>VETE A *</pattern><template>Enséñame el camino.</template></category>
-    <category><pattern>Y TU</pattern><template>¿Y yo qué? Platícame más detalles.</template></category>
-
-    <category><pattern>YA</pattern><template>Estamos de acuerdo.</template></category>
-    <category><pattern>YA LO HE DICHO</pattern><template><srai>YA TE LO HE DICHO</srai></template></category>
-    <category><pattern>YA LO DIJE</pattern><template><srai>YA TE LO HE DICHO</srai></template></category>
-    <category><pattern>YA TE LO DIJE</pattern><template><srai>YA TE LO HE DICHO</srai></template></category>
-    <category><pattern>YA TE LO HE DICHO</pattern><template>Perdona, a veces se me pasa entre tantos pedidos.</template></category>
-    <category><pattern>YA VEO</pattern><template>Así es.</template></category>
-    <category><pattern>YO TAMBIEN</pattern><template>Coincidimos en eso.</template></category>
-    <category><pattern>YO TAMBIEN *</pattern><template><sr/></template></category>
-
+<!-- Respuestas sueltas (sin contexto) y 'no sé' orientado al dominio -->
+<category><pattern>SI</pattern><template>¿Me cuentas un poco más sobre tu consulta? Puedo ayudarte con rastreo, envíos, pagos o cambios.</template></category>
+<category><pattern>NO</pattern><template>Entendido. Si necesitas algo más, aquí estaré.</template></category>
+<category><pattern>NO GRACIAS</pattern><template>Entendido, gracias a ti. ¡Que tengas un excelente día!</template></category>
+<category><pattern>NO SE</pattern><template><srai>ORIENTACION</srai></template></category>
+<category><pattern>NO ESTOY SEGURO</pattern><template><srai>ORIENTACION</srai></template></category>
+<category><pattern>NO ESTOY SEGURA</pattern><template><srai>ORIENTACION</srai></template></category>
+<category><pattern>NO SE QUE PREGUNTAR</pattern><template><srai>ORIENTACION</srai></template></category>
+<category><pattern>ORIENTACION</pattern><template>No te preocupes, yo te oriento. ¿Tu duda es sobre rastreo de un pedido, envíos, pagos o cambios y devoluciones?</template></category>
+<category><pattern>NO ENTIENDO</pattern><template><srai>REFORMULAR</srai></template></category>
+<category><pattern>NO TE ENTENDI</pattern><template><srai>REFORMULAR</srai></template></category>
+<category><pattern>REPITE</pattern><template><srai>REFORMULAR</srai></template></category>
+<category><pattern>NO ENTENDI</pattern><template><srai>REFORMULAR</srai></template></category>
+<category><pattern>EXPLICA</pattern><template><srai>REFORMULAR</srai></template></category>
+<category><pattern>EXPLICAME</pattern><template><srai>REFORMULAR</srai></template></category>
+<category><pattern>REFORMULAR</pattern><template>Con gusto lo explico de otra forma. ¿Me dices qué parte no quedó clara, o cuál es tu duda: rastreo, envíos, pagos o cambios?</template></category>
+<category><pattern>POR FAVOR</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>PORFA</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>PORFAVOR</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>ADELANTE</pattern><template><think><set name="topic"></set></think>Claro, dime. ¿En qué te puedo ayudar?</template></category>
+<category><pattern>TENGO UNA DUDA</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>TENGO UNA PREGUNTA</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>TENGO UN PROBLEMA</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>UNA PREGUNTA</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>UNA DUDA</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>TENGO OTRA DUDA</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>OTRA DUDA</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>OTRA PREGUNTA</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>TENGO UNA CONSULTA</pattern><template><srai>ADELANTE</srai></template></category>
 </aiml>

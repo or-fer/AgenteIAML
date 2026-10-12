@@ -1,39 +1,937 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 
-    <!-- Métodos generales -->
-    <category>
-        <pattern>METODOS DE PAGO</pattern>
-        <template>Aceptamos tarjetas de crédito y débito (Visa, Mastercard, American Express), PayPal, Mercado Pago, transferencia SPEI y pago en efectivo en OXXO.</template>
-    </category>
+<!-- Pagos: métodos, tarjetas, MSI, OXXO, SPEI, PayPal, seguridad y problemas de pago -->
 
-    <category><pattern>* TARJETAS *</pattern><template><srai>METODOS DE PAGO</srai></template></category>
-    <category><pattern>* TARJETA *</pattern><template><srai>METODOS DE PAGO</srai></template></category>
-    <category><pattern>ACEPTAS TARJETAS</pattern><template><srai>METODOS DE PAGO</srai></template></category>
-    <category><pattern>QUE TARJETAS ACEPTAS</pattern><template><srai>METODOS DE PAGO</srai></template></category>
+<!-- METODOS PAGO -->
+<category><pattern>INTENCION METODOS PAGO</pattern><template><think><set name="topic">PAGOS</set><set name="fallos">0</set></think>Aceptamos tarjetas de crédito y débito (Visa, Mastercard, American Express), PayPal, Mercado Pago, transferencia SPEI y pago en efectivo en OXXO.</template></category>
+<category><pattern>METODOS DE PAGO</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>METODOS DE PAGO *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* METODOS DE PAGO</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* METODOS DE PAGO *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>METODO DE PAGO</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>METODO DE PAGO *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* METODO DE PAGO</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* METODO DE PAGO *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>FORMAS DE PAGO</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>FORMAS DE PAGO *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* FORMAS DE PAGO</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* FORMAS DE PAGO *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>FORMA DE PAGO</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>FORMA DE PAGO *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* FORMA DE PAGO</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* FORMA DE PAGO *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>OPCIONES DE PAGO</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>OPCIONES DE PAGO *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* OPCIONES DE PAGO</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* OPCIONES DE PAGO *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>MEDIOS DE PAGO</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>MEDIOS DE PAGO *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* MEDIOS DE PAGO</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* MEDIOS DE PAGO *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>TIPOS DE PAGO</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>TIPOS DE PAGO *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* TIPOS DE PAGO</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* TIPOS DE PAGO *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>COMO SE PAGA</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>COMO SE PAGA *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* COMO SE PAGA</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* COMO SE PAGA *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>QUE TARJETAS</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>QUE TARJETAS *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* QUE TARJETAS</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* QUE TARJETAS *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>QUE TARJETAS MANEJAS</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>QUE TARJETAS MANEJAS *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* QUE TARJETAS MANEJAS</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* QUE TARJETAS MANEJAS *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>QUE TARJETAS ACEPTAS</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>QUE TARJETAS ACEPTAS *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* QUE TARJETAS ACEPTAS</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>* QUE TARJETAS ACEPTAS *</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>PAGAR</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>COMO PAGAR</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>COMO PAGO</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>ACEPTAN</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>COMO PUEDO PAGAR</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>PUEDO PAGAR</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>PAGO</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>COMO HAGO EL PAGO</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
+<category><pattern>COMO REALIZO EL PAGO</pattern><template><srai>INTENCION METODOS PAGO</srai></template></category>
 
-    <!-- Métodos específicos -->
-    <category>
-        <pattern>ACEPTAN TARJETA *</pattern>
-        <template>Sí, aceptamos tarjetas de débito y crédito <star/> a través de nuestra pasarela de pago segura.</template>
-    </category>
+<!-- TARJETA -->
+<category><pattern>INTENCION TARJETA</pattern><template><think><set name="topic">PAGOS</set><set name="fallos">0</set></think>Sí, aceptamos tarjetas de débito y crédito Visa, Mastercard y American Express a través de nuestra pasarela de pago segura. Algunos bancos piden validar la compra con un código (3D Secure) que te llega por SMS o por su app.</template></category>
+<category><pattern>TARJETA DE CREDITO</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>TARJETA DE CREDITO *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* TARJETA DE CREDITO</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* TARJETA DE CREDITO *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>TARJETA DE DEBITO</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>TARJETA DE DEBITO *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* TARJETA DE DEBITO</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* TARJETA DE DEBITO *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>TARJETAS DE CREDITO</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>TARJETAS DE CREDITO *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* TARJETAS DE CREDITO</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* TARJETAS DE CREDITO *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>TARJETAS DE DEBITO</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>TARJETAS DE DEBITO *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* TARJETAS DE DEBITO</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* TARJETAS DE DEBITO *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>ACEPTAN TARJETA</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>ACEPTAN TARJETA *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* ACEPTAN TARJETA</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* ACEPTAN TARJETA *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>ACEPTAS TARJETAS</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>ACEPTAS TARJETAS *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* ACEPTAS TARJETAS</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* ACEPTAS TARJETAS *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>TARJETA</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* TARJETA</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* TARJETA *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>TARJETAS</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* TARJETAS</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* TARJETAS *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>VISA</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* VISA</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* VISA *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>MASTERCARD</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* MASTERCARD</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* MASTERCARD *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>AMEX</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* AMEX</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* AMEX *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>AMERICAN EXPRESS</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* AMERICAN EXPRESS</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* AMERICAN EXPRESS *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>CREDITO</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* CREDITO</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* CREDITO *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>DEBITO</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* DEBITO</pattern><template><srai>INTENCION TARJETA</srai></template></category>
+<category><pattern>* DEBITO *</pattern><template><srai>INTENCION TARJETA</srai></template></category>
 
-    <category>
-        <pattern>ACEPTAN PAYPAL</pattern>
-        <template>¡Sí! Puedes pagar de forma segura con PayPal directamente en el checkout.</template>
-    </category>
-    <category><pattern>* PAYPAL *</pattern><template><srai>ACEPTAN PAYPAL</srai></template></category>
+<!-- MSI -->
+<category><pattern>INTENCION MSI</pattern><template><think><set name="topic">PAGOS</set><set name="fallos">0</set></think>Ofrecemos <srai>INFO MSI PLAZOS</srai> meses sin intereses (MSI) en compras mayores a <srai>INFO MSI MINIMO</srai> con tarjetas participantes Visa, Mastercard y AMEX. Elige la opción al pagar; si no aparece, tu banco o tu tarjeta podrían no participar.</template></category>
+<category><pattern>CUANTOS MESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>CUANTOS MESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* CUANTOS MESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* CUANTOS MESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>A CUANTOS MESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>A CUANTOS MESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* A CUANTOS MESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* A CUANTOS MESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>EN CUANTOS MESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>EN CUANTOS MESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* EN CUANTOS MESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* EN CUANTOS MESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>MESES PARA PAGAR</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>MESES PARA PAGAR *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* MESES PARA PAGAR</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* MESES PARA PAGAR *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>A CUANTOS PAGOS</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>A CUANTOS PAGOS *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* A CUANTOS PAGOS</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* A CUANTOS PAGOS *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>EN CUANTOS PAGOS</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>EN CUANTOS PAGOS *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* EN CUANTOS PAGOS</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* EN CUANTOS PAGOS *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>PAGAR EN MESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>PAGAR EN MESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* PAGAR EN MESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* PAGAR EN MESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>MESES SIN INTERESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>MESES SIN INTERESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* MESES SIN INTERESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* MESES SIN INTERESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>MESIS SIN INTERESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>MESIS SIN INTERESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* MESIS SIN INTERESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* MESIS SIN INTERESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>SIN INTERESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>SIN INTERESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* SIN INTERESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* SIN INTERESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>SIN INTERECES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>SIN INTERECES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* SIN INTERECES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* SIN INTERECES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>A MESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>A MESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* A MESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* A MESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>PAGOS DIFERIDOS</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>PAGOS DIFERIDOS *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* PAGOS DIFERIDOS</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* PAGOS DIFERIDOS *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>A PLAZOS</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>A PLAZOS *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* A PLAZOS</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* A PLAZOS *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>PAGAR EN PARCIALIDADES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>PAGAR EN PARCIALIDADES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* PAGAR EN PARCIALIDADES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* PAGAR EN PARCIALIDADES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>FINANCIAMIENTO</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>FINANCIAMIENTO *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* FINANCIAMIENTO</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* FINANCIAMIENTO *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>PAGO A MESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>PAGO A MESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* PAGO A MESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* PAGO A MESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>PAGAR A MESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>PAGAR A MESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* PAGAR A MESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* PAGAR A MESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>DIFERIR</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>DIFERIR *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* DIFERIR</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* DIFERIR *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>MENSUALIDADES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* MENSUALIDADES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* MENSUALIDADES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>PARCIALIDADES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* PARCIALIDADES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* PARCIALIDADES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>MESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* MESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>* MESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>MSI</pattern><template><srai>INTENCION MSI</srai></template></category>
 
-    <category>
-        <pattern>PAGO EN OXXO</pattern>
-        <template>Al seleccionar pago en OXXO se generará un código de barras de 14 dígitos. Tienes 24 horas para realizar tu pago antes de que se cancele la orden.</template>
-    </category>
-    <category><pattern>* OXXO *</pattern><template><srai>PAGO EN OXXO</srai></template></category>
+<!-- OXXO -->
+<category><pattern>INTENCION OXXO</pattern><template><think><set name="topic">PAGOS</set><set name="fallos">0</set></think>Al seleccionar pago en OXXO se generará un código de barras de 14 dígitos. Tienes <srai>INFO VIGENCIA OXXO</srai> para realizar tu pago antes de que se cancele la orden; procesamos tu pedido cuando el pago se acredita.</template></category>
+<category><pattern>TIENDA DE CONVENIENCIA</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>TIENDA DE CONVENIENCIA *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* TIENDA DE CONVENIENCIA</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* TIENDA DE CONVENIENCIA *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>TIENDAS DE CONVENIENCIA</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>TIENDAS DE CONVENIENCIA *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* TIENDAS DE CONVENIENCIA</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* TIENDAS DE CONVENIENCIA *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>EN UNA TIENDA</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>EN UNA TIENDA *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* EN UNA TIENDA</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* EN UNA TIENDA *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>SUPERMERCADO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>SUPERMERCADO *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* SUPERMERCADO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* SUPERMERCADO *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>FARMACIA</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>FARMACIA *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* FARMACIA</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* FARMACIA *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>SEVEN ELEVEN</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>SEVEN ELEVEN *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* SEVEN ELEVEN</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* SEVEN ELEVEN *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>CIRCLE K</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>CIRCLE K *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* CIRCLE K</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* CIRCLE K *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>TIENDITA</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>TIENDITA *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* TIENDITA</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* TIENDITA *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>EN EFECTIVO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>EN EFECTIVO *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* EN EFECTIVO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* EN EFECTIVO *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>PAGO EN EFECTIVO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>PAGO EN EFECTIVO *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* PAGO EN EFECTIVO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* PAGO EN EFECTIVO *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>PAGO EN OXXO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>PAGO EN OXXO *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* PAGO EN OXXO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* PAGO EN OXXO *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>PAGAR EN TIENDA</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>PAGAR EN TIENDA *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* PAGAR EN TIENDA</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* PAGAR EN TIENDA *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>PAGAR EN OXXO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>PAGAR EN OXXO *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* PAGAR EN OXXO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* PAGAR EN OXXO *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>REFERENCIA DE PAGO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>REFERENCIA DE PAGO *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* REFERENCIA DE PAGO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* REFERENCIA DE PAGO *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>FICHA DE PAGO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>FICHA DE PAGO *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* FICHA DE PAGO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* FICHA DE PAGO *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>7 ELEVEN</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>7 ELEVEN *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* 7 ELEVEN</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* 7 ELEVEN *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>OXXO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* OXXO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* OXXO *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>EFECTIVO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* EFECTIVO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>* EFECTIVO *</pattern><template><srai>INTENCION OXXO</srai></template></category>
 
-    <category>
-        <pattern>MESES SIN INTERESES</pattern>
-        <template>Ofrecemos 3 y 6 Meses Sin Intereses (MSI) en compras mayores a $2,500 MXN con tarjetas participante Visa, Mastercard y AMEX.</template>
-    </category>
-    <category><pattern>* MESES SIN INTERESES *</pattern><template><srai>MESES SIN INTERESES</srai></template></category>
-    <category><pattern>* MSI *</pattern><template><srai>MESES SIN INTERESES</srai></template></category>
+<!-- TRANSFERENCIA  [tema: PAGOS] -->
+<category><pattern>INTENCION TRANSFERENCIA</pattern><template><think><set name="topic">PAGOS</set><set name="fallos">0</set></think>Puedes pagar por transferencia SPEI: al finalizar tu compra te damos una CLABE y el monto exacto, con vigencia de <srai>INFO VIGENCIA SPEI</srai>. El pago suele reflejarse en minutos y entonces procesamos tu pedido.</template></category>
+<category><pattern>TRANSFERENCIA BANCARIA</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>TRANSFERENCIA BANCARIA *</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>* TRANSFERENCIA BANCARIA</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>* TRANSFERENCIA BANCARIA *</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>PAGO POR TRANSFERENCIA</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>PAGO POR TRANSFERENCIA *</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>* PAGO POR TRANSFERENCIA</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>* PAGO POR TRANSFERENCIA *</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>DEPOSITO BANCARIO</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>DEPOSITO BANCARIO *</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>* DEPOSITO BANCARIO</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>* DEPOSITO BANCARIO *</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>PAGAR POR TRANSFERENCIA</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>PAGAR POR TRANSFERENCIA *</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>* PAGAR POR TRANSFERENCIA</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>* PAGAR POR TRANSFERENCIA *</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>SPEI</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>* SPEI</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>* SPEI *</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>TRANSFERENCIA</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>* TRANSFERENCIA</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>* TRANSFERENCIA *</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>TRANSFERENCIAS</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>* TRANSFERENCIAS</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>* TRANSFERENCIAS *</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>CLABE</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>* CLABE</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>* CLABE *</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>DEPOSITO</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>* DEPOSITO</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>* DEPOSITO *</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+
+<!-- PAYPAL -->
+<category><pattern>INTENCION PAYPAL</pattern><template><think><set name="topic">PAGOS</set><set name="fallos">0</set></think>¡Sí! Puedes pagar de forma segura con PayPal o con Mercado Pago directamente en el checkout.</template></category>
+<category><pattern>ACEPTAN PAYPAL</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>ACEPTAN PAYPAL *</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>* ACEPTAN PAYPAL</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>* ACEPTAN PAYPAL *</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>PAGAR CON PAYPAL</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>PAGAR CON PAYPAL *</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>* PAGAR CON PAYPAL</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>* PAGAR CON PAYPAL *</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>PAYPAL</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>PAYPAL *</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>* PAYPAL</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>* PAYPAL *</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>PAY PAL</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>PAY PAL *</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>* PAY PAL</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>* PAY PAL *</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>MERCADO PAGO</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>MERCADO PAGO *</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>* MERCADO PAGO</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>* MERCADO PAGO *</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>MERCADOPAGO</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>MERCADOPAGO *</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>* MERCADOPAGO</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>* MERCADOPAGO *</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+
+<!-- CONTRAENTREGA -->
+<category><pattern>INTENCION CONTRAENTREGA</pattern><template><think><set name="topic">PAGOS</set><set name="fallos">0</set></think>Por ahora no manejamos pago contra entrega: el pago se realiza al hacer el pedido, con tarjeta, PayPal, Mercado Pago, SPEI o efectivo en OXXO.</template></category>
+<category><pattern>CONTRA ENTREGA</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>CONTRA ENTREGA *</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>* CONTRA ENTREGA</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>* CONTRA ENTREGA *</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>PAGAR AL RECIBIR</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>PAGAR AL RECIBIR *</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>* PAGAR AL RECIBIR</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>* PAGAR AL RECIBIR *</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>PAGO AL RECIBIR</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>PAGO AL RECIBIR *</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>* PAGO AL RECIBIR</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>* PAGO AL RECIBIR *</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>PAGAR CUANDO LLEGUE</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>PAGAR CUANDO LLEGUE *</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>* PAGAR CUANDO LLEGUE</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>* PAGAR CUANDO LLEGUE *</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>PAGAR CUANDO ME LLEGUE</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>PAGAR CUANDO ME LLEGUE *</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>* PAGAR CUANDO ME LLEGUE</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>* PAGAR CUANDO ME LLEGUE *</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>PAGO CUANDO LLEGUE</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>PAGO CUANDO LLEGUE *</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>* PAGO CUANDO LLEGUE</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>* PAGO CUANDO LLEGUE *</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>CONTRAENTREGA</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>* CONTRAENTREGA</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+<category><pattern>* CONTRAENTREGA *</pattern><template><srai>INTENCION CONTRAENTREGA</srai></template></category>
+
+<!-- MONEDA IVA -->
+<category><pattern>INTENCION MONEDA IVA</pattern><template><think><set name="topic">PAGOS</set><set name="fallos">0</set></think>Todos los precios están en pesos mexicanos (MXN) e incluyen IVA. El costo de envío se suma al finalizar la compra, salvo que tu pedido califique para envío gratis.</template></category>
+<category><pattern>EN QUE MONEDA</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>EN QUE MONEDA *</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>* EN QUE MONEDA</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>* EN QUE MONEDA *</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>INCLUYE IVA</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>INCLUYE IVA *</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>* INCLUYE IVA</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>* INCLUYE IVA *</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>INCLUYEN IVA</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>INCLUYEN IVA *</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>* INCLUYEN IVA</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>* INCLUYEN IVA *</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>PRECIOS CON IVA</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>PRECIOS CON IVA *</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>* PRECIOS CON IVA</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>* PRECIOS CON IVA *</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>PRECIO CON IVA</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>PRECIO CON IVA *</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>* PRECIO CON IVA</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>* PRECIO CON IVA *</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>IVA</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>IVA *</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>* IVA</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>* IVA *</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>DOLARES</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>DOLARES *</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>* DOLARES</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>* DOLARES *</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>PESOS</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>PESOS *</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>* PESOS</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>* PESOS *</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>MONEDA</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>MONEDA *</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>* MONEDA</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+<category><pattern>* MONEDA *</pattern><template><srai>INTENCION MONEDA IVA</srai></template></category>
+
+<!-- SEGURIDAD -->
+<category><pattern>INTENCION SEGURIDAD</pattern><template><think><set name="topic">PAGOS</set><set name="fallos">0</set></think>Sí, tu pago es seguro: nuestro sitio usa conexión cifrada (HTTPS) y los pagos con tarjeta los procesa una pasarela certificada, por lo que no guardamos los datos completos de tu tarjeta. Nunca te pediremos tu NIP ni claves por chat o correo.</template></category>
+<category><pattern>ES SEGURO</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>ES SEGURO *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* ES SEGURO</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* ES SEGURO *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>ES SEGURA</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>ES SEGURA *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* ES SEGURA</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* ES SEGURA *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>PAGO SEGURO</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>PAGO SEGURO *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* PAGO SEGURO</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* PAGO SEGURO *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>SON CONFIABLES</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>SON CONFIABLES *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* SON CONFIABLES</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* SON CONFIABLES *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>ES CONFIABLE</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>ES CONFIABLE *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* ES CONFIABLE</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* ES CONFIABLE *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>SE PUEDE CONFIAR</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>SE PUEDE CONFIAR *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* SE PUEDE CONFIAR</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* SE PUEDE CONFIAR *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>ES UNA ESTAFA</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>ES UNA ESTAFA *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* ES UNA ESTAFA</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* ES UNA ESTAFA *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>ES FRAUDE</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>ES FRAUDE *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* ES FRAUDE</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* ES FRAUDE *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>ES UN FRAUDE</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>ES UN FRAUDE *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* ES UN FRAUDE</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* ES UN FRAUDE *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>DATOS DE MI TARJETA</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>DATOS DE MI TARJETA *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* DATOS DE MI TARJETA</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* DATOS DE MI TARJETA *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>3D SECURE</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>3D SECURE *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* 3D SECURE</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* 3D SECURE *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>SEGURIDAD</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>SEGURIDAD *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* SEGURIDAD</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* SEGURIDAD *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>CONFIABLE</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>CONFIABLE *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* CONFIABLE</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* CONFIABLE *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>ESTAFA</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>ESTAFA *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* ESTAFA</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* ESTAFA *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>FRAUDE</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>FRAUDE *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* FRAUDE</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+<category><pattern>* FRAUDE *</pattern><template><srai>INTENCION SEGURIDAD</srai></template></category>
+
+<!-- PAGO RECHAZADO -->
+<category><pattern>INTENCION PAGO RECHAZADO</pattern><template><think><set name="topic">PAGOS</set><set name="fallos">0</set></think>Lamento el inconveniente. Un pago puede rechazarse por datos mal capturados, fondos o límite insuficientes, o porque tu banco bloqueó compras en línea o pide validación 3D Secure. Revisa los datos, prueba con otra tarjeta u otro método (PayPal, SPEI u OXXO) y, si sigue igual, llama a tu banco para autorizar el cargo.</template></category>
+<category><pattern>PAGO NO PASA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>PAGO NO PASA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* PAGO NO PASA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* PAGO NO PASA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO PASA EL PAGO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO PASA EL PAGO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO PASA EL PAGO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO PASA EL PAGO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO PASA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO PASA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO PASA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO PASA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>PAGO NO SE HACE</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>PAGO NO SE HACE *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* PAGO NO SE HACE</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* PAGO NO SE HACE *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO SE HACE EL PAGO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO SE HACE EL PAGO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO SE HACE EL PAGO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO SE HACE EL PAGO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO SE PUEDE PAGAR</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO SE PUEDE PAGAR *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO SE PUEDE PAGAR</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO SE PUEDE PAGAR *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO SE COMPLETA EL PAGO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO SE COMPLETA EL PAGO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO SE COMPLETA EL PAGO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO SE COMPLETA EL PAGO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO ME DEJA COMPRAR</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO ME DEJA COMPRAR *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO ME DEJA COMPRAR</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO ME DEJA COMPRAR *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>TARJETA RECHAZADA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>TARJETA RECHAZADA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* TARJETA RECHAZADA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* TARJETA RECHAZADA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>TARJETA FUE RECHAZADA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>TARJETA FUE RECHAZADA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* TARJETA FUE RECHAZADA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* TARJETA FUE RECHAZADA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>TARJETA NO PASA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>TARJETA NO PASA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* TARJETA NO PASA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* TARJETA NO PASA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>TARJETA NO FUNCIONA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>TARJETA NO FUNCIONA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* TARJETA NO FUNCIONA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* TARJETA NO FUNCIONA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>TARJETA DECLINADA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>TARJETA DECLINADA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* TARJETA DECLINADA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* TARJETA DECLINADA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>TARJETA NO SIRVE</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>TARJETA NO SIRVE *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* TARJETA NO SIRVE</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* TARJETA NO SIRVE *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>TARJETA NO ES ACEPTADA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>TARJETA NO ES ACEPTADA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* TARJETA NO ES ACEPTADA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* TARJETA NO ES ACEPTADA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>PAGO RECHAZADO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>PAGO RECHAZADO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* PAGO RECHAZADO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* PAGO RECHAZADO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>PAGO FALLIDO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>PAGO FALLIDO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* PAGO FALLIDO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* PAGO FALLIDO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO ME DEJA PAGAR</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO ME DEJA PAGAR *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO ME DEJA PAGAR</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO ME DEJA PAGAR *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO PUEDO PAGAR</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO PUEDO PAGAR *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO PUEDO PAGAR</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO PUEDO PAGAR *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO PASA MI TARJETA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO PASA MI TARJETA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO PASA MI TARJETA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO PASA MI TARJETA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO ACEPTA MI TARJETA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO ACEPTA MI TARJETA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO ACEPTA MI TARJETA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO ACEPTA MI TARJETA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO ME ACEPTA LA TARJETA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO ME ACEPTA LA TARJETA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO ME ACEPTA LA TARJETA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO ME ACEPTA LA TARJETA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO ME ACEPTA EL PAGO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO ME ACEPTA EL PAGO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO ME ACEPTA EL PAGO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO ME ACEPTA EL PAGO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>ERROR AL PAGAR</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>ERROR AL PAGAR *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* ERROR AL PAGAR</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* ERROR AL PAGAR *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>ERROR EN EL PAGO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>ERROR EN EL PAGO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* ERROR EN EL PAGO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* ERROR EN EL PAGO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>ERROR DE PAGO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>ERROR DE PAGO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* ERROR DE PAGO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* ERROR DE PAGO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO SE PROCESA EL PAGO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO SE PROCESA EL PAGO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO SE PROCESA EL PAGO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO SE PROCESA EL PAGO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO SE PUDO PAGAR</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO SE PUDO PAGAR *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO SE PUDO PAGAR</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO SE PUDO PAGAR *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO SE REALIZA EL PAGO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>NO SE REALIZA EL PAGO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO SE REALIZA EL PAGO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* NO SE REALIZA EL PAGO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>PAGO NO PROCESADO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>PAGO NO PROCESADO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* PAGO NO PROCESADO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* PAGO NO PROCESADO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>ME RECHAZA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>ME RECHAZA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* ME RECHAZA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* ME RECHAZA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>ME RECHAZARON</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>ME RECHAZARON *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* ME RECHAZARON</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* ME RECHAZARON *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>RECHAZADA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* RECHAZADA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* RECHAZADA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>RECHAZADO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* RECHAZADO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* RECHAZADO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>DECLINADA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* DECLINADA</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* DECLINADA *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>DECLINADO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* DECLINADO</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+<category><pattern>* DECLINADO *</pattern><template><srai>INTENCION PAGO RECHAZADO</srai></template></category>
+
+<!-- COBRO DOBLE -->
+<category><pattern>INTENCION COBRO DOBLE</pattern><template><think><set name="topic">PAGOS</set><set name="fallos">0</set></think>Si ves un cargo duplicado, no te preocupes: muchas veces es una autorización temporal que el banco libera en 3 a 5 días hábiles. Si pasado ese plazo sigue apareciendo, escríbenos a <srai>INFO CORREO</srai> con tu número de pedido y el comprobante del cargo para revisarlo.</template></category>
+<category><pattern>ME CARGARON DOBLE</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME CARGARON DOBLE *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME CARGARON DOBLE</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME CARGARON DOBLE *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME CARGARON DOS VECES</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME CARGARON DOS VECES *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME CARGARON DOS VECES</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME CARGARON DOS VECES *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>CARGARON DOBLE</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>CARGARON DOBLE *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* CARGARON DOBLE</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* CARGARON DOBLE *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME CARGARON DE MAS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME CARGARON DE MAS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME CARGARON DE MAS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME CARGARON DE MAS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>COBRARON DE MAS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>COBRARON DE MAS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* COBRARON DE MAS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* COBRARON DE MAS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>CARGARON DE MAS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>CARGARON DE MAS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* CARGARON DE MAS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* CARGARON DE MAS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME CARGARON</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME CARGARON *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME CARGARON</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME CARGARON *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME HAN COBRADO DE MAS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME HAN COBRADO DE MAS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME HAN COBRADO DE MAS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME HAN COBRADO DE MAS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME COBRARON</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME COBRARON *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME COBRARON</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME COBRARON *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>DOS CARGOS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>DOS CARGOS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* DOS CARGOS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* DOS CARGOS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>DOS COBROS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>DOS COBROS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* DOS COBROS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* DOS COBROS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>COBRARON DOS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>COBRARON DOS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* COBRARON DOS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* COBRARON DOS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>CARGOS DUPLICADOS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>CARGOS DUPLICADOS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* CARGOS DUPLICADOS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* CARGOS DUPLICADOS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>COBROS DUPLICADOS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>COBROS DUPLICADOS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* COBROS DUPLICADOS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* COBROS DUPLICADOS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME HICIERON DOS CARGOS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME HICIERON DOS CARGOS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME HICIERON DOS CARGOS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME HICIERON DOS CARGOS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME HICIERON UN CARGO DOBLE</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME HICIERON UN CARGO DOBLE *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME HICIERON UN CARGO DOBLE</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME HICIERON UN CARGO DOBLE *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>CARGO EXTRA</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>CARGO EXTRA *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* CARGO EXTRA</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* CARGO EXTRA *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>CARGO DE MAS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>CARGO DE MAS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* CARGO DE MAS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* CARGO DE MAS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>COBRO DOBLE</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>COBRO DOBLE *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* COBRO DOBLE</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* COBRO DOBLE *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>COBRO DUPLICADO</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>COBRO DUPLICADO *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* COBRO DUPLICADO</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* COBRO DUPLICADO *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>CARGO DUPLICADO</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>CARGO DUPLICADO *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* CARGO DUPLICADO</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* CARGO DUPLICADO *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>CARGO DOBLE</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>CARGO DOBLE *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* CARGO DOBLE</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* CARGO DOBLE *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME COBRARON DOS VECES</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME COBRARON DOS VECES *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME COBRARON DOS VECES</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME COBRARON DOS VECES *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME COBRARON DE MAS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME COBRARON DE MAS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME COBRARON DE MAS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME COBRARON DE MAS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME COBRARON DOBLE</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>ME COBRARON DOBLE *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME COBRARON DOBLE</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* ME COBRARON DOBLE *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>CARGO NO RECONOCIDO</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>CARGO NO RECONOCIDO *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* CARGO NO RECONOCIDO</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* CARGO NO RECONOCIDO *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>COBRO NO RECONOCIDO</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>COBRO NO RECONOCIDO *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* COBRO NO RECONOCIDO</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>* COBRO NO RECONOCIDO *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+
+<!-- PAGO NO REFLEJADO -->
+<category><pattern>INTENCION PAGO NO REFLEJADO</pattern><template><think><set name="topic">PAGOS</set><set name="fallos">0</set></think>Los pagos con tarjeta, PayPal o Mercado Pago se confirman al instante, SPEI en minutos y OXXO hasta 24 horas después de pagar. Si ya pasó ese tiempo, envía a <srai>INFO CORREO</srai> tu comprobante de pago y tu número de pedido para validarlo.</template></category>
+<category><pattern>NO APARECE</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>NO APARECE *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* NO APARECE</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* NO APARECE *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>NO LLEGA MI PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>NO LLEGA MI PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* NO LLEGA MI PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* NO LLEGA MI PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>HICE MI PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>HICE MI PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* HICE MI PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* HICE MI PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>HICE EL PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>HICE EL PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* HICE EL PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* HICE EL PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>HICE MI TRANSFERENCIA</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>HICE MI TRANSFERENCIA *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* HICE MI TRANSFERENCIA</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* HICE MI TRANSFERENCIA *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>HICE LA TRANSFERENCIA</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>HICE LA TRANSFERENCIA *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* HICE LA TRANSFERENCIA</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* HICE LA TRANSFERENCIA *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>HICE MI DEPOSITO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>HICE MI DEPOSITO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* HICE MI DEPOSITO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* HICE MI DEPOSITO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>REALICE MI PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>REALICE MI PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* REALICE MI PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* REALICE MI PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>REALICE EL PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>REALICE EL PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* REALICE EL PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* REALICE EL PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>YA TRANSFERI</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>YA TRANSFERI *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* YA TRANSFERI</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* YA TRANSFERI *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>YA DEPOSITE</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>YA DEPOSITE *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* YA DEPOSITE</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* YA DEPOSITE *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>YA HICE EL PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>YA HICE EL PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* YA HICE EL PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* YA HICE EL PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>YA HICE MI PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>YA HICE MI PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* YA HICE MI PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* YA HICE MI PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>YA PAGUE</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>YA PAGUE *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* YA PAGUE</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* YA PAGUE *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>PAGUE Y NO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>PAGUE Y NO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* PAGUE Y NO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* PAGUE Y NO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>PAGUE EN</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>PAGUE EN *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* PAGUE EN</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* PAGUE EN *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>NO SE REFLEJA</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>NO SE REFLEJA *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* NO SE REFLEJA</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* NO SE REFLEJA *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>NO SE REFLEJA MI PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>NO SE REFLEJA MI PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* NO SE REFLEJA MI PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* NO SE REFLEJA MI PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>NO APARECE MI PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>NO APARECE MI PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* NO APARECE MI PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* NO APARECE MI PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>NO SE VE MI PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>NO SE VE MI PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* NO SE VE MI PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* NO SE VE MI PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>PAGO NO REFLEJADO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>PAGO NO REFLEJADO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* PAGO NO REFLEJADO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* PAGO NO REFLEJADO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>CONFIRMAR PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>CONFIRMAR PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* CONFIRMAR PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* CONFIRMAR PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>CONFIRMAR MI PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>CONFIRMAR MI PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* CONFIRMAR MI PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* CONFIRMAR MI PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>COMPROBANTE DE PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>COMPROBANTE DE PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* COMPROBANTE DE PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* COMPROBANTE DE PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>ENVIAR COMPROBANTE</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>ENVIAR COMPROBANTE *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* ENVIAR COMPROBANTE</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* ENVIAR COMPROBANTE *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>MANDAR COMPROBANTE</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>MANDAR COMPROBANTE *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* MANDAR COMPROBANTE</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* MANDAR COMPROBANTE *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>PAGO NO SE REFLEJA</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>PAGO NO SE REFLEJA *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* PAGO NO SE REFLEJA</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* PAGO NO SE REFLEJA *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>PAGO NO APARECE</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>PAGO NO APARECE *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* PAGO NO APARECE</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* PAGO NO APARECE *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>NO ME CONFIRMARON EL PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>NO ME CONFIRMARON EL PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* NO ME CONFIRMARON EL PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* NO ME CONFIRMARON EL PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>NO HAN CONFIRMADO MI PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>NO HAN CONFIRMADO MI PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* NO HAN CONFIRMADO MI PAGO</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* NO HAN CONFIRMADO MI PAGO *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>PAGO PENDIENTE</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>PAGO PENDIENTE *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* PAGO PENDIENTE</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+<category><pattern>* PAGO PENDIENTE *</pattern><template><srai>INTENCION PAGO NO REFLEJADO</srai></template></category>
+
+<!-- CAMBIAR METODO -->
+<category><pattern>INTENCION CAMBIAR METODO</pattern><template><think><set name="topic">PAGOS</set><set name="fallos">0</set></think>Una vez generado el pedido no se puede cambiar el método de pago. Si aún no lo pagas, puedes cancelarlo y volver a comprar con otro método; si ya lo pagaste, escríbenos a <srai>INFO CORREO</srai> antes de que salga de bodega.</template></category>
+<category><pattern>CAMBIAR MI METODO DE PAGO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR MI METODO DE PAGO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR MI METODO DE PAGO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR MI METODO DE PAGO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR MI METODO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR MI METODO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR MI METODO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR MI METODO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR EL METODO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR EL METODO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR EL METODO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR EL METODO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR METODO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR METODO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR METODO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR METODO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR EL METODO DE PAGO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR EL METODO DE PAGO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR EL METODO DE PAGO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR EL METODO DE PAGO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR METODO DE PAGO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR METODO DE PAGO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR METODO DE PAGO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR METODO DE PAGO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR LA FORMA DE PAGO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR LA FORMA DE PAGO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR LA FORMA DE PAGO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR LA FORMA DE PAGO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR FORMA DE PAGO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR FORMA DE PAGO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR FORMA DE PAGO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR FORMA DE PAGO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR MI FORMA DE PAGO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR MI FORMA DE PAGO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR MI FORMA DE PAGO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR MI FORMA DE PAGO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR LA TARJETA</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR LA TARJETA *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR LA TARJETA</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR LA TARJETA *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR MI TARJETA</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR MI TARJETA *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR MI TARJETA</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR MI TARJETA *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>PAGAR CON OTRA TARJETA</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>PAGAR CON OTRA TARJETA *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* PAGAR CON OTRA TARJETA</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* PAGAR CON OTRA TARJETA *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>PAGAR CON OTRO METODO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>PAGAR CON OTRO METODO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* PAGAR CON OTRO METODO</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* PAGAR CON OTRO METODO *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR A PAYPAL</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR A PAYPAL *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR A PAYPAL</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR A PAYPAL *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR A TRANSFERENCIA</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>CAMBIAR A TRANSFERENCIA *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR A TRANSFERENCIA</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+<category><pattern>* CAMBIAR A TRANSFERENCIA *</pattern><template><srai>INTENCION CAMBIAR METODO</srai></template></category>
+
+<!-- PAGO TIEMPO  [tema: PAGOS] -->
+<category><pattern>INTENCION PAGO TIEMPO</pattern><template><think><set name="topic">PAGOS</set><set name="fallos">0</set></think>Con tarjeta, PayPal o Mercado Pago el pago se confirma al instante; con SPEI en minutos, y con OXXO hasta 24 horas después de pagar. Cuando se acredita te enviamos un correo de confirmación.</template></category>
+<category><pattern>CUANTO TARDA EN REFLEJARSE</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDA EN REFLEJARSE *</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA EN REFLEJARSE</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA EN REFLEJARSE *</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDA EN ACREDITARSE</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDA EN ACREDITARSE *</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA EN ACREDITARSE</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA EN ACREDITARSE *</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDA EN CONFIRMARSE</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDA EN CONFIRMARSE *</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA EN CONFIRMARSE</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA EN CONFIRMARSE *</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDA EN APARECER EL PAGO</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>CUANTO TARDA EN APARECER EL PAGO *</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA EN APARECER EL PAGO</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+<category><pattern>* CUANTO TARDA EN APARECER EL PAGO *</pattern><template><srai>INTENCION PAGO TIEMPO</srai></template></category>
+
+<!-- TEMA PAGOS -->
+<category><pattern>INTENCION TEMA PAGOS</pattern><template><think><set name="topic">PAGOS</set><set name="fallos">0</set></think>Sobre pagos puedo ayudarte con formas de pago, meses sin intereses, pagos rechazados, facturación, cupones y reembolsos. ¿Qué te gustaría saber?</template></category>
+<category><pattern>PAGOS</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>PAGOS Y FACTURACION</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>COBROS</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>COBRO</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
 </aiml>

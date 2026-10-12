@@ -1,36 +1,1512 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 
-    <!-- Patrón Canónico -->
-    <category>
-        <pattern>COMO RASTREO MI PEDIDO</pattern>
-        <template>Para rastrear tu pedido necesitamos tu número de guía (ejemplo: GUIA12345 o 12345). ¿Tienes a la mano tu número de guía?</template>
-    </category>
+<!-- Pedidos: rastreo con flujo <that> (¿tienes tu guía? sí/no), captura con <set>, retrasos, dirección, cancelación, incidencias y cómo hacer un pedido -->
+<category><pattern>RASTREO SIN GUIA</pattern><template><think><set name="topic">RASTREO</set><set name="fallos">0</set></think>Con gusto te ayudo a rastrear tu pedido. Para hacerlo necesitamos tu número de guía (ejemplo: GUIA12345 o 12345); te llegó por correo cuando salió de bodega. Dime si ya tienes tu número de guía a la mano.</template></category>
 
-    <!-- Capturas abiertas para rastreo -->
-    <category><pattern>* RASTREO *</pattern><template><srai>COMO RASTREO MI PEDIDO</srai></template></category>
-    <category><pattern>* RASTREAR *</pattern><template><srai>COMO RASTREO MI PEDIDO</srai></template></category>
-    <category><pattern>COMO PUEDO RASTREAR *</pattern><template><srai>COMO RASTREO MI PEDIDO</srai></template></category>
+<!-- RASTREO -->
+<category><pattern>INTENCION RASTREO</pattern><template><condition name="num_pedido"><li value=""><srai>RASTREO SIN GUIA</srai></li><li value="unknown"><srai>RASTREO SIN GUIA</srai></li><li><think><set name="topic">RASTREO</set><set name="fallos">0</set></think>Claro. Ya tengo registrada tu guía <get name="num_pedido"/>. Hemos consultado la guía <get name="num_pedido"/>: tu paquete se encuentra EN TRANSITO con entrega estimada en 24 a 48 horas. Si lleva más de 48 horas sin movimiento, dime que no se mueve y te oriento.</li></condition></template></category>
+<category><pattern>YA MANDARON</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA MANDARON *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA MANDARON</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA MANDARON *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA ENVIARON</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA ENVIARON *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA ENVIARON</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA ENVIARON *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA LO ENVIARON</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA LO ENVIARON *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA LO ENVIARON</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA LO ENVIARON *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA SE ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA SE ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA SE ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA SE ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA SE FUE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA SE FUE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA SE FUE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA SE FUE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA SE FUE MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA SE FUE MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA SE FUE MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA SE FUE MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>EN QUE PARTE VA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>EN QUE PARTE VA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* EN QUE PARTE VA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* EN QUE PARTE VA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>EN QUE PARTE ESTA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>EN QUE PARTE ESTA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* EN QUE PARTE ESTA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* EN QUE PARTE ESTA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>POR DONDE VA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>POR DONDE VA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* POR DONDE VA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* POR DONDE VA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>EN DONDE ESTA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>EN DONDE ESTA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* EN DONDE ESTA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* EN DONDE ESTA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>EN DONDE VA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>EN DONDE VA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* EN DONDE VA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* EN DONDE VA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SABER DE MI ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SABER DE MI ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SABER DE MI ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SABER DE MI ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SABER DE MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SABER DE MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SABER DE MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SABER DE MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SABER DE MI ORDEN</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SABER DE MI ORDEN *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SABER DE MI ORDEN</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SABER DE MI ORDEN *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SABER DE MI COMPRA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SABER DE MI COMPRA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SABER DE MI COMPRA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SABER DE MI COMPRA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTADO DE MI ORDEN</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTADO DE MI ORDEN *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTADO DE MI ORDEN</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTADO DE MI ORDEN *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTADO DE MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTADO DE MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTADO DE MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTADO DE MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTADO DE MI ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTADO DE MI ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTADO DE MI ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTADO DE MI ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTATUS DE MI ORDEN</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTATUS DE MI ORDEN *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTATUS DE MI ORDEN</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTATUS DE MI ORDEN *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTATUS DE MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTATUS DE MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTATUS DE MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTATUS DE MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE VIENE MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE VIENE MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE VIENE MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE VIENE MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE VIENE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE VIENE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE VIENE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE VIENE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE ANDA MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE ANDA MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE ANDA MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE ANDA MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE ANDA MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE ANDA MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE ANDA MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE ANDA MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE SE ENCUENTRA MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE SE ENCUENTRA MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE SE ENCUENTRA MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE SE ENCUENTRA MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE SE ENCUENTRA MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE SE ENCUENTRA MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE SE ENCUENTRA MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE SE ENCUENTRA MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE ESTA MI ORDEN</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE ESTA MI ORDEN *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE ESTA MI ORDEN</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE ESTA MI ORDEN *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE VA MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE VA MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE VA MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE VA MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA SALIO MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA SALIO MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA SALIO MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA SALIO MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA SALIO MI ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA SALIO MI ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA SALIO MI ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA SALIO MI ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>COMO VA MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>COMO VA MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* COMO VA MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* COMO VA MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>COMO VA MI COMPRA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>COMO VA MI COMPRA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* COMO VA MI COMPRA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* COMO VA MI COMPRA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>COMO VA MI ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>COMO VA MI ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* COMO VA MI ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* COMO VA MI ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>COMO VA MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>COMO VA MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* COMO VA MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* COMO VA MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>COMO VA LA ENTREGA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>COMO VA LA ENTREGA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* COMO VA LA ENTREGA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* COMO VA LA ENTREGA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>QUE PASO CON MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>QUE PASO CON MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* QUE PASO CON MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* QUE PASO CON MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>QUE PASO CON MI COMPRA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>QUE PASO CON MI COMPRA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* QUE PASO CON MI COMPRA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* QUE PASO CON MI COMPRA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>QUE PASO CON MI ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>QUE PASO CON MI ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* QUE PASO CON MI ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* QUE PASO CON MI ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>NOTICIAS DE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>NOTICIAS DE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* NOTICIAS DE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* NOTICIAS DE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>INFORMACION DE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>INFORMACION DE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* INFORMACION DE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* INFORMACION DE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>INFORMACION SOBRE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>INFORMACION SOBRE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* INFORMACION SOBRE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* INFORMACION SOBRE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SABER DE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SABER DE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SABER DE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SABER DE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SABER ALGO DE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SABER ALGO DE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SABER ALGO DE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SABER ALGO DE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA ME MANDARON</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA ME MANDARON *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA ME MANDARON</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA ME MANDARON *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA ME ENVIARON</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA ME ENVIARON *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA ME ENVIARON</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA ME ENVIARON *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA LO MANDARON</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA LO MANDARON *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA LO MANDARON</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA LO MANDARON *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA SALIO MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA SALIO MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA SALIO MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA SALIO MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA SALIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA SALIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA SALIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA SALIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA ESTA EN CAMINO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA ESTA EN CAMINO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA ESTA EN CAMINO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA ESTA EN CAMINO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA VA EN CAMINO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>YA VA EN CAMINO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA VA EN CAMINO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* YA VA EN CAMINO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>EN CAMINO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>EN CAMINO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* EN CAMINO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* EN CAMINO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SE ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SE ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SE ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SE ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SEGUIMIENTO DE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SEGUIMIENTO DE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SEGUIMIENTO DE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SEGUIMIENTO DE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTADO DE MI COMPRA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTADO DE MI COMPRA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTADO DE MI COMPRA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTADO DE MI COMPRA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTATUS DE MI COMPRA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTATUS DE MI COMPRA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTATUS DE MI COMPRA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTATUS DE MI COMPRA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTATUS DE MI ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTATUS DE MI ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTATUS DE MI ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTATUS DE MI ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>RASTREAR</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>RASTREAR *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* RASTREAR</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* RASTREAR *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>RASTREO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>RASTREO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* RASTREO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* RASTREO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>RESTREAR</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>RESTREAR *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* RESTREAR</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* RESTREAR *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>RASTRIAR</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>RASTRIAR *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* RASTRIAR</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* RASTRIAR *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>RASTREAR PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>RASTREAR PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* RASTREAR PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* RASTREAR PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>NUMERO DE GUIA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>NUMERO DE GUIA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* NUMERO DE GUIA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* NUMERO DE GUIA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>NUMERO DE RASTREO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>NUMERO DE RASTREO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* NUMERO DE RASTREO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* NUMERO DE RASTREO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>NUMERO DE SEGUIMIENTO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>NUMERO DE SEGUIMIENTO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* NUMERO DE SEGUIMIENTO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* NUMERO DE SEGUIMIENTO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>CODIGO DE RASTREO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>CODIGO DE RASTREO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* CODIGO DE RASTREO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* CODIGO DE RASTREO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>GUIA DE RASTREO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>GUIA DE RASTREO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* GUIA DE RASTREO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* GUIA DE RASTREO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>GUIA DE ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>GUIA DE ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* GUIA DE ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* GUIA DE ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SEGUIMIENTO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SEGUIMIENTO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SEGUIMIENTO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SEGUIMIENTO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SEGUIR MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SEGUIR MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SEGUIR MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SEGUIR MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SEGUIR EL PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SEGUIR EL PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SEGUIR EL PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SEGUIR EL PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE ESTA MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE ESTA MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE ESTA MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE ESTA MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE ESTA MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE ESTA MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE ESTA MI PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE ESTA MI PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE ESTA MI COMPRA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE ESTA MI COMPRA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE ESTA MI COMPRA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE ESTA MI COMPRA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE ESTA MI ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE ESTA MI ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE ESTA MI ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE ESTA MI ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE VA MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE VA MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE VA MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE VA MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE QUEDO MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE QUEDO MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE QUEDO MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* DONDE QUEDO MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTADO DE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTADO DE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTADO DE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTADO DE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTADO DEL PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTADO DEL PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTADO DEL PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTADO DEL PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTATUS DE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTATUS DE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTATUS DE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTATUS DE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTATUS DEL PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ESTATUS DEL PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTATUS DEL PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ESTATUS DEL PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>STATUS DE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>STATUS DE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* STATUS DE MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* STATUS DE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>TRACKING</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>TRACKING *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* TRACKING</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* TRACKING *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ENLACE DE SEGUIMIENTO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>ENLACE DE SEGUIMIENTO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ENLACE DE SEGUIMIENTO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* ENLACE DE SEGUIMIENTO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SABER DONDE ESTA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>SABER DONDE ESTA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SABER DONDE ESTA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* SABER DONDE ESTA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>CONSULTAR MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>CONSULTAR MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* CONSULTAR MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* CONSULTAR MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>VER MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>VER MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* VER MI PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* VER MI PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>VER EL ESTADO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>VER EL ESTADO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* VER EL ESTADO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* VER EL ESTADO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>COMO RASTREO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>COMO RASTREO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* COMO RASTREO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* COMO RASTREO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>COMO PUEDO RASTREAR</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>COMO PUEDO RASTREAR *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* COMO PUEDO RASTREAR</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>* COMO PUEDO RASTREAR *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
 
-    <!-- Dónde hacer pedidos -->
-    <category>
-        <pattern>DONDE HAGO UN PEDIDO</pattern>
-        <template>Puedes realizar tus pedidos directamente en nuestro sitio web oficial www.patitas.com o elegir tus tenis por aquí y te ayudamos a generar tu orden.</template>
-    </category>
+<!-- Flujo con <that>: el bot pregunta si ya tiene la guía; 'sí' / 'no' se interpretan según esa pregunta -->
+<category><pattern>RASTREO SI</pattern><template>Perfecto, escribe aquí tu número de guía.</template></category>
+<category><pattern>RASTREO NO</pattern><template><think><set name="topic">RASTREO</set><set name="fallos">0</set></think>No hay problema. Tu guía viene en el correo de confirmación de envío (asunto: Tu pedido va en camino) y también aparece en Mi cuenta &gt; Mis pedidos de <srai>INFO SITIO</srai>. Si no la encuentras, escríbenos a <srai>INFO CORREO</srai> con el correo que usaste al comprar.</template></category>
+<category><pattern>SI</pattern><that>DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO SI</srai></template></category>
+<category><pattern>SI</pattern><that>* DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO SI</srai></template></category>
+<category><pattern>SI LO TENGO</pattern><that>DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO SI</srai></template></category>
+<category><pattern>SI LO TENGO</pattern><that>* DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO SI</srai></template></category>
+<category><pattern>YA LO TENGO</pattern><that>DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO SI</srai></template></category>
+<category><pattern>YA LO TENGO</pattern><that>* DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO SI</srai></template></category>
+<category><pattern>SI TENGO</pattern><that>DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO SI</srai></template></category>
+<category><pattern>SI TENGO</pattern><that>* DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO SI</srai></template></category>
+<category><pattern>CLARO</pattern><that>DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO SI</srai></template></category>
+<category><pattern>CLARO</pattern><that>* DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO SI</srai></template></category>
+<category><pattern>AQUI ESTA</pattern><that>DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO SI</srai></template></category>
+<category><pattern>AQUI ESTA</pattern><that>* DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO SI</srai></template></category>
+<category><pattern>NO</pattern><that>DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO</pattern><that>* DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO LO TENGO</pattern><that>DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO LO TENGO</pattern><that>* DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO TENGO</pattern><that>DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO TENGO</pattern><that>* DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO LO ENCUENTRO</pattern><that>DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO LO ENCUENTRO</pattern><that>* DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO LO SE</pattern><that>DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO LO SE</pattern><that>* DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO SE</pattern><that>DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO SE</pattern><that>* DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO *</pattern><that>DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO *</pattern><that>* DIME SI YA TIENES TU NÚMERO DE GUÍA A LA MANO</that><template><srai>RASTREO NO</srai></template></category>
 
-    <category><pattern>* PUEDO HACER PEDIDOS *</pattern><template><srai>DONDE HAGO UN PEDIDO</srai></template></category>
-    <category><pattern>* DONDE SE HACEN * PEDIDOS *</pattern><template><srai>DONDE HAGO UN PEDIDO</srai></template></category>
-    <category><pattern>* ME AYUDAS A * PEDIDO *</pattern><template><srai>DONDE HAGO UN PEDIDO</srai></template></category>
+<!-- Captura de la guía: se guarda en 'num_pedido' (como en tu versión original) y se consulta con <get> -->
+<category><pattern>REGISTRAR GUIA *</pattern><template><think><set name="num_pedido"><star/></set></think><think><set name="topic">RASTREO</set><set name="fallos">0</set></think>Hemos consultado la guía <get name="num_pedido"/>. Tu paquete se encuentra actualmente EN TRANSITO con entrega estimada en 24 a 48 horas.</template></category>
+<category><pattern>*</pattern><that>PERFECTO ESCRIBE AQUÍ TU NÚMERO DE GUÍA</that><template><srai>REGISTRAR GUIA <star/></srai></template></category>
+<category><pattern>NO</pattern><that>PERFECTO ESCRIBE AQUÍ TU NÚMERO DE GUÍA</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO LO TENGO</pattern><that>PERFECTO ESCRIBE AQUÍ TU NÚMERO DE GUÍA</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO TENGO</pattern><that>PERFECTO ESCRIBE AQUÍ TU NÚMERO DE GUÍA</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO LO ENCUENTRO</pattern><that>PERFECTO ESCRIBE AQUÍ TU NÚMERO DE GUÍA</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO LO SE</pattern><that>PERFECTO ESCRIBE AQUÍ TU NÚMERO DE GUÍA</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO SE</pattern><that>PERFECTO ESCRIBE AQUÍ TU NÚMERO DE GUÍA</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>NO *</pattern><that>PERFECTO ESCRIBE AQUÍ TU NÚMERO DE GUÍA</that><template><srai>RASTREO NO</srai></template></category>
+<category><pattern>MI GUIA ES *</pattern><template><srai>REGISTRAR GUIA <star/></srai></template></category>
+<category><pattern>LA GUIA ES *</pattern><template><srai>REGISTRAR GUIA <star/></srai></template></category>
+<category><pattern>GUIA *</pattern><template><srai>REGISTRAR GUIA <star/></srai></template></category>
+<category><pattern>MI NUMERO DE GUIA ES *</pattern><template><srai>REGISTRAR GUIA <star/></srai></template></category>
+<category><pattern>NUMERO DE GUIA ES *</pattern><template><srai>REGISTRAR GUIA <star/></srai></template></category>
+<category><pattern>MI PEDIDO ES *</pattern><template><srai>REGISTRAR GUIA <star/></srai></template></category>
+<category><pattern>MI NUMERO DE PEDIDO ES *</pattern><template><srai>REGISTRAR GUIA <star/></srai></template></category>
 
-    <!-- Captura flexible de Guía -->
-    <category>
-        <pattern>GUIA *</pattern>
-        <template>
-            <set name="num_pedido"><star/></set>
-            Hemos consultado la guía <get name="num_pedido"/>. Tu paquete se encuentra actualmente EN TRANSITO con entrega estimada en 24 a 48 horas.
-        </template>
-    </category>
+<!-- RASTREO PROBLEMA  -->
+<category><pattern>INTENCION RASTREO PROBLEMA</pattern><template><think><set name="topic">RASTREO</set><set name="fallos">0</set></think>Si aún no recibes tu guía, puede ser que tu pedido siga en preparación (lo procesamos en <srai>INFO PROCESAMIENTO</srai>) o que el correo haya caído en spam o promociones. Revisa esas carpetas y, si ya pasó ese tiempo desde tu pago, escríbenos a <srai>INFO CORREO</srai> con tu número de pedido.</template></category>
+<category><pattern>SE ME PERDIO EL CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>SE ME PERDIO EL CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* SE ME PERDIO EL CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* SE ME PERDIO EL CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>SE ME PERDIO LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>SE ME PERDIO LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* SE ME PERDIO LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* SE ME PERDIO LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>PERDI EL CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>PERDI EL CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* PERDI EL CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* PERDI EL CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>PERDI LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>PERDI LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* PERDI LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* PERDI LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>BORRE EL CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>BORRE EL CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* BORRE EL CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* BORRE EL CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ENCUENTRO EL CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ENCUENTRO EL CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ENCUENTRO EL CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ENCUENTRO EL CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ENCUENTRO MI GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ENCUENTRO MI GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ENCUENTRO MI GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ENCUENTRO MI GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME LLEGO CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME LLEGO CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME LLEGO CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME LLEGO CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME LLEGO NINGUN CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME LLEGO NINGUN CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME LLEGO NINGUN CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME LLEGO NINGUN CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO RECIBI CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO RECIBI CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO RECIBI CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO RECIBI CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO RECIBI NINGUN CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO RECIBI NINGUN CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO RECIBI NINGUN CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO RECIBI NINGUN CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME LLEGO LA CONFIRMACION</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME LLEGO LA CONFIRMACION *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME LLEGO LA CONFIRMACION</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME LLEGO LA CONFIRMACION *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO RECIBI CONFIRMACION</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO RECIBI CONFIRMACION *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO RECIBI CONFIRMACION</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO RECIBI CONFIRMACION *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO RECIBI LA CONFIRMACION</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO RECIBI LA CONFIRMACION *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO RECIBI LA CONFIRMACION</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO RECIBI LA CONFIRMACION *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME LLEGO NADA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME LLEGO NADA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME LLEGO NADA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME LLEGO NADA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO RECIBI LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO RECIBI LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO RECIBI LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO RECIBI LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO RECIBI EL CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO RECIBI EL CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO RECIBI EL CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO RECIBI EL CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME LLEGO LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME LLEGO LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME LLEGO LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME LLEGO LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME LLEGO EL CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME LLEGO EL CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME LLEGO EL CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME LLEGO EL CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME LLEGA LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME LLEGA LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME LLEGA LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME LLEGA LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME LLEGA EL CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME LLEGA EL CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME LLEGA EL CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME LLEGA EL CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO LLEGA LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO LLEGA LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO LLEGA LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO LLEGA LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO LLEGA EL CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO LLEGA EL CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO LLEGA EL CORREO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO LLEGA EL CORREO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO TENGO GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO TENGO GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO TENGO GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO TENGO GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO TENGO LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO TENGO LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO TENGO LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO TENGO LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>SIN GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>SIN GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* SIN GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* SIN GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO FUNCIONA LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO FUNCIONA LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO FUNCIONA LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO FUNCIONA LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>LA GUIA NO FUNCIONA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>LA GUIA NO FUNCIONA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* LA GUIA NO FUNCIONA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* LA GUIA NO FUNCIONA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>GUIA NO VALIDA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>GUIA NO VALIDA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* GUIA NO VALIDA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* GUIA NO VALIDA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ENCUENTRO LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ENCUENTRO LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ENCUENTRO LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ENCUENTRO LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO APARECE LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO APARECE LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO APARECE LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO APARECE LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO APARECE MI PEDIDO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO APARECE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO APARECE MI PEDIDO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO APARECE MI PEDIDO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ENCUENTRO MI PEDIDO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ENCUENTRO MI PEDIDO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ENCUENTRO MI PEDIDO</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ENCUENTRO MI PEDIDO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>GUIA NO FUNCIONA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>GUIA NO FUNCIONA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* GUIA NO FUNCIONA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* GUIA NO FUNCIONA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>GUIA NO SIRVE</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>GUIA NO SIRVE *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* GUIA NO SIRVE</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* GUIA NO SIRVE *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO SIRVE LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO SIRVE LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO SIRVE LA GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO SIRVE LA GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO SIRVE EL NUMERO DE GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO SIRVE EL NUMERO DE GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO SIRVE EL NUMERO DE GUIA</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO SIRVE EL NUMERO DE GUIA *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO PUEDO RASTREAR</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO PUEDO RASTREAR *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO PUEDO RASTREAR</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO PUEDO RASTREAR *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME DEJA RASTREAR</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO ME DEJA RASTREAR *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME DEJA RASTREAR</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO ME DEJA RASTREAR *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO SE PUEDE RASTREAR</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NO SE PUEDE RASTREAR *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO SE PUEDE RASTREAR</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>* NO SE PUEDE RASTREAR *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NUMERO DE SEGUIMIENTO NO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NUMERO DE GUIA NO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>NUMERO DE RASTREO NO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>CODIGO DE RASTREO NO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>GUIA NO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
+<category><pattern>RASTREO NO *</pattern><template><srai>INTENCION RASTREO PROBLEMA</srai></template></category>
 
-    <category><pattern>MI GUIA ES *</pattern><template><srai>GUIA <star/></srai></template></category>
-    <category><pattern>GUIA*</pattern><template><srai>GUIA <star/></srai></template></category>
+<!-- RETRASO -->
+<category><pattern>INTENCION RETRASO</pattern><template><think><set name="topic">RASTREO</set><set name="fallos">0</set></think>Lamento el retraso. Revisa tu guía: si el paquete lleva más de 48 horas sin movimiento o ya pasó la fecha estimada, escríbenos a <srai>INFO CORREO</srai> con tu número de pedido para abrir una aclaración con la paquetería. Atendemos <srai>INFO HORARIO</srai>.</template></category>
+<category><pattern>Y NADA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>Y NADA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* Y NADA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* Y NADA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>HACE SEMANAS</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>HACE SEMANAS *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* HACE SEMANAS</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* HACE SEMANAS *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>HACE DOS SEMANAS</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>HACE DOS SEMANAS *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* HACE DOS SEMANAS</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* HACE DOS SEMANAS *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>HACE UNA SEMANA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>HACE UNA SEMANA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* HACE UNA SEMANA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* HACE UNA SEMANA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SEMANAS ESPERANDO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SEMANAS ESPERANDO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SEMANAS ESPERANDO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SEMANAS ESPERANDO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NADA QUE LLEGA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NADA QUE LLEGA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NADA QUE LLEGA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NADA QUE LLEGA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NADA QUE LE ENTREGAN</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NADA QUE LE ENTREGAN *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NADA QUE LE ENTREGAN</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NADA QUE LE ENTREGAN *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NUNCA VINO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NUNCA VINO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NUNCA VINO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NUNCA VINO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO VINO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO VINO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO VINO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO VINO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NUNCA LLEGO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NUNCA LLEGO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NUNCA LLEGO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NUNCA LLEGO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NUNCA LLEGA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NUNCA LLEGA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NUNCA LLEGA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NUNCA LLEGA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>LLEVO UNA SEMANA ESPERANDO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>LLEVO UNA SEMANA ESPERANDO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* LLEVO UNA SEMANA ESPERANDO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* LLEVO UNA SEMANA ESPERANDO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>LLEVO DIAS ESPERANDO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>LLEVO DIAS ESPERANDO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* LLEVO DIAS ESPERANDO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* LLEVO DIAS ESPERANDO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SIGO ESPERANDO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SIGO ESPERANDO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SIGO ESPERANDO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SIGO ESPERANDO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SIGO SIN RECIBIR</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SIGO SIN RECIBIR *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SIGO SIN RECIBIR</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SIGO SIN RECIBIR *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>AUN NO RECIBO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>AUN NO RECIBO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* AUN NO RECIBO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* AUN NO RECIBO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>TODAVIA NO RECIBO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>TODAVIA NO RECIBO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* TODAVIA NO RECIBO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* TODAVIA NO RECIBO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO HE RECIBIDO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO HE RECIBIDO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO HE RECIBIDO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO HE RECIBIDO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>AUN NO LLEGA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>AUN NO LLEGA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* AUN NO LLEGA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* AUN NO LLEGA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO HA LLEGADO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO HA LLEGADO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO HA LLEGADO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO HA LLEGADO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO LLEGA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO LLEGA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO LLEGA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO LLEGA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO LLEGO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO LLEGO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO LLEGO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO LLEGO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO ME HA LLEGADO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO ME HA LLEGADO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO ME HA LLEGADO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO ME HA LLEGADO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO ME LLEGA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO ME LLEGA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO ME LLEGA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO ME LLEGA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO ME LLEGO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO ME LLEGO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO ME LLEGO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO ME LLEGO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SIGUE SIN LLEGAR</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SIGUE SIN LLEGAR *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SIGUE SIN LLEGAR</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SIGUE SIN LLEGAR *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>RETRASO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>RETRASO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* RETRASO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* RETRASO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>RETRASADO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>RETRASADO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* RETRASADO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* RETRASADO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SE RETRASO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SE RETRASO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SE RETRASO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SE RETRASO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SE ATRASO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SE ATRASO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SE ATRASO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SE ATRASO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>ATRASO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>ATRASO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* ATRASO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* ATRASO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>ATRASADO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>ATRASADO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* ATRASADO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* ATRASADO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>DEMORA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>DEMORA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* DEMORA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* DEMORA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>DEMORADO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>DEMORADO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* DEMORADO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* DEMORADO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>TARDO MUCHO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>TARDO MUCHO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* TARDO MUCHO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* TARDO MUCHO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>LLEGO TARDE</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>LLEGO TARDE *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* LLEGO TARDE</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* LLEGO TARDE *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>YA PASARON</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>YA PASARON *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* YA PASARON</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* YA PASARON *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>YA PASO LA FECHA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>YA PASO LA FECHA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* YA PASO LA FECHA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* YA PASO LA FECHA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO SE MUEVE</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO SE MUEVE *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO SE MUEVE</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO SE MUEVE *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO SE ACTUALIZA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO SE ACTUALIZA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO SE ACTUALIZA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO SE ACTUALIZA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SIN MOVIMIENTO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SIN MOVIMIENTO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SIN MOVIMIENTO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SIN MOVIMIENTO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SIGUE IGUAL</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SIGUE IGUAL *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SIGUE IGUAL</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SIGUE IGUAL *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SE PERDIO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SE PERDIO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SE PERDIO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SE PERDIO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>EXTRAVIADO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>EXTRAVIADO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* EXTRAVIADO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* EXTRAVIADO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>PERDIDO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>PERDIDO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* PERDIDO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* PERDIDO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SIN MOVERSE</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>SIN MOVERSE *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SIN MOVERSE</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* SIN MOVERSE *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO SE HA MOVIDO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO SE HA MOVIDO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO SE HA MOVIDO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO SE HA MOVIDO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO SE HA ACTUALIZADO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO SE HA ACTUALIZADO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO SE HA ACTUALIZADO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO SE HA ACTUALIZADO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO AVANZA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>NO AVANZA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO AVANZA</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* NO AVANZA *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>ESTANCADO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>ESTANCADO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* ESTANCADO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* ESTANCADO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>ATORADO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>ATORADO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* ATORADO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* ATORADO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>DIAS SIN MOVIMIENTO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>DIAS SIN MOVIMIENTO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* DIAS SIN MOVIMIENTO</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>* DIAS SIN MOVIMIENTO *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+
+<!-- DIRECCION ENTREGA  -->
+<category><pattern>INTENCION DIRECCION ENTREGA</pattern><template><think><set name="topic">PEDIDO</set><set name="fallos">0</set></think>Puedes corregir la dirección solo si tu pedido aún no sale de bodega. Escríbenos cuanto antes a <srai>INFO CORREO</srai> con tu número de pedido y la dirección correcta; si ya tiene guía, pide a la paquetería reprogramar la entrega.</template></category>
+<category><pattern>CAMBIARME LA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIARME LA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIARME LA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIARME LA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIARME EL DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIARME EL DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIARME EL DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIARME EL DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIARME MI DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIARME MI DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIARME MI DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIARME MI DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>PUSE MAL LA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>PUSE MAL LA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* PUSE MAL LA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* PUSE MAL LA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>PUSE MAL MI DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>PUSE MAL MI DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* PUSE MAL MI DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* PUSE MAL MI DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>PUSE MAL EL NUMERO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>PUSE MAL EL NUMERO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* PUSE MAL EL NUMERO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* PUSE MAL EL NUMERO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>PUSE MAL</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>PUSE MAL *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* PUSE MAL</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* PUSE MAL *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CORREGIR MI DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CORREGIR MI DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CORREGIR MI DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CORREGIR MI DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CORREGIR EL DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CORREGIR EL DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CORREGIR EL DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CORREGIR EL DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>MODIFICAR MI DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>MODIFICAR MI DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* MODIFICAR MI DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* MODIFICAR MI DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR MI DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR MI DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR MI DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR MI DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>ACTUALIZAR MI DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>ACTUALIZAR MI DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* ACTUALIZAR MI DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* ACTUALIZAR MI DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>DOMICILIO EQUIVOCADO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>DOMICILIO EQUIVOCADO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* DOMICILIO EQUIVOCADO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* DOMICILIO EQUIVOCADO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>DOMICILIO INCORRECTO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>DOMICILIO INCORRECTO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* DOMICILIO INCORRECTO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* DOMICILIO INCORRECTO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIEN LA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIEN LA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIEN LA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIEN LA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIEN MI DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIEN MI DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIEN MI DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIEN MI DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIEN EL DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIEN EL DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIEN EL DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIEN EL DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIEN LA DIRECCION DE ENTREGA</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIEN LA DIRECCION DE ENTREGA *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIEN LA DIRECCION DE ENTREGA</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIEN LA DIRECCION DE ENTREGA *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR LA DIRECCION DE MI PEDIDO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR LA DIRECCION DE MI PEDIDO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR LA DIRECCION DE MI PEDIDO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR LA DIRECCION DE MI PEDIDO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR LA DIRECCION DEL PEDIDO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR LA DIRECCION DEL PEDIDO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR LA DIRECCION DEL PEDIDO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR LA DIRECCION DEL PEDIDO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>DIRECCION DE ENTREGA</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>DIRECCION DE ENTREGA *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* DIRECCION DE ENTREGA</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* DIRECCION DE ENTREGA *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>DIRECCION DE ENVIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>DIRECCION DE ENVIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* DIRECCION DE ENVIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* DIRECCION DE ENVIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>DIRECCION DE MI PEDIDO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>DIRECCION DE MI PEDIDO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* DIRECCION DE MI PEDIDO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* DIRECCION DE MI PEDIDO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>DIRECCION DEL PEDIDO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>DIRECCION DEL PEDIDO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* DIRECCION DEL PEDIDO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* DIRECCION DEL PEDIDO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR LA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR LA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR LA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR LA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR MI DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR MI DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR MI DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR MI DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR LA DIRECCION DE ENTREGA</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR LA DIRECCION DE ENTREGA *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR LA DIRECCION DE ENTREGA</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR LA DIRECCION DE ENTREGA *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR EL DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR EL DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR EL DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR EL DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR DIRECCION DE ENVIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIAR DIRECCION DE ENVIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR DIRECCION DE ENVIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIAR DIRECCION DE ENVIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>MODIFICAR DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>MODIFICAR DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* MODIFICAR DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* MODIFICAR DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>MODIFICAR LA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>MODIFICAR LA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* MODIFICAR LA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* MODIFICAR LA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CORREGIR DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CORREGIR DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CORREGIR DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CORREGIR DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CORREGIR LA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CORREGIR LA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CORREGIR LA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CORREGIR LA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>ACTUALIZAR DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>ACTUALIZAR DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* ACTUALIZAR DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* ACTUALIZAR DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>ACTUALIZAR LA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>ACTUALIZAR LA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* ACTUALIZAR LA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* ACTUALIZAR LA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIO DE DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>CAMBIO DE DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIO DE DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* CAMBIO DE DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>DIRECCION EQUIVOCADA</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>DIRECCION EQUIVOCADA *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* DIRECCION EQUIVOCADA</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* DIRECCION EQUIVOCADA *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>DIRECCION INCORRECTA</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>DIRECCION INCORRECTA *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* DIRECCION INCORRECTA</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* DIRECCION INCORRECTA *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>ME EQUIVOQUE DE DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>ME EQUIVOQUE DE DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* ME EQUIVOQUE DE DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* ME EQUIVOQUE DE DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>ME EQUIVOQUE EN LA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>ME EQUIVOQUE EN LA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* ME EQUIVOQUE EN LA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* ME EQUIVOQUE EN LA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>OTRA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>OTRA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* OTRA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* OTRA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>ENVIAR A OTRA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>ENVIAR A OTRA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* ENVIAR A OTRA DIRECCION</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>* ENVIAR A OTRA DIRECCION *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+
+<!-- REINTENTO  -->
+<category><pattern>INTENCION REINTENTO</pattern><template><think><set name="topic">RASTREO</set><set name="fallos">0</set></think>Si no te encontraron, la paquetería intenta la entrega hasta 2 veces más y después deja el paquete en su sucursal por unos días. Con tu guía puedes reprogramar la entrega o contactarla directamente; si ya lo regresaron a bodega, escríbenos a <srai>INFO CORREO</srai>.</template></category>
+<category><pattern>NO ESTABA</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>NO ESTABA *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* NO ESTABA</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* NO ESTABA *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>NO HABIA NADIE</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>NO HABIA NADIE *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* NO HABIA NADIE</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* NO HABIA NADIE *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>NO ESTOY EN CASA</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>NO ESTOY EN CASA *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* NO ESTOY EN CASA</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* NO ESTOY EN CASA *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>REPROGRAMAR</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>REPROGRAMAR *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* REPROGRAMAR</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* REPROGRAMAR *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>REPROGRAMAR ENTREGA</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>REPROGRAMAR ENTREGA *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* REPROGRAMAR ENTREGA</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* REPROGRAMAR ENTREGA *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>VOLVER A INTENTAR</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>VOLVER A INTENTAR *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* VOLVER A INTENTAR</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* VOLVER A INTENTAR *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>SEGUNDO INTENTO</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>SEGUNDO INTENTO *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* SEGUNDO INTENTO</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* SEGUNDO INTENTO *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>NO ME ENCONTRARON</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>NO ME ENCONTRARON *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* NO ME ENCONTRARON</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* NO ME ENCONTRARON *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>NO ME LOCALIZARON</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>NO ME LOCALIZARON *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* NO ME LOCALIZARON</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* NO ME LOCALIZARON *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>INTENTO DE ENTREGA</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>INTENTO DE ENTREGA *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* INTENTO DE ENTREGA</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* INTENTO DE ENTREGA *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>PERDI LA ENTREGA</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>PERDI LA ENTREGA *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* PERDI LA ENTREGA</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* PERDI LA ENTREGA *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>NO PUDE RECIBIR</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>NO PUDE RECIBIR *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* NO PUDE RECIBIR</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* NO PUDE RECIBIR *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>NO PUDE RECIBIRLO</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>NO PUDE RECIBIRLO *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* NO PUDE RECIBIRLO</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* NO PUDE RECIBIRLO *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>DEJARON AVISO</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>DEJARON AVISO *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* DEJARON AVISO</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* DEJARON AVISO *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>AVISO DE VISITA</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>AVISO DE VISITA *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* AVISO DE VISITA</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* AVISO DE VISITA *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>LO REGRESARON</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>LO REGRESARON *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* LO REGRESARON</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* LO REGRESARON *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>REGRESARON MI PEDIDO</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>REGRESARON MI PEDIDO *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* REGRESARON MI PEDIDO</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+<category><pattern>* REGRESARON MI PEDIDO *</pattern><template><srai>INTENCION REINTENTO</srai></template></category>
+
+<!-- DANADO -->
+<category><pattern>INTENCION DANADO</pattern><template><think><set name="topic">ENTREGA</set><set name="fallos">0</set></think>Lamento lo ocurrido. Escríbenos a <srai>INFO CORREO</srai> con tu número de pedido y fotos del empaque y del calzado dentro de las 48 horas siguientes a la entrega; con eso hacemos el cambio o el reembolso sin costo para ti.</template></category>
+<category><pattern>LLEGO ABIERTO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>LLEGO ABIERTO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* LLEGO ABIERTO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* LLEGO ABIERTO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>LLEGO ABIERTA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>LLEGO ABIERTA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* LLEGO ABIERTA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* LLEGO ABIERTA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>CAJA ABIERTA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>CAJA ABIERTA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* CAJA ABIERTA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* CAJA ABIERTA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>CAJA ROTA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>CAJA ROTA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* CAJA ROTA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* CAJA ROTA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>CAJA DANADA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>CAJA DANADA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* CAJA DANADA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* CAJA DANADA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>PAQUETE ABIERTO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>PAQUETE ABIERTO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* PAQUETE ABIERTO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* PAQUETE ABIERTO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>LLEGO MAL</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>LLEGO MAL *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* LLEGO MAL</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* LLEGO MAL *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>VINO MAL</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>VINO MAL *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* VINO MAL</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* VINO MAL *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>EN MAL ESTADO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>EN MAL ESTADO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* EN MAL ESTADO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* EN MAL ESTADO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>MAL ESTADO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>MAL ESTADO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* MAL ESTADO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* MAL ESTADO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>GOLPEADA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>GOLPEADA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* GOLPEADA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* GOLPEADA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>GOLPEADAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>GOLPEADAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* GOLPEADAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* GOLPEADAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>ABOLLADA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>ABOLLADA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* ABOLLADA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* ABOLLADA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>ABOLLADAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>ABOLLADAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* ABOLLADAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* ABOLLADAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>SUCIOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>SUCIOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* SUCIOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* SUCIOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>SUCIAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>SUCIAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* SUCIAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* SUCIAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>ROTOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>ROTOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* ROTOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* ROTOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>ROTAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>ROTAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* ROTAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* ROTAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>DANADAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>DANADAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* DANADAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* DANADAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>MANCHADOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>MANCHADOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* MANCHADOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* MANCHADOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>MANCHADAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>MANCHADAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* MANCHADAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* MANCHADAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>MALTRATADOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>MALTRATADOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* MALTRATADOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* MALTRATADOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>MALTRATADAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>MALTRATADAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* MALTRATADAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* MALTRATADAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>GOLPEADOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>GOLPEADOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* GOLPEADOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* GOLPEADOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>USADOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>USADOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* USADOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* USADOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>USADAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>USADAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* USADAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* USADAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>SIN CAJA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>SIN CAJA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* SIN CAJA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* SIN CAJA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>SIN ETIQUETA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>SIN ETIQUETA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* SIN ETIQUETA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* SIN ETIQUETA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>DANADO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>DANADO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* DANADO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* DANADO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>DANADA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>DANADA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* DANADA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* DANADA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>DANADOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>DANADOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* DANADOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* DANADOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>ROTO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>ROTO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* ROTO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* ROTO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>ROTA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>ROTA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* ROTA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* ROTA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>MALTRATADO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>MALTRATADO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* MALTRATADO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* MALTRATADO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>GOLPEADO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>GOLPEADO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* GOLPEADO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* GOLPEADO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>MANCHADO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>MANCHADO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* MANCHADO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* MANCHADO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>SUCIO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>SUCIO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* SUCIO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>* SUCIO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+
+<!-- EQUIVOCADO -->
+<category><pattern>INTENCION EQUIVOCADO</pattern><template><think><set name="topic">ENTREGA</set><set name="fallos">0</set></think>Lamento el error. Envía a <srai>INFO CORREO</srai> tu número de pedido y una foto de lo que recibiste (con la etiqueta de la caja) y lo resolvemos con un envío correcto sin costo, o con reembolso si lo prefieres.</template></category>
+<category><pattern>NO SON MIOS</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO SON MIOS *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO SON MIOS</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO SON MIOS *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO SON LOS MIOS</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO SON LOS MIOS *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO SON LOS MIOS</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO SON LOS MIOS *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO SON LOS QUE PEDI</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO SON LOS QUE PEDI *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO SON LOS QUE PEDI</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO SON LOS QUE PEDI *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO SON LOS QUE COMPRE</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO SON LOS QUE COMPRE *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO SON LOS QUE COMPRE</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO SON LOS QUE COMPRE *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO FUE LO QUE PEDI</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO FUE LO QUE PEDI *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO FUE LO QUE PEDI</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO FUE LO QUE PEDI *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO FUE LO QUE COMPRE</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO FUE LO QUE COMPRE *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO FUE LO QUE COMPRE</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO FUE LO QUE COMPRE *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO SON LOS TENIS QUE PEDI</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO SON LOS TENIS QUE PEDI *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO SON LOS TENIS QUE PEDI</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO SON LOS TENIS QUE PEDI *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>PRODUCTO EQUIVOCADO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>PRODUCTO EQUIVOCADO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* PRODUCTO EQUIVOCADO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* PRODUCTO EQUIVOCADO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>MODELO EQUIVOCADO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>MODELO EQUIVOCADO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* MODELO EQUIVOCADO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* MODELO EQUIVOCADO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>COLOR EQUIVOCADO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>COLOR EQUIVOCADO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* COLOR EQUIVOCADO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* COLOR EQUIVOCADO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>ARTICULO EQUIVOCADO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>ARTICULO EQUIVOCADO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* ARTICULO EQUIVOCADO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* ARTICULO EQUIVOCADO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>PEDIDO EQUIVOCADO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>PEDIDO EQUIVOCADO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* PEDIDO EQUIVOCADO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* PEDIDO EQUIVOCADO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>ME MANDARON OTRO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>ME MANDARON OTRO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* ME MANDARON OTRO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* ME MANDARON OTRO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>ME MANDARON OTROS</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>ME MANDARON OTROS *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* ME MANDARON OTROS</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* ME MANDARON OTROS *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>ME ENVIARON OTRO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>ME ENVIARON OTRO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* ME ENVIARON OTRO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* ME ENVIARON OTRO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>ME LLEGO OTRO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>ME LLEGO OTRO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* ME LLEGO OTRO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* ME LLEGO OTRO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO ES LO QUE PEDI</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO ES LO QUE PEDI *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO ES LO QUE PEDI</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO ES LO QUE PEDI *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO ES LO QUE COMPRE</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO ES LO QUE COMPRE *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO ES LO QUE COMPRE</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO ES LO QUE COMPRE *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>PEDIDO INCOMPLETO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>PEDIDO INCOMPLETO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* PEDIDO INCOMPLETO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* PEDIDO INCOMPLETO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>FALTA UN</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>FALTA UN *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* FALTA UN</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* FALTA UN *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>FALTA UNO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>FALTA UNO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* FALTA UNO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* FALTA UNO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>ME FALTA UN</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>ME FALTA UN *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* ME FALTA UN</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* ME FALTA UN *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>ME FALTO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>ME FALTO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* ME FALTO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* ME FALTO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>UN SOLO ZAPATO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>UN SOLO ZAPATO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* UN SOLO ZAPATO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* UN SOLO ZAPATO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>SOLO UN ZAPATO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>SOLO UN ZAPATO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* SOLO UN ZAPATO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* SOLO UN ZAPATO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>INCOMPLETO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* INCOMPLETO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* INCOMPLETO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>EQUIVOCADO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* EQUIVOCADO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* EQUIVOCADO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO PEDI</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO PEDI</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO PEDI *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO COMPRE</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO COMPRE</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO COMPRE *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>NO ERA MI PEDIDO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO ERA MI PEDIDO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>* NO ERA MI PEDIDO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+
+<!-- CANCELAR -->
+<category><pattern>INTENCION CANCELAR</pattern><template><think><set name="topic">PEDIDO</set><set name="fallos">0</set></think>Puedes cancelar sin costo si tu pedido aún no ha salido de bodega: escríbenos cuanto antes a <srai>INFO CORREO</srai> con tu número de pedido. Si ya fue enviado, puedes rechazar la entrega o solicitar una devolución al recibirlo. El reembolso tarda <srai>INFO PLAZO REEMBOLSO</srai>.</template></category>
+<category><pattern>COMO LO CANCELO</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>COMO LO CANCELO *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* COMO LO CANCELO</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* COMO LO CANCELO *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>COMO CANCELO</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>COMO CANCELO *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* COMO CANCELO</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* COMO CANCELO *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>CANCELARLO</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>CANCELARLO *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* CANCELARLO</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* CANCELARLO *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>CANCELARLA</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>CANCELARLA *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* CANCELARLA</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* CANCELARLA *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>LO CANCELO</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>LO CANCELO *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* LO CANCELO</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* LO CANCELO *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>CANCELO</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>CANCELO *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* CANCELO</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* CANCELO *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>COMO LA CANCELO</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>COMO LA CANCELO *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* COMO LA CANCELO</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* COMO LA CANCELO *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>CANCELAR</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>CANCELAR *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* CANCELAR</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* CANCELAR *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>CANCELACION</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>CANCELACION *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* CANCELACION</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* CANCELACION *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>CANCELACIONES</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>CANCELACIONES *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* CANCELACIONES</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* CANCELACIONES *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>ANULAR</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>ANULAR *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* ANULAR</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* ANULAR *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>YA NO QUIERO MI PEDIDO</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>YA NO QUIERO MI PEDIDO *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* YA NO QUIERO MI PEDIDO</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* YA NO QUIERO MI PEDIDO *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>YA NO LO QUIERO</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>YA NO LO QUIERO *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* YA NO LO QUIERO</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* YA NO LO QUIERO *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>NO QUIERO MI PEDIDO</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>NO QUIERO MI PEDIDO *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* NO QUIERO MI PEDIDO</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* NO QUIERO MI PEDIDO *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>DAR DE BAJA</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>DAR DE BAJA *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* DAR DE BAJA</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* DAR DE BAJA *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>ME ARREPENTI</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>ME ARREPENTI *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* ME ARREPENTI</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+<category><pattern>* ME ARREPENTI *</pattern><template><srai>INTENCION CANCELAR</srai></template></category>
+
+<!-- HACER PEDIDO -->
+<category><pattern>INTENCION HACER PEDIDO</pattern><template><think><set name="topic">PEDIDO</set><set name="fallos">0</set></think>Puedes realizar tus pedidos directamente en nuestro sitio web oficial <srai>INFO SITIO</srai>: elige tus tenis, selecciona talla y color, agrégalos al carrito y finaliza el pago. Si prefieres, dime qué tipo de tenis buscas y te oriento.</template></category>
+<category><pattern>DONDE HAGO UN PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>DONDE HAGO UN PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* DONDE HAGO UN PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* DONDE HAGO UN PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>DONDE SE HACEN LOS PEDIDOS</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>DONDE SE HACEN LOS PEDIDOS *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* DONDE SE HACEN LOS PEDIDOS</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* DONDE SE HACEN LOS PEDIDOS *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>DONDE PUEDO HACER PEDIDOS</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>DONDE PUEDO HACER PEDIDOS *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* DONDE PUEDO HACER PEDIDOS</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* DONDE PUEDO HACER PEDIDOS *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>DONDE PUEDO HACER UN PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>DONDE PUEDO HACER UN PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* DONDE PUEDO HACER UN PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* DONDE PUEDO HACER UN PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>COMO HAGO UN PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>COMO HAGO UN PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* COMO HAGO UN PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* COMO HAGO UN PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>COMO HAGO MI PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>COMO HAGO MI PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* COMO HAGO MI PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* COMO HAGO MI PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>COMO HACER UN PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>COMO HACER UN PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* COMO HACER UN PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* COMO HACER UN PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>HACER UN PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>HACER UN PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* HACER UN PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* HACER UN PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>HACER EL PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>HACER EL PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* HACER EL PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* HACER EL PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>HACER MI PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>HACER MI PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* HACER MI PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* HACER MI PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>REALIZAR UN PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>REALIZAR UN PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* REALIZAR UN PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* REALIZAR UN PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>REALIZAR MI PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>REALIZAR MI PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* REALIZAR MI PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* REALIZAR MI PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>COMO COMPRO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>COMO COMPRO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* COMO COMPRO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* COMO COMPRO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>COMO COMPRAR</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>COMO COMPRAR *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* COMO COMPRAR</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* COMO COMPRAR *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>COMO PUEDO COMPRAR</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>COMO PUEDO COMPRAR *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* COMO PUEDO COMPRAR</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* COMO PUEDO COMPRAR *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>COMO HAGO UNA COMPRA</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>COMO HAGO UNA COMPRA *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* COMO HAGO UNA COMPRA</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* COMO HAGO UNA COMPRA *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>HACER UNA COMPRA</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>HACER UNA COMPRA *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* HACER UNA COMPRA</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* HACER UNA COMPRA *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>COMPRAR EN LINEA</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>COMPRAR EN LINEA *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* COMPRAR EN LINEA</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* COMPRAR EN LINEA *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>ME AYUDAS A HACER EL PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>ME AYUDAS A HACER EL PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* ME AYUDAS A HACER EL PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* ME AYUDAS A HACER EL PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>AYUDAME A HACER EL PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>AYUDAME A HACER EL PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* AYUDAME A HACER EL PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* AYUDAME A HACER EL PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>AYUDA CON MI PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>AYUDA CON MI PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* AYUDA CON MI PEDIDO</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* AYUDA CON MI PEDIDO *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>AYUDA PARA COMPRAR</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>AYUDA PARA COMPRAR *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* AYUDA PARA COMPRAR</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* AYUDA PARA COMPRAR *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>GENERAR MI ORDEN</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>GENERAR MI ORDEN *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* GENERAR MI ORDEN</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* GENERAR MI ORDEN *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>GENERAR UNA ORDEN</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>GENERAR UNA ORDEN *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* GENERAR UNA ORDEN</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>* GENERAR UNA ORDEN *</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>QUIERO COMPRAR</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>PARA COMPRAR</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+<category><pattern>COMPRAR</pattern><template><srai>INTENCION HACER PEDIDO</srai></template></category>
+
+<!-- TEMA PEDIDO -->
+<category><pattern>INTENCION TEMA PEDIDO</pattern><template><think><set name="topic">PEDIDO</set><set name="fallos">0</set></think>Sobre tu pedido puedo ayudarte a rastrearlo, decirte cuánto tarda, cambiar la dirección de entrega o cancelarlo. ¿Qué necesitas?</template></category>
+<category><pattern>PEDIDO</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>PEDIDOS</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>COMPRA</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>COMPRAS</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>MI PEDIDO</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>MI COMPRA</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>SOBRE MI PEDIDO</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>PROBLEMA CON MI PEDIDO</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>TENGO UN PROBLEMA CON MI PEDIDO</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>DUDA SOBRE MI PEDIDO</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+
+<!-- Patrones con hueco: la palabra interrogativa se conserva y el * absorbe el relleno ('donde viene mi paquete') -->
+<category><pattern>DONDE * PEDIDO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE * PEDIDO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE * PAQUETE</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE * PAQUETE *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE * ORDEN</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE * ORDEN *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE * COMPRA</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE * COMPRA *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE * ENVIO</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>DONDE * ENVIO *</pattern><template><srai>INTENCION RASTREO</srai></template></category>
+<category><pattern>CUANDO * LLEGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANDO * LLEGARA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANDO * LLEGAN</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANDO * ENTREGAN</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANDO * ENTREGARAN</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
+<category><pattern>CUANDO * ME LLEGA</pattern><template><srai>INTENCION TIEMPOS</srai></template></category>
 </aiml>
