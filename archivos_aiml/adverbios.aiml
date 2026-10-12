@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- Adverbios y muletillas que se eliminan al inicio o al final (<sr/>). -->
+<!-- Al inicio: 'realmente quiero cambiar mi talla' -> 'quiero cambiar mi talla' -->
+
+<category><pattern>ABSOLUTAMENTE *</pattern><template><sr/></template></category>
+<category><pattern>ACTUALMENTE *</pattern><template><sr/></template></category>
+<category><pattern>ADEMAS *</pattern><template><sr/></template></category>
+<category><pattern>AL PARECER *</pattern><template><sr/></template></category>
+<category><pattern>APARENTEMENTE *</pattern><template><sr/></template></category>
+<category><pattern>APROXIMADAMENTE *</pattern><template><sr/></template></category>
+<category><pattern>AUTOMATICAMENTE *</pattern><template><sr/></template></category>
+<category><pattern>BASICAMENTE *</pattern><template><sr/></template></category>
+<category><pattern>BASTANTE *</pattern><template><sr/></template></category>
+<category><pattern>CASI *</pattern><template><sr/></template></category>
+<category><pattern>CIERTAMENTE *</pattern><template><sr/></template></category>
+<category><pattern>CLARAMENTE *</pattern><template><sr/></template></category>
+<category><pattern>COMPLETAMENTE *</pattern><template><sr/></template></category>
+<category><pattern>DEFINITIVAMENTE *</pattern><template><sr/></template></category>
+<category><pattern>DE HECHO *</pattern><template><sr/></template></category>
+<category><pattern>DIRECTAMENTE *</pattern><template><sr/></template></category>
+<category><pattern>EN GENERAL *</pattern><template><sr/></template></category>
+<category><pattern>EN FIN *</pattern><template><sr/></template></category>
+<category><pattern>EN REALIDAD *</pattern><template><sr/></template></category>
+<category><pattern>ES DECIR *</pattern><template><sr/></template></category>
+<category><pattern>ESPECIALMENTE *</pattern><template><sr/></template></category>
+<category><pattern>EVIDENTEMENTE *</pattern><template><sr/></template></category>
+<category><pattern>EXACTAMENTE *</pattern><template><sr/></template></category>
+<category><pattern>FINALMENTE *</pattern><template><sr/></template></category>
+<category><pattern>GENERALMENTE *</pattern><template><sr/></template></category>
+<category><pattern>HONESTAMENTE *</pattern><template><sr/></template></category>
+<category><pattern>LITERALMENTE *</pattern><template><sr/></template></category>
+<category><pattern>MAS O MENOS *</pattern><template><sr/></template></category>
+<category><pattern>NATURALMENTE *</pattern><template><sr/></template></category>
+<category><pattern>NORMALMENTE *</pattern><template><sr/></template></category>
+<category><pattern>OBVIAMENTE *</pattern><template><sr/></template></category>
+<category><pattern>PARTICULARMENTE *</pattern><template><sr/></template></category>
+<category><pattern>PERSONALMENTE *</pattern><template><sr/></template></category>
+<category><pattern>POR EJEMPLO *</pattern><template><sr/></template></category>
+<category><pattern>POR SUPUESTO *</pattern><template><sr/></template></category>
+<category><pattern>POR FAVOR *</pattern><template><sr/></template></category>
+<category><pattern>POSIBLEMENTE *</pattern><template><sr/></template></category>
+<category><pattern>PROBABLEMENTE *</pattern><template><sr/></template></category>
+<category><pattern>REALMENTE *</pattern><template><sr/></template></category>
+<category><pattern>SEGURAMENTE *</pattern><template><sr/></template></category>
+<category><pattern>SERIAMENTE *</pattern><template><sr/></template></category>
+<category><pattern>SIEMPRE *</pattern><template><sr/></template></category>
+<category><pattern>SIMPLEMENTE *</pattern><template><sr/></template></category>
+<category><pattern>SINCERAMENTE *</pattern><template><sr/></template></category>
+<category><pattern>SIN EMBARGO *</pattern><template><sr/></template></category>
+<category><pattern>SOBRE TODO *</pattern><template><sr/></template></category>
+<category><pattern>TAMBIEN *</pattern><template><sr/></template></category>
+<category><pattern>TOTALMENTE *</pattern><template><sr/></template></category>
+<category><pattern>UN POCO *</pattern><template><sr/></template></category>
+<category><pattern>MUY *</pattern><template><sr/></template></category>
+<category><pattern>MUCHO *</pattern><template><sr/></template></category>
+<category><pattern>QUIZA *</pattern><template><sr/></template></category>
+<category><pattern>QUIZAS *</pattern><template><sr/></template></category>
+<category><pattern>TAL VEZ *</pattern><template><sr/></template></category>
+<category><pattern>ASIMISMO *</pattern><template><sr/></template></category>
+<category><pattern>DE TODOS MODOS *</pattern><template><sr/></template></category>
+<category><pattern>DE TODAS FORMAS *</pattern><template><sr/></template></category>
+<category><pattern>POR LO MENOS *</pattern><template><sr/></template></category>
+
+<!-- Al final: 'quiero cambiar mi talla por favor' -> 'quiero cambiar mi talla' -->
+
+<category><pattern>* ABSOLUTAMENTE</pattern><template><sr/></template></category>
+<category><pattern>* ACTUALMENTE</pattern><template><sr/></template></category>
+<category><pattern>* ADEMAS</pattern><template><sr/></template></category>
+<category><pattern>* AL PARECER</pattern><template><sr/></template></category>
+<category><pattern>* APARENTEMENTE</pattern><template><sr/></template></category>
+<category><pattern>* APROXIMADAMENTE</pattern><template><sr/></template></category>
+<category><pattern>* AUTOMATICAMENTE</pattern><template><sr/></template></category>
+<category><pattern>* BASICAMENTE</pattern><template><sr/></template></category>
+<category><pattern>* BASTANTE</pattern><template><sr/></template></category>
+<category><pattern>* CASI</pattern><template><sr/></template></category>
+<category><pattern>* CIERTAMENTE</pattern><template><sr/></template></category>
+<category><pattern>* CLARAMENTE</pattern><template><sr/></template></category>
+<category><pattern>* COMPLETAMENTE</pattern><template><sr/></template></category>
+<category><pattern>* DEFINITIVAMENTE</pattern><template><sr/></template></category>
+<category><pattern>* DE HECHO</pattern><template><sr/></template></category>
+<category><pattern>* DIRECTAMENTE</pattern><template><sr/></template></category>
+<category><pattern>* EN GENERAL</pattern><template><sr/></template></category>
+<category><pattern>* EN FIN</pattern><template><sr/></template></category>
+<category><pattern>* EN REALIDAD</pattern><template><sr/></template></category>
+<category><pattern>* ES DECIR</pattern><template><sr/></template></category>
+<category><pattern>* ESPECIALMENTE</pattern><template><sr/></template></category>
+<category><pattern>* EVIDENTEMENTE</pattern><template><sr/></template></category>
+<category><pattern>* EXACTAMENTE</pattern><template><sr/></template></category>
+<category><pattern>* FINALMENTE</pattern><template><sr/></template></category>
+<category><pattern>* GENERALMENTE</pattern><template><sr/></template></category>
+<category><pattern>* HONESTAMENTE</pattern><template><sr/></template></category>
+<category><pattern>* LITERALMENTE</pattern><template><sr/></template></category>
+<category><pattern>* MAS O MENOS</pattern><template><sr/></template></category>
+<category><pattern>* NATURALMENTE</pattern><template><sr/></template></category>
+<category><pattern>* NORMALMENTE</pattern><template><sr/></template></category>
+<category><pattern>* OBVIAMENTE</pattern><template><sr/></template></category>
+<category><pattern>* PARTICULARMENTE</pattern><template><sr/></template></category>
+<category><pattern>* PERSONALMENTE</pattern><template><sr/></template></category>
+<category><pattern>* POR EJEMPLO</pattern><template><sr/></template></category>
+<category><pattern>* POR SUPUESTO</pattern><template><sr/></template></category>
+<category><pattern>* POR FAVOR</pattern><template><sr/></template></category>
+<category><pattern>* POSIBLEMENTE</pattern><template><sr/></template></category>
+<category><pattern>* PROBABLEMENTE</pattern><template><sr/></template></category>
+<category><pattern>* REALMENTE</pattern><template><sr/></template></category>
+<category><pattern>* SEGURAMENTE</pattern><template><sr/></template></category>
+<category><pattern>* SERIAMENTE</pattern><template><sr/></template></category>
+<category><pattern>* SIEMPRE</pattern><template><sr/></template></category>
+<category><pattern>* SIMPLEMENTE</pattern><template><sr/></template></category>
+<category><pattern>* SINCERAMENTE</pattern><template><sr/></template></category>
+<category><pattern>* SIN EMBARGO</pattern><template><sr/></template></category>
+<category><pattern>* SOBRE TODO</pattern><template><sr/></template></category>
+<category><pattern>* TAMBIEN</pattern><template><sr/></template></category>
+<category><pattern>* TOTALMENTE</pattern><template><sr/></template></category>
+<category><pattern>* UN POCO</pattern><template><sr/></template></category>
+<category><pattern>* MUY</pattern><template><sr/></template></category>
+<category><pattern>* MUCHO</pattern><template><sr/></template></category>
+<category><pattern>* QUIZA</pattern><template><sr/></template></category>
+<category><pattern>* QUIZAS</pattern><template><sr/></template></category>
+<category><pattern>* TAL VEZ</pattern><template><sr/></template></category>
+<category><pattern>* ASIMISMO</pattern><template><sr/></template></category>
+<category><pattern>* DE TODOS MODOS</pattern><template><sr/></template></category>
+<category><pattern>* DE TODAS FORMAS</pattern><template><sr/></template></category>
+<category><pattern>* POR LO MENOS</pattern><template><sr/></template></category>
+</aiml>

@@ -1,98 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 
-    <category><pattern>ADIOS _</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>ADIOS</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>CHAO _</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>CHAO</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>HASTA LA PROXIMA _</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>HASTA LA PROXIMA</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>HASTA LA VISTA _</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>HASTA LA VISTA</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>HASTA LUEGO _</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>HASTA LUEGO</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>HASTA MAS VERNOS _</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>HASTA MAS VERNOS</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>HASTA OTRA _</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>HASTA OTRA</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>HASTA PRONTO _</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>HASTA PRONTO</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>ME LARGO _</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>ME LARGO</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>ME MARCHO _</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>ME MARCHO</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>ME TENGO QUE IR *</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>ME TENGO QUE IR</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>ME VOY *</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>ME VOY</pattern><template>Bueno. <srai>ADIOS</srai></template></category>
-    <category><pattern>NOS VEMOS _</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>NOS VEMOS</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>QUE TE VAYA BIEN _</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>QUE TE VAYA BIEN</pattern><template>Gracias. <srai>ADIOS</srai></template></category>
-    <category><pattern>TE DEJO _</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>TE DEJO</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>TENGO QUE DEJARTE _</pattern><template>De acuerdo. <srai>ADIOS</srai></template></category>
-    <category><pattern>TENGO QUE DEJARTE</pattern><template>Muy bien. <srai>ADIOS</srai></template></category>
-    <category><pattern>TENGO QUE IRME _</pattern><template>Esta bien. <srai>ADIOS</srai></template></category>
-    <category><pattern>TENGO QUE IRME</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>BYE</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>BYE *</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>BYE BYE</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>BYE BYE *</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>BYEBYE</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>BYEBYE *</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>DESCONECTAME</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>END</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>EXIT</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>PIERDETE</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>PIRATE</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>MARCHATE</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>VETE A CASA</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>GOOD BY</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>GOOD BYE</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>GOOD BYE *</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>GOOD NITE</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>GOODBY</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>GOODBYE</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>GOODBYE *</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>VOY A IRME</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>* VOY A IRME</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>NO QUIERO HABLAR MAS</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>SAYONARA</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>TA TA</pattern><template><srai>ADIOS</srai></template></category>
-    <category><pattern>TIME TO GO</pattern><template><srai>ADIOS</srai></template></category>
+<!-- Despedidas y agradecimientos -->
+<!-- Despedidas: con texto adicional también cierran la conversación -->
 
-    <category>
-        <pattern>ADIOS</pattern>
-        <template>
-            <random>
-                <li>Nos vemos.</li>
-                <li>Chao.</li>
-                <li>Hasta la próxima.</li>
-                <li>Adiós.</li>
-                <li>Hasta luego.</li>
-                <li>Espero verte pronto.</li>
-                <li>Encantado de haber hablado contigo.</li>
-                <li>Espero haberte sido de ayuda. Hasta otra.</li>
-                <li>Ciao.</li>
-                <li>Me lo he pasado genial. Vuelve pronto a 'Patitas pa' que las quiero'.</li>
-            </random>
-        </template>
-    </category>
+<category><pattern>CHAO</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>CHAO *</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>* CHAO</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>HASTA LUEGO</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>HASTA LUEGO *</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>* HASTA LUEGO</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>HASTA PRONTO</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>HASTA PRONTO *</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>* HASTA PRONTO</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>HASTA LA PROXIMA</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>HASTA LA PROXIMA *</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>* HASTA LA PROXIMA</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>HASTA OTRA</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>HASTA OTRA *</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>* HASTA OTRA</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>NOS VEMOS</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>NOS VEMOS *</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>* NOS VEMOS</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>BYE</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>BYE *</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>* BYE</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>BYE BYE</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>BYE BYE *</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>* BYE BYE</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>GOODBYE</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>GOODBYE *</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>* GOODBYE</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>QUE TE VAYA BIEN</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>QUE TE VAYA BIEN *</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>* QUE TE VAYA BIEN</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>ADIOS *</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>* ADIOS</pattern><template><srai>ADIOS</srai></template></category>
 
-    <category><pattern>_ GRACIAS *</pattern><template><srai>GRACIAS</srai></template></category>
-    <category><pattern>_ GRACIAS</pattern><template><srai>GRACIAS</srai></template></category>
-    <category><pattern>GRACIAS *</pattern><template><srai>GRACIAS</srai></template></category>
-    <category>
-        <pattern>GRACIAS</pattern>
-        <template>
-            <random>
-                <li>No hay de qué.</li>
-                <li>De nada.</li>
-                <li>Para eso estoy.</li>
-                <li>De nada, ¿necesitas algo más?</li>
-            </random>
-        </template>
-    </category>
+<!-- Despedidas que solo valen si son la frase completa -->
+<category><pattern>ME VOY</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>ME TENGO QUE IR</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>TENGO QUE IRME</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>TE DEJO</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>ME MARCHO</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>HASTA LA VISTA</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>SAYONARA</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>EXIT</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>END</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>DESCONECTAME</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>ES TODO</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>ESO ES TODO</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>ESO ERA TODO</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>NADA MAS</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>NADA MAS GRACIAS</pattern><template><srai>ADIOS</srai></template></category>
+<category><pattern>ADIOS</pattern><template><random><li>¡Hasta luego! Gracias por escribir a <srai>INFO TIENDA</srai>.</li><li>Que tengas excelente día. Aquí estaré cuando me necesites.</li><li>Hasta pronto. Si tienes otra duda, escríbeme cuando quieras.</li><li>Gracias por contactarnos. ¡Hasta la próxima!</li></random></template></category>
 
+<!-- Gracias -->
+<category><pattern>GRACIAS</pattern><template><srai>AGRADECIMIENTO</srai></template></category>
+<category><pattern>* GRACIAS</pattern><template><srai>AGRADECIMIENTO</srai></template></category>
+<category><pattern>GRACIAS POR *</pattern><template><srai>AGRADECIMIENTO</srai></template></category>
+<category><pattern>TE LO AGRADEZCO</pattern><template><srai>AGRADECIMIENTO</srai></template></category>
+<category><pattern>MUY AMABLE</pattern><template><srai>AGRADECIMIENTO</srai></template></category>
+<category><pattern>GRACIAS *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>AGRADECIMIENTO</pattern><template><random><li>De nada. ¿Hay algo más en lo que pueda ayudarte?</li><li>Con gusto. Si tienes otra duda, aquí estoy.</li><li>Para eso estoy. ¿Necesitas algo más?</li><li>¡Un placer ayudarte!</li></random></template></category>
 </aiml>

@@ -1,14 +1,679 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 
-    <category>
-        <pattern>*</pattern>
-        <template>
-            <random>
-                <li>Disculpa, no entendí tu consulta. En 'Patitas pa' que las quiero' puedo ayudarte con: rastrear pedido, envíos a provincia, métodos de pago, catálogo de tenis o políticas de cambio.</li>
-                <li>No estoy seguro de haber comprendido. Prueba preguntando: "¿Cómo rastreo mi pedido?", "¿Aceptan tarjeta?" o "¿Cuál es su política de cambios?".</li>
-                <li>Como asistente de 'Patitas pa' que las quiero', aún no reconozco esa frase. ¿Podrías replantear tu duda sobre nuestros productos o servicios?</li>
-            </random>
-        </template>
-    </category>
+<!-- Fallback (caidas) en dos etapas: (1) RESCATE por palabra clave -> menú del tema; (2) contador de fallos con <condition> -> orientación y escalamiento a humano -->
+
+<!-- RESCATE. Solo aquí actúan estas palabras clave -->
+<category><pattern>*</pattern><template><srai>RESCATE <star/></srai></template></category>
+<category><pattern>RESCATE *</pattern><template><srai>FALLBACK</srai></template></category>
+<category><pattern>RESCATE PEDIDO</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE PEDIDO *</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE * PEDIDO</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE * PEDIDO *</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE PEDIDOS</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE PEDIDOS *</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE * PEDIDOS</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE * PEDIDOS *</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE COMPRA</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE COMPRA *</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE * COMPRA</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE * COMPRA *</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE COMPRAS</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE COMPRAS *</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE * COMPRAS</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE * COMPRAS *</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE ORDEN</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE ORDEN *</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE * ORDEN</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE * ORDEN *</pattern><template><srai>INTENCION TEMA PEDIDO</srai></template></category>
+<category><pattern>RESCATE ENVIO</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE ENVIO *</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE * ENVIO</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE * ENVIO *</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE ENVIOS</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE ENVIOS *</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE * ENVIOS</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE * ENVIOS *</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE ENTREGA</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE ENTREGA *</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE * ENTREGA</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE * ENTREGA *</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE ENTREGAR</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE ENTREGAR *</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE * ENTREGAR</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE * ENTREGAR *</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE ENTREGAN</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE ENTREGAN *</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE * ENTREGAN</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE * ENTREGAN *</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE PAQUETE</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE PAQUETE *</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE * PAQUETE</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE * PAQUETE *</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE PAQUETERIA</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE PAQUETERIA *</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE * PAQUETERIA</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE * PAQUETERIA *</pattern><template><srai>INTENCION TEMA ENVIOS</srai></template></category>
+<category><pattern>RESCATE PAGO</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE PAGO *</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE * PAGO</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE * PAGO *</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE PAGOS</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE PAGOS *</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE * PAGOS</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE * PAGOS *</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE PAGAR</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE PAGAR *</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE * PAGAR</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE * PAGAR *</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE COBRO</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE COBRO *</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE * COBRO</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE * COBRO *</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE COBRARON</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE COBRARON *</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE * COBRARON</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE * COBRARON *</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE DINERO</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE DINERO *</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE * DINERO</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE * DINERO *</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE BANCO</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE BANCO *</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE * BANCO</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE * BANCO *</pattern><template><srai>INTENCION TEMA PAGOS</srai></template></category>
+<category><pattern>RESCATE CAMBIO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>RESCATE CAMBIO *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>RESCATE * CAMBIO</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>RESCATE * CAMBIO *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>RESCATE CAMBIOS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>RESCATE CAMBIOS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>RESCATE * CAMBIOS</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>RESCATE * CAMBIOS *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>RESCATE CAMBIAR</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>RESCATE CAMBIAR *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>RESCATE * CAMBIAR</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>RESCATE * CAMBIAR *</pattern><template><srai>INTENCION CAMBIOS</srai></template></category>
+<category><pattern>RESCATE TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE TENIS *</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE * TENIS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE * TENIS *</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE ZAPATOS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE ZAPATOS *</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE * ZAPATOS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE * ZAPATOS *</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE CALZADO</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE CALZADO *</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE * CALZADO</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE * CALZADO *</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE MODELO</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE MODELO *</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE * MODELO</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE * MODELO *</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE MODELOS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE MODELOS *</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE * MODELOS</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE * MODELOS *</pattern><template><srai>INTENCION BUSCAR TENIS</srai></template></category>
+<category><pattern>RESCATE FACTURA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>RESCATE FACTURA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>RESCATE * FACTURA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>RESCATE * FACTURA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>RESCATE FACTURAR</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>RESCATE FACTURAR *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>RESCATE * FACTURAR</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>RESCATE * FACTURAR *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>RESCATE DESCUENTO</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>RESCATE DESCUENTO *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>RESCATE * DESCUENTO</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>RESCATE * DESCUENTO *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>RESCATE PROMO</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>RESCATE PROMO *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>RESCATE * PROMO</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>RESCATE * PROMO *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>RESCATE CUPON</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>RESCATE CUPON *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>RESCATE * CUPON</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>RESCATE * CUPON *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>RESCATE OFERTA</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>RESCATE OFERTA *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>RESCATE * OFERTA</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>RESCATE * OFERTA *</pattern><template><srai>INTENCION PROMOCIONES</srai></template></category>
+<category><pattern>RESCATE PRECIO</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE PRECIO *</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE * PRECIO</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE * PRECIO *</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE PRECIOS</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE PRECIOS *</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE * PRECIOS</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE * PRECIOS *</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE CUESTA</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE CUESTA *</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE * CUESTA</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE * CUESTA *</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE COSTO</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE COSTO *</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE * COSTO</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE * COSTO *</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE COSTOS</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE COSTOS *</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE * COSTOS</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE * COSTOS *</pattern><template><srai>INTENCION RANGO PRECIOS</srai></template></category>
+<category><pattern>RESCATE HORARIO</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE HORARIO *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE * HORARIO</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE * HORARIO *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE HORA</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE HORA *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE * HORA</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE * HORA *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE ABREN</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE ABREN *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE * ABREN</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE * ABREN *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE CIERRAN</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE CIERRAN *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE * CIERRAN</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE * CIERRAN *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE ATIENDEN</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE ATIENDEN *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE * ATIENDEN</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE * ATIENDEN *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE TRABAJAN</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE TRABAJAN *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE * TRABAJAN</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE * TRABAJAN *</pattern><template><srai>INTENCION HORARIO ATENCION</srai></template></category>
+<category><pattern>RESCATE BODEGA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE BODEGA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE * BODEGA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE * BODEGA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE QUEDA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE QUEDA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE * QUEDA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE * QUEDA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE QUEDAN</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE QUEDAN *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE * QUEDAN</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE * QUEDAN *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE UBICADOS</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE UBICADOS *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE * UBICADOS</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE * UBICADOS *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE UBICACION</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE UBICACION *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE * UBICACION</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE * UBICACION *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>RESCATE TIENDA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE TIENDA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE * TIENDA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE * TIENDA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE LOCAL</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE LOCAL *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE * LOCAL</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE * LOCAL *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE SUCURSAL</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE SUCURSAL *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE * SUCURSAL</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE * SUCURSAL *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE SHOWROOM</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE SHOWROOM *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE * SHOWROOM</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE * SHOWROOM *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE PROBAR</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE PROBAR *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE * PROBAR</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE * PROBAR *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE PROBARME</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE PROBARME *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE * PROBARME</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE * PROBARME *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>RESCATE ASESOR</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>RESCATE ASESOR *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>RESCATE * ASESOR</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>RESCATE * ASESOR *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>RESCATE PERSONA</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>RESCATE PERSONA *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>RESCATE * PERSONA</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>RESCATE * PERSONA *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>RESCATE AGENTE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>RESCATE AGENTE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>RESCATE * AGENTE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>RESCATE * AGENTE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>RESCATE ALGUIEN</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>RESCATE ALGUIEN *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>RESCATE * ALGUIEN</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>RESCATE * ALGUIEN *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>RESCATE TALLA</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>RESCATE TALLA *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>RESCATE * TALLA</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>RESCATE * TALLA *</pattern><template><srai>INTENCION TALLAS</srai></template></category>
+<category><pattern>RESCATE AGUASCALIENTES</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE AGUASCALIENTES *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * AGUASCALIENTES</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * AGUASCALIENTES *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE BAJA CALIFORNIA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE BAJA CALIFORNIA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * BAJA CALIFORNIA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * BAJA CALIFORNIA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE CAMPECHE</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE CAMPECHE *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * CAMPECHE</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * CAMPECHE *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE CHIAPAS</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE CHIAPAS *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * CHIAPAS</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * CHIAPAS *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE CHIHUAHUA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE CHIHUAHUA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * CHIHUAHUA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * CHIHUAHUA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE COAHUILA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE COAHUILA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * COAHUILA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * COAHUILA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE COLIMA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE COLIMA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * COLIMA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * COLIMA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE DURANGO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE DURANGO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * DURANGO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * DURANGO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE GUANAJUATO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE GUANAJUATO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * GUANAJUATO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * GUANAJUATO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE GUERRERO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE GUERRERO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * GUERRERO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * GUERRERO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE HIDALGO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE HIDALGO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * HIDALGO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * HIDALGO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE JALISCO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE JALISCO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * JALISCO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * JALISCO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE MICHOACAN</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE MICHOACAN *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * MICHOACAN</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * MICHOACAN *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE MORELOS</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE MORELOS *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * MORELOS</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * MORELOS *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE NAYARIT</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE NAYARIT *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * NAYARIT</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * NAYARIT *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE NUEVO LEON</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE NUEVO LEON *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * NUEVO LEON</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * NUEVO LEON *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE OAXACA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE OAXACA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * OAXACA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * OAXACA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE PUEBLA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE PUEBLA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * PUEBLA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * PUEBLA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE QUERETARO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE QUERETARO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * QUERETARO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * QUERETARO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE QUINTANA ROO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE QUINTANA ROO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * QUINTANA ROO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * QUINTANA ROO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE SAN LUIS POTOSI</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE SAN LUIS POTOSI *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * SAN LUIS POTOSI</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * SAN LUIS POTOSI *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE SINALOA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE SINALOA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * SINALOA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * SINALOA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE SONORA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE SONORA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * SONORA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * SONORA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE TABASCO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE TABASCO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * TABASCO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * TABASCO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE TAMAULIPAS</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE TAMAULIPAS *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * TAMAULIPAS</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * TAMAULIPAS *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE TLAXCALA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE TLAXCALA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * TLAXCALA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * TLAXCALA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE VERACRUZ</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE VERACRUZ *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * VERACRUZ</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * VERACRUZ *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE YUCATAN</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE YUCATAN *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * YUCATAN</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * YUCATAN *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE ZACATECAS</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE ZACATECAS *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * ZACATECAS</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * ZACATECAS *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE MONTERREY</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE MONTERREY *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * MONTERREY</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * MONTERREY *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE GUADALAJARA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE GUADALAJARA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * GUADALAJARA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * GUADALAJARA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE TIJUANA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE TIJUANA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * TIJUANA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * TIJUANA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE CANCUN</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE CANCUN *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * CANCUN</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * CANCUN *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE MERIDA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE MERIDA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * MERIDA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * MERIDA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE TOLUCA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE TOLUCA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * TOLUCA</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * TOLUCA *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE ACAPULCO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE ACAPULCO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * ACAPULCO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * ACAPULCO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE CULIACAN</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE CULIACAN *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * CULIACAN</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * CULIACAN *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE HERMOSILLO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE HERMOSILLO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * HERMOSILLO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * HERMOSILLO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE SALTILLO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE SALTILLO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * SALTILLO</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * SALTILLO *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE MANDAN</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE MANDAN *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * MANDAN</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * MANDAN *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE ENVIAN</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE ENVIAN *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * ENVIAN</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * ENVIAN *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE ENVIARON</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE ENVIARON *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * ENVIARON</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * ENVIARON *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE MANDARON</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE MANDARON *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * MANDARON</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE * MANDARON *</pattern><template><srai>INTENCION COBERTURA</srai></template></category>
+<category><pattern>RESCATE DEVOLVER</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE DEVOLVER *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE * DEVOLVER</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE * DEVOLVER *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE DEVOLUCION</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE DEVOLUCION *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE * DEVOLUCION</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE * DEVOLUCION *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE DEVOLUCIONES</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE DEVOLUCIONES *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE * DEVOLUCIONES</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE * DEVOLUCIONES *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE REGRESAR</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE REGRESAR *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE * REGRESAR</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE * REGRESAR *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE DEVOLVERLO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE DEVOLVERLO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE * DEVOLVERLO</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE * DEVOLVERLO *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE DEVOLVERLOS</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE DEVOLVERLOS *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE * DEVOLVERLOS</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE * DEVOLVERLOS *</pattern><template><srai>INTENCION DEVOLUCION</srai></template></category>
+<category><pattern>RESCATE SUELA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE SUELA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * SUELA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * SUELA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE COSTURA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE COSTURA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * COSTURA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * COSTURA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE COSTURAS</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE COSTURAS *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * COSTURAS</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * COSTURAS *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE DESCOSIDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE DESCOSIDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * DESCOSIDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * DESCOSIDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE DESPEGANDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE DESPEGANDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * DESPEGANDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * DESPEGANDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE ROMPIENDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE ROMPIENDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * ROMPIENDO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * ROMPIENDO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE DESPEGO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE DESPEGO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * DESPEGO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * DESPEGO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE DESPEGARON</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE DESPEGARON *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * DESPEGARON</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * DESPEGARON *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE DEFECTUOSO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE DEFECTUOSO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * DEFECTUOSO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * DEFECTUOSO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE DEFECTUOSOS</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE DEFECTUOSOS *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * DEFECTUOSOS</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * DEFECTUOSOS *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE ROMPIO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE ROMPIO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * ROMPIO</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * ROMPIO *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE ROMPIERON</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE ROMPIERON *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * ROMPIERON</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * ROMPIERON *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE GARANTIA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE GARANTIA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * GARANTIA</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE * GARANTIA *</pattern><template><srai>INTENCION DEFECTO</srai></template></category>
+<category><pattern>RESCATE CARGO</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>RESCATE CARGO *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>RESCATE * CARGO</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>RESCATE * CARGO *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>RESCATE CARGOS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>RESCATE CARGOS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>RESCATE * CARGOS</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>RESCATE * CARGOS *</pattern><template><srai>INTENCION COBRO DOBLE</srai></template></category>
+<category><pattern>RESCATE REPARTIDOR</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>RESCATE REPARTIDOR *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>RESCATE * REPARTIDOR</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>RESCATE * REPARTIDOR *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>RESCATE MOVERSE</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>RESCATE MOVERSE *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>RESCATE * MOVERSE</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>RESCATE * MOVERSE *</pattern><template><srai>INTENCION RETRASO</srai></template></category>
+<category><pattern>RESCATE GOLPEADA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE GOLPEADA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * GOLPEADA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * GOLPEADA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE GOLPEADAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE GOLPEADAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * GOLPEADAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * GOLPEADAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE GOLPEADO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE GOLPEADO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * GOLPEADO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * GOLPEADO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE GOLPEADOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE GOLPEADOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * GOLPEADOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * GOLPEADOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE SUCIOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE SUCIOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * SUCIOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * SUCIOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE SUCIAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE SUCIAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * SUCIAS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * SUCIAS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE MANCHADOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE MANCHADOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * MANCHADOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * MANCHADOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE USADOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE USADOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * USADOS</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * USADOS *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE APLASTADA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE APLASTADA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * APLASTADA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * APLASTADA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE APLASTADO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE APLASTADO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * APLASTADO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * APLASTADO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE ABOLLADA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE ABOLLADA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * ABOLLADA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * ABOLLADA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE ABOLLADO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE ABOLLADO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * ABOLLADO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * ABOLLADO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE ROTA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE ROTA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * ROTA</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * ROTA *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE ROTO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE ROTO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * ROTO</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE * ROTO *</pattern><template><srai>INTENCION DANADO</srai></template></category>
+<category><pattern>RESCATE HARTO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE HARTO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE * HARTO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE * HARTO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE HARTA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE HARTA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE * HARTA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE * HARTA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE CANSADO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE CANSADO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE * CANSADO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE * CANSADO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE PESIMO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE PESIMO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE * PESIMO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE * PESIMO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE PORQUERIA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE PORQUERIA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE * PORQUERIA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE * PORQUERIA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE BASURA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE BASURA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE * BASURA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE * BASURA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE HORRIBLE</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE HORRIBLE *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE * HORRIBLE</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE * HORRIBLE *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE INCOMPETENTES</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE INCOMPETENTES *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE * INCOMPETENTES</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE * INCOMPETENTES *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RESCATE SABADO</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>RESCATE SABADO *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>RESCATE * SABADO</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>RESCATE * SABADO *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>RESCATE SABADOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>RESCATE SABADOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>RESCATE * SABADOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>RESCATE * SABADOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>RESCATE DOMINGO</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>RESCATE DOMINGO *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>RESCATE * DOMINGO</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>RESCATE * DOMINGO *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>RESCATE DOMINGOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>RESCATE DOMINGOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>RESCATE * DOMINGOS</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>RESCATE * DOMINGOS *</pattern><template><srai>INTENCION DOMINGOS</srai></template></category>
+<category><pattern>RESCATE MESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>RESCATE MESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>RESCATE * MESES</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>RESCATE * MESES *</pattern><template><srai>INTENCION MSI</srai></template></category>
+<category><pattern>RESCATE TRANSFERENCIA</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>RESCATE TRANSFERENCIA *</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>RESCATE * TRANSFERENCIA</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>RESCATE * TRANSFERENCIA *</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>RESCATE SPEI</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>RESCATE SPEI *</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>RESCATE * SPEI</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>RESCATE * SPEI *</pattern><template><srai>INTENCION TRANSFERENCIA</srai></template></category>
+<category><pattern>RESCATE OXXO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>RESCATE OXXO *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>RESCATE * OXXO</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>RESCATE * OXXO *</pattern><template><srai>INTENCION OXXO</srai></template></category>
+<category><pattern>RESCATE PAYPAL</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>RESCATE PAYPAL *</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>RESCATE * PAYPAL</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>RESCATE * PAYPAL *</pattern><template><srai>INTENCION PAYPAL</srai></template></category>
+<category><pattern>RESCATE CODIGO</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>RESCATE CODIGO *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>RESCATE * CODIGO</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>RESCATE * CODIGO *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>RESCATE CODIGOS</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>RESCATE CODIGOS *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>RESCATE * CODIGOS</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>RESCATE * CODIGOS *</pattern><template><srai>INTENCION CUPON</srai></template></category>
+<category><pattern>RESCATE RECOGER</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>RESCATE RECOGER *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>RESCATE * RECOGER</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>RESCATE * RECOGER *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>RESCATE DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>RESCATE DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>RESCATE * DOMICILIO</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>RESCATE * DOMICILIO *</pattern><template><srai>INTENCION DIRECCION ENTREGA</srai></template></category>
+<category><pattern>RESCATE RAPIDO</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>RESCATE RAPIDO *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>RESCATE * RAPIDO</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>RESCATE * RAPIDO *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>RESCATE RAPIDA</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>RESCATE RAPIDA *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>RESCATE * RAPIDA</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>RESCATE * RAPIDA *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>RESCATE PRONTO</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>RESCATE PRONTO *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>RESCATE * PRONTO</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>RESCATE * PRONTO *</pattern><template><srai>INTENCION EXPRESS</srai></template></category>
+<category><pattern>RESCATE EQUIVOCADO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>RESCATE EQUIVOCADO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>RESCATE * EQUIVOCADO</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>RESCATE * EQUIVOCADO *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>RESCATE EQUIVOCADA</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>RESCATE EQUIVOCADA *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>RESCATE * EQUIVOCADA</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+<category><pattern>RESCATE * EQUIVOCADA *</pattern><template><srai>INTENCION EQUIVOCADO</srai></template></category>
+
+<!-- Nada se reconoció. 1er fallo: orienta; 2do: da ejemplos; 3er: ofrece asesor humano y reinicia el contador -->
+<category><pattern>FALLBACK UNO</pattern><template><think><set name="fallos">1</set></think>Disculpa, no entendí tu consulta. En <srai>INFO TIENDA</srai> puedo ayudarte con: rastrear pedido, envíos a provincia, métodos de pago, catálogo de tenis o políticas de cambio.</template></category>
+<category><pattern>FALLBACK DOS</pattern><template><think><set name="fallos">2</set></think>No estoy seguro de haber comprendido. Prueba preguntando: dónde está mi pedido, aceptan tarjeta, cuánto cuesta el envío o cuál es su política de cambios.</template></category>
+<category><pattern>FALLBACK TRES</pattern><template><think><set name="fallos"></set></think>Parece que no logro ayudarte con eso. Te paso con una persona del equipo: escríbenos a <srai>INFO CORREO</srai> indicando tu duda. Atendemos <srai>INFO HORARIO</srai>.</template></category>
+<category><pattern>FALLBACK</pattern><template><condition name="fallos"><li value="1"><srai>FALLBACK DOS</srai></li><li value="2"><srai>FALLBACK TRES</srai></li><li><srai>FALLBACK UNO</srai></li></condition></template></category>
 </aiml>

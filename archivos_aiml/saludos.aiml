@@ -1,39 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 
-    <category><pattern>HOLA</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>HOLA *</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>BUENAS *</pattern><template><srai>ATENDER SALUDO</srai></template></category>
-    <category><pattern>BUENOS DIAS *</pattern><template><srai>ATENDER SALUDO</srai></template></category>
+<!-- Saludos y cortesía inicial. Cada saludo se reduce (<srai>) a HOLA; si trae más texto, se descarta el saludo y se procesa el resto -->
 
-    <category>
-        <pattern>ATENDER SALUDO</pattern>
-        <template>
-            <condition name="usuario">
-                <li value="unknown"><srai>SALUDO ANONIMO</srai></li>
-                <li value=""><srai>SALUDO ANONIMO</srai></li>
-                <li>¡Hola de nuevo, <get name="usuario"/>! ¿En qué te ayudamos hoy en 'Patitas pa' que las quiero'?</li>
-            </condition>
-        </template>
-    </category>
+<!-- Saludos que se reducen a HOLA; con texto adicional ('buenas tardes quiero rastrear...') se procesa solo el resto -->
+<category><pattern>BUEN DIA</pattern><template><srai>HOLA</srai></template></category>
+<category><pattern>BUEN DIA *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>BUENOS DIAS</pattern><template><srai>HOLA</srai></template></category>
+<category><pattern>BUENOS DIAS *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>BUENAS TARDES</pattern><template><srai>HOLA</srai></template></category>
+<category><pattern>BUENAS TARDES *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>BUENAS NOCHES</pattern><template><srai>HOLA</srai></template></category>
+<category><pattern>BUENAS NOCHES *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>BUENAS</pattern><template><srai>HOLA</srai></template></category>
+<category><pattern>BUENAS *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>HEY</pattern><template><srai>HOLA</srai></template></category>
+<category><pattern>HEY *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>HOLI</pattern><template><srai>HOLA</srai></template></category>
+<category><pattern>HOLI *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>HELLO</pattern><template><srai>HOLA</srai></template></category>
+<category><pattern>HELLO *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>HI</pattern><template><srai>HOLA</srai></template></category>
+<category><pattern>HI *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>QUE ONDA</pattern><template><srai>HOLA</srai></template></category>
+<category><pattern>QUE ONDA *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>SALUDOS</pattern><template><srai>HOLA</srai></template></category>
+<category><pattern>SALUDOS *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>ALO</pattern><template><srai>HOLA</srai></template></category>
+<category><pattern>ALO *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>KONNICHIWA</pattern><template><srai>HOLA</srai></template></category>
+<category><pattern>KONNICHIWA *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>CONNECT</pattern><template><srai>HOLA</srai></template></category>
+<category><pattern>HOLA *</pattern><template><srai><star/></srai></template></category>
 
-    <category>
-        <pattern>SALUDO ANONIMO</pattern>
-        <template>
-            <random>
-                <li>¡Hola! Bienvenido a 'Patitas pa' que las quiero'. ¿Cómo te llamas?</li>
-                <li>¡Qué onda! Bienvenido a la tienda. ¿Cuál es tu nombre?</li>
-            </random>
-        </template>
-    </category>
+<!-- HOLA usa <condition> sobre la variable de sesión 'nombre' (memoria con <set>/<get>) -->
+<category><pattern>HOLA</pattern><template><condition name="usuario"><li value=""><srai>SALUDO ANONIMO</srai></li><li value="unknown"><srai>SALUDO ANONIMO</srai></li><li>¡Hola de nuevo, <get name="usuario"/>! ¿En qué te ayudamos hoy en <srai>INFO TIENDA</srai>?</li></condition></template></category>
 
-    <category>
-        <pattern>ME LLAMO *</pattern>
-        <template>
-            <set name="usuario"><star/></set>, ¡un gusto atenderte! Platícame, ¿qué tenis buscas o qué trámite necesitas realizar hoy?
-        </template>
-    </category>
+<!-- ¿Cómo estás? y similares -->
+<category><pattern>COMO ESTAS</pattern><template><srai>QUE TAL</srai></template></category>
+<category><pattern>COMO ESTAN</pattern><template><srai>QUE TAL</srai></template></category>
+<category><pattern>COMO TE VA</pattern><template><srai>QUE TAL</srai></template></category>
+<category><pattern>COMO ANDAS</pattern><template><srai>QUE TAL</srai></template></category>
+<category><pattern>COMO LO LLEVAS</pattern><template><srai>QUE TAL</srai></template></category>
+<category><pattern>COMO VA TODO</pattern><template><srai>QUE TAL</srai></template></category>
+<category><pattern>COMO VA ESO</pattern><template><srai>QUE TAL</srai></template></category>
+<category><pattern>COMO AMANECISTE</pattern><template><srai>QUE TAL</srai></template></category>
+<category><pattern>COMO ESTAS *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>QUE TAL</pattern><template><random><li>¡Muy bien, gracias por preguntar! ¿En qué te puedo ayudar?</li><li>Todo bien por aquí, listo para ayudarte. ¿Qué necesitas?</li><li>Excelente, gracias. ¿Con qué te puedo ayudar hoy?</li></random></template></category>
+<category><pattern>QUE ME CUENTAS</pattern><template><srai>QUE TAL</srai></template></category>
+<category><pattern>QUE TE CUENTAS</pattern><template><srai>QUE TAL</srai></template></category>
+<category><pattern>QUE HAY DE NUEVO</pattern><template><srai>QUE TAL</srai></template></category>
+<category><pattern>QUE HAY</pattern><template><srai>QUE TAL</srai></template></category>
+<category><pattern>QUE PASA</pattern><template><srai>QUE TAL</srai></template></category>
+<category><pattern>COMO VAS</pattern><template><srai>QUE TAL</srai></template></category>
+<category><pattern>ENCANTADO</pattern><template>Igualmente, un gusto. ¿En qué te puedo ayudar?</template></category>
+<category><pattern>ENCANTADA</pattern><template><srai>ENCANTADO</srai></template></category>
+<category><pattern>MUCHO GUSTO</pattern><template><srai>ENCANTADO</srai></template></category>
 
-    <category><pattern>MI NOMBRE ES *</pattern><template><srai>ME LLAMO <star/></srai></template></category>
-    <category><pattern>SOY *</pattern><template><srai>ME LLAMO <star/></srai></template></category>
+<!-- Primer saludo: pide el nombre. La respuesta TERMINA con el prompt para que el <that> coincida -->
+<category><pattern>SALUDO ANONIMO</pattern><template><random><li>¡Hola! Bienvenido a <srai>INFO TIENDA</srai>. Dime tu nombre para atenderte mejor.</li><li>¡Qué onda! Bienvenido a <srai>INFO TIENDA</srai>. Dime tu nombre para atenderte mejor.</li></random></template></category>
+
+<!-- Registro del nombre (<set> dentro de <think> para que no se imprima; <formal> pone 'Fer' en vez de 'FER') -->
+<category><pattern>REGISTRAR USUARIO *</pattern><template><think><set name="usuario"><formal><star/></formal></set></think>Mucho gusto, <get name="usuario"/>. Platícame, ¿qué tenis buscas o qué trámite necesitas hoy? Puedo ayudarte con rastreo de pedidos, envíos, pagos, facturas y cambios.</template></category>
+<category><pattern>ME LLAMO *</pattern><template><srai>REGISTRAR USUARIO <star/></srai></template></category>
+<category><pattern>MI NOMBRE ES *</pattern><template><srai>REGISTRAR USUARIO <star/></srai></template></category>
+<category><pattern>ME DICEN *</pattern><template><srai>REGISTRAR USUARIO <star/></srai></template></category>
+<category><pattern>MI NOMBRE *</pattern><template><srai>REGISTRAR USUARIO <star/></srai></template></category>
+<category><pattern>YO ME LLAMO *</pattern><template><srai>REGISTRAR USUARIO <star/></srai></template></category>
+<category><pattern>PUEDES LLAMARME *</pattern><template><srai>REGISTRAR USUARIO <star/></srai></template></category>
+<category><pattern>LLAMAME *</pattern><template><srai>REGISTRAR USUARIO <star/></srai></template></category>
+<category><pattern>*</pattern><that>DIME TU NOMBRE PARA ATENDERTE MEJOR</that><template><srai>REGISTRAR USUARIO <star/></srai></template></category>
+<category><pattern>*</pattern><that>* DIME TU NOMBRE PARA ATENDERTE MEJOR</that><template><srai>REGISTRAR USUARIO <star/></srai></template></category>
+<category><pattern>SOY *</pattern><that>DIME TU NOMBRE PARA ATENDERTE MEJOR</that><template><srai>REGISTRAR USUARIO <star/></srai></template></category>
+<category><pattern>SOY *</pattern><that>* DIME TU NOMBRE PARA ATENDERTE MEJOR</that><template><srai>REGISTRAR USUARIO <star/></srai></template></category>
+<category><pattern>NO</pattern><that>DIME TU NOMBRE PARA ATENDERTE MEJOR</that><template>Sin problema, no es necesario. ¿En qué te puedo ayudar?</template></category>
+<category><pattern>NO</pattern><that>* DIME TU NOMBRE PARA ATENDERTE MEJOR</that><template>Sin problema, no es necesario. ¿En qué te puedo ayudar?</template></category>
+<category><pattern>NO QUIERO</pattern><that>DIME TU NOMBRE PARA ATENDERTE MEJOR</that><template>Sin problema, no es necesario. ¿En qué te puedo ayudar?</template></category>
+<category><pattern>NO QUIERO</pattern><that>* DIME TU NOMBRE PARA ATENDERTE MEJOR</that><template>Sin problema, no es necesario. ¿En qué te puedo ayudar?</template></category>
+<category><pattern>NO IMPORTA</pattern><that>DIME TU NOMBRE PARA ATENDERTE MEJOR</that><template>Sin problema, no es necesario. ¿En qué te puedo ayudar?</template></category>
+<category><pattern>NO IMPORTA</pattern><that>* DIME TU NOMBRE PARA ATENDERTE MEJOR</that><template>Sin problema, no es necesario. ¿En qué te puedo ayudar?</template></category>
+<category><pattern>PARA QUE</pattern><that>DIME TU NOMBRE PARA ATENDERTE MEJOR</that><template>Sin problema, no es necesario. ¿En qué te puedo ayudar?</template></category>
+<category><pattern>PARA QUE</pattern><that>* DIME TU NOMBRE PARA ATENDERTE MEJOR</that><template>Sin problema, no es necesario. ¿En qué te puedo ayudar?</template></category>
+<category><pattern>NO TE LO DIGO</pattern><that>DIME TU NOMBRE PARA ATENDERTE MEJOR</that><template>Sin problema, no es necesario. ¿En qué te puedo ayudar?</template></category>
+<category><pattern>NO TE LO DIGO</pattern><that>* DIME TU NOMBRE PARA ATENDERTE MEJOR</that><template>Sin problema, no es necesario. ¿En qué te puedo ayudar?</template></category>
+<category><pattern>NO GRACIAS</pattern><that>DIME TU NOMBRE PARA ATENDERTE MEJOR</that><template>Sin problema, no es necesario. ¿En qué te puedo ayudar?</template></category>
+<category><pattern>NO GRACIAS</pattern><that>* DIME TU NOMBRE PARA ATENDERTE MEJOR</that><template>Sin problema, no es necesario. ¿En qué te puedo ayudar?</template></category>
+<category><pattern>PREFIERO NO DECIRLO</pattern><that>DIME TU NOMBRE PARA ATENDERTE MEJOR</that><template>Sin problema, no es necesario. ¿En qué te puedo ayudar?</template></category>
+<category><pattern>PREFIERO NO DECIRLO</pattern><that>* DIME TU NOMBRE PARA ATENDERTE MEJOR</that><template>Sin problema, no es necesario. ¿En qué te puedo ayudar?</template></category>
+<category><pattern>COMO ME LLAMO</pattern><template><condition name="usuario"><li value="">Aún no me has dicho tu nombre. Dime tu nombre para atenderte mejor.</li><li>Te llamas <get name="usuario"/>.</li></condition></template></category>
+<category><pattern>CUAL ES MI NOMBRE</pattern><template><srai>COMO ME LLAMO</srai></template></category>
+<category><pattern>SABES MI NOMBRE</pattern><template><srai>COMO ME LLAMO</srai></template></category>
+<category><pattern>SABES COMO ME LLAMO</pattern><template><srai>COMO ME LLAMO</srai></template></category>
+<category><pattern>RECUERDAS MI NOMBRE</pattern><template><srai>COMO ME LLAMO</srai></template></category>
+
+<!-- SOY *: se toma como nombre, salvo frases que claramente no lo son -->
+<category><pattern>SOY *</pattern><template><srai>REGISTRAR USUARIO <star/></srai></template></category>
+<category><pattern>SOY CLIENTE</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>SOY NUEVO</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>SOY NUEVA</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>SOY ESTUDIANTE</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>SOY DE *</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>SOY UN *</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>SOY UNA *</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>SOY EL *</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>SOY LA *</pattern><template><srai>ADELANTE</srai></template></category>
+<category><pattern>SOY CLIENTE *</pattern><template><srai>ADELANTE</srai></template></category>
 </aiml>

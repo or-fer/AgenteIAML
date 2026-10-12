@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- Soporte: asesor humano, quejas, ayuda, identidad del bot, cumplidos y opiniones -->
+
+<!-- HUMANO -->
+<category><pattern>INTENCION HUMANO</pattern><template><think><set name="topic">SOPORTE</set><set name="fallos">0</set></think>Claro, te canalizo con una persona del equipo. Escríbenos a <srai>INFO CORREO</srai> indicando tu número de pedido. Atendemos <srai>INFO HORARIO</srai>.</template></category>
+<category><pattern>NECESITO AYUDA DE ALGUIEN</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>NECESITO AYUDA DE ALGUIEN *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* NECESITO AYUDA DE ALGUIEN</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* NECESITO AYUDA DE ALGUIEN *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>NECESITO AYUDA DE UNA PERSONA</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>NECESITO AYUDA DE UNA PERSONA *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* NECESITO AYUDA DE UNA PERSONA</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* NECESITO AYUDA DE UNA PERSONA *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>NECESITO AYUDA HUMANA</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>NECESITO AYUDA HUMANA *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* NECESITO AYUDA HUMANA</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* NECESITO AYUDA HUMANA *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>QUIERO AYUDA DE ALGUIEN</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>QUIERO AYUDA DE ALGUIEN *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* QUIERO AYUDA DE ALGUIEN</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* QUIERO AYUDA DE ALGUIEN *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>AYUDA DE ALGUIEN</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>AYUDA DE ALGUIEN *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* AYUDA DE ALGUIEN</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* AYUDA DE ALGUIEN *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>AYUDA DE UNA PERSONA</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>AYUDA DE UNA PERSONA *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* AYUDA DE UNA PERSONA</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* AYUDA DE UNA PERSONA *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>AYUDA HUMANA</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>AYUDA HUMANA *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* AYUDA HUMANA</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* AYUDA HUMANA *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>ALGUIEN QUE ME AYUDE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>ALGUIEN QUE ME AYUDE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* ALGUIEN QUE ME AYUDE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* ALGUIEN QUE ME AYUDE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>ALGUIEN QUE ME ATIENDA</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>ALGUIEN QUE ME ATIENDA *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* ALGUIEN QUE ME ATIENDA</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* ALGUIEN QUE ME ATIENDA *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>ALGUIEN QUE ME EXPLIQUE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>ALGUIEN QUE ME EXPLIQUE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* ALGUIEN QUE ME EXPLIQUE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* ALGUIEN QUE ME EXPLIQUE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>COMUNICAR CON UN ASESOR</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>COMUNICAR CON UN ASESOR *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* COMUNICAR CON UN ASESOR</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* COMUNICAR CON UN ASESOR *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>COMUNICARME CON UN ASESOR</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>COMUNICARME CON UN ASESOR *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* COMUNICARME CON UN ASESOR</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* COMUNICARME CON UN ASESOR *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>CORREO DE CONTACTO</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>CORREO DE CONTACTO *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* CORREO DE CONTACTO</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* CORREO DE CONTACTO *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>UN CORREO</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>UN CORREO *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* UN CORREO</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* UN CORREO *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>HABLAR CON UN ASESOR</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>HABLAR CON UN ASESOR *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* HABLAR CON UN ASESOR</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* HABLAR CON UN ASESOR *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>HABLAR CON ALGUIEN</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>HABLAR CON ALGUIEN *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* HABLAR CON ALGUIEN</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* HABLAR CON ALGUIEN *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>HABLAR CON UNA PERSONA</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>HABLAR CON UNA PERSONA *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* HABLAR CON UNA PERSONA</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* HABLAR CON UNA PERSONA *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>HABLAR CON UN HUMANO</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>HABLAR CON UN HUMANO *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* HABLAR CON UN HUMANO</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* HABLAR CON UN HUMANO *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>HABLAR CON UN AGENTE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>HABLAR CON UN AGENTE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* HABLAR CON UN AGENTE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* HABLAR CON UN AGENTE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>HABLAR CON UN REPRESENTANTE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>HABLAR CON UN REPRESENTANTE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* HABLAR CON UN REPRESENTANTE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* HABLAR CON UN REPRESENTANTE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>HABLAR CON SERVICIO A CLIENTES</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>HABLAR CON SERVICIO A CLIENTES *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* HABLAR CON SERVICIO A CLIENTES</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* HABLAR CON SERVICIO A CLIENTES *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>QUIERO UN ASESOR</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>QUIERO UN ASESOR *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* QUIERO UN ASESOR</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* QUIERO UN ASESOR *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>QUIERO UN AGENTE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>QUIERO UN AGENTE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* QUIERO UN AGENTE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* QUIERO UN AGENTE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>NECESITO UN ASESOR</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>NECESITO UN ASESOR *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* NECESITO UN ASESOR</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* NECESITO UN ASESOR *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>PASAME CON UN ASESOR</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>PASAME CON UN ASESOR *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* PASAME CON UN ASESOR</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* PASAME CON UN ASESOR *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>ATENCION A CLIENTES</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>ATENCION A CLIENTES *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* ATENCION A CLIENTES</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* ATENCION A CLIENTES *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>SERVICIO A CLIENTES</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>SERVICIO A CLIENTES *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* SERVICIO A CLIENTES</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* SERVICIO A CLIENTES *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>ATENCION AL CLIENTE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>ATENCION AL CLIENTE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* ATENCION AL CLIENTE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* ATENCION AL CLIENTE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>SERVICIO AL CLIENTE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>SERVICIO AL CLIENTE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* SERVICIO AL CLIENTE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* SERVICIO AL CLIENTE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>NUMERO DE TELEFONO</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>NUMERO DE TELEFONO *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* NUMERO DE TELEFONO</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* NUMERO DE TELEFONO *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>COMO LOS CONTACTO</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>COMO LOS CONTACTO *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* COMO LOS CONTACTO</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* COMO LOS CONTACTO *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>ASESOR</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>ASESOR *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* ASESOR</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* ASESOR *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>AGENTE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>AGENTE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* AGENTE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* AGENTE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>HUMANO</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>HUMANO *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* HUMANO</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* HUMANO *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>TELEFONO</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>TELEFONO *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* TELEFONO</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* TELEFONO *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>WHATSAPP</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>WHATSAPP *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* WHATSAPP</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* WHATSAPP *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>CONTACTO</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>CONTACTO *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* CONTACTO</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* CONTACTO *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>REPRESENTANTE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>REPRESENTANTE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* REPRESENTANTE</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* REPRESENTANTE *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>SUPERVISOR</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>SUPERVISOR *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* SUPERVISOR</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+<category><pattern>* SUPERVISOR *</pattern><template><srai>INTENCION HUMANO</srai></template></category>
+
+<!-- QUEJA -->
+<category><pattern>INTENCION QUEJA</pattern><template><think><set name="topic">SOPORTE</set><set name="fallos">0</set></think>Lamento mucho que hayas tenido una mala experiencia y quiero que se resuelva. Escríbenos a <srai>INFO CORREO</srai> con tu número de pedido y una persona te atenderá con prioridad. Atendemos <srai>INFO HORARIO</srai>.</template></category>
+<category><pattern>ESTOY HARTO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY HARTO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY HARTO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY HARTO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY HARTA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY HARTA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY HARTA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY HARTA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY CANSADO DE ESPERAR</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY CANSADO DE ESPERAR *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY CANSADO DE ESPERAR</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY CANSADO DE ESPERAR *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ME TIENEN HARTO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ME TIENEN HARTO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ME TIENEN HARTO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ME TIENEN HARTO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ES UNA BURLA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ES UNA BURLA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ES UNA BURLA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ES UNA BURLA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>QUE MAL SERVICIO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>QUE MAL SERVICIO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* QUE MAL SERVICIO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* QUE MAL SERVICIO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>NADIE ME RESPONDE</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>NADIE ME RESPONDE *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* NADIE ME RESPONDE</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* NADIE ME RESPONDE *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>NO ME RESPONDEN</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>NO ME RESPONDEN *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* NO ME RESPONDEN</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* NO ME RESPONDEN *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>NADIE ME CONTESTA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>NADIE ME CONTESTA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* NADIE ME CONTESTA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* NADIE ME CONTESTA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY HARTO DE ESPERAR</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY HARTO DE ESPERAR *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY HARTO DE ESPERAR</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY HARTO DE ESPERAR *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY MOLESTO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY MOLESTO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY MOLESTO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY MOLESTO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY MOLESTA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY MOLESTA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY MOLESTA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY MOLESTA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY ENOJADO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY ENOJADO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY ENOJADO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY ENOJADO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY ENOJADA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY ENOJADA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY ENOJADA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY ENOJADA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>MALA ATENCION</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>MALA ATENCION *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* MALA ATENCION</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* MALA ATENCION *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>MAL SERVICIO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>MAL SERVICIO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* MAL SERVICIO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* MAL SERVICIO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>PESIMO SERVICIO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>PESIMO SERVICIO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* PESIMO SERVICIO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* PESIMO SERVICIO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>PESIMA ATENCION</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>PESIMA ATENCION *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* PESIMA ATENCION</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* PESIMA ATENCION *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>MALA EXPERIENCIA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>MALA EXPERIENCIA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* MALA EXPERIENCIA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* MALA EXPERIENCIA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ES INACEPTABLE</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ES INACEPTABLE *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ES INACEPTABLE</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ES INACEPTABLE *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>QUIERO PRESENTAR UNA QUEJA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>QUIERO PRESENTAR UNA QUEJA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* QUIERO PRESENTAR UNA QUEJA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* QUIERO PRESENTAR UNA QUEJA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>QUIERO QUEJARME</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>QUIERO QUEJARME *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* QUIERO QUEJARME</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* QUIERO QUEJARME *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>PRESENTAR UNA QUEJA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>PRESENTAR UNA QUEJA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* PRESENTAR UNA QUEJA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* PRESENTAR UNA QUEJA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY MUY MOLESTO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY MUY MOLESTO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY MUY MOLESTO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY MUY MOLESTO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY MUY MOLESTA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>ESTOY MUY MOLESTA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY MUY MOLESTA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* ESTOY MUY MOLESTA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>PORQUERIA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>PORQUERIA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* PORQUERIA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* PORQUERIA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>BASURA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>BASURA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* BASURA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* BASURA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>HORRIBLE</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>HORRIBLE *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* HORRIBLE</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* HORRIBLE *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>MALISIMO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>MALISIMO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* MALISIMO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* MALISIMO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>INCOMPETENTES</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>INCOMPETENTES *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* INCOMPETENTES</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* INCOMPETENTES *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>FATAL</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>FATAL *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* FATAL</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* FATAL *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>VERGUENZA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>VERGUENZA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* VERGUENZA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* VERGUENZA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>QUEJA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>QUEJA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* QUEJA</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* QUEJA *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>QUEJAS</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>QUEJAS *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* QUEJAS</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* QUEJAS *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RECLAMO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>RECLAMO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* RECLAMO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* RECLAMO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>INACEPTABLE</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>INACEPTABLE *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* INACEPTABLE</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* INACEPTABLE *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>PESIMO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>PESIMO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* PESIMO</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+<category><pattern>* PESIMO *</pattern><template><srai>INTENCION QUEJA</srai></template></category>
+
+<!-- AYUDA -->
+<category><pattern>INTENCION AYUDA</pattern><template><think><set name="topic">AYUDA</set><set name="fallos">0</set></think>Puedo ayudarte con: rastreo de pedidos, tiempos y costos de envío (incluidos envíos a provincia), formas de pago y meses sin intereses, facturación, cambios y devoluciones, tallas y catálogo de tenis. Escríbeme tu duda con tus palabras, por ejemplo: dónde está mi pedido.</template></category>
+<category><pattern>EN QUE ME PUEDES AYUDAR</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>EN QUE ME PUEDES AYUDAR *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* EN QUE ME PUEDES AYUDAR</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* EN QUE ME PUEDES AYUDAR *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>EN QUE ME AYUDAS</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>EN QUE ME AYUDAS *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* EN QUE ME AYUDAS</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* EN QUE ME AYUDAS *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE PUEDES HACER</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE PUEDES HACER *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE PUEDES HACER</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE PUEDES HACER *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE SABES HACER</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE SABES HACER *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE SABES HACER</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE SABES HACER *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE HACES</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE HACES *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE HACES</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE HACES *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>COMO ME PUEDES AYUDAR</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>COMO ME PUEDES AYUDAR *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* COMO ME PUEDES AYUDAR</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* COMO ME PUEDES AYUDAR *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>NECESITO AYUDA</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>NECESITO AYUDA *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* NECESITO AYUDA</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* NECESITO AYUDA *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>ME PUEDES AYUDAR</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>ME PUEDES AYUDAR *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* ME PUEDES AYUDAR</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* ME PUEDES AYUDAR *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>ME AYUDAS</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>ME AYUDAS *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* ME AYUDAS</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* ME AYUDAS *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>ME AYUDARIAS</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>ME AYUDARIAS *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* ME AYUDARIAS</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* ME AYUDARIAS *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE SERVICIOS OFRECES</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE SERVICIOS OFRECES *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE SERVICIOS OFRECES</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE SERVICIOS OFRECES *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE SERVICIOS TIENEN</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE SERVICIOS TIENEN *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE SERVICIOS TIENEN</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE SERVICIOS TIENEN *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE SERVICIOS MANEJAN</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE SERVICIOS MANEJAN *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE SERVICIOS MANEJAN</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE SERVICIOS MANEJAN *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE SERVICIOS</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE SERVICIOS *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE SERVICIOS</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE SERVICIOS *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE OFRECEN</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE OFRECEN *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE OFRECEN</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE OFRECEN *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE OFRECES</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE OFRECES *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE OFRECES</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE OFRECES *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE TRAMITES PUEDO HACER</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>QUE TRAMITES PUEDO HACER *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE TRAMITES PUEDO HACER</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* QUE TRAMITES PUEDO HACER *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>AYUDA</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* AYUDA</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* AYUDA *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>AYUDAME</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* AYUDAME</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* AYUDAME *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>MENU</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* MENU</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* MENU *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>OPCIONES</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* OPCIONES</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* OPCIONES *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>INFO</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* INFO</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* INFO *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>INFORMACION</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* INFORMACION</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* INFORMACION *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>TEMAS</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* TEMAS</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* TEMAS *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>SERVICIOS</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* SERVICIOS</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+<category><pattern>* SERVICIOS *</pattern><template><srai>INTENCION AYUDA</srai></template></category>
+
+<!-- IDENTIDAD -->
+<category><pattern>INTENCION IDENTIDAD</pattern><template><think><set name="topic">AYUDA</set><set name="fallos">0</set></think>Soy el asistente virtual de <srai>INFO TIENDA</srai>, un bot que resuelve dudas frecuentes sobre pedidos, envíos, pagos y cambios. Si prefieres hablar con una persona, dime que quieres un asesor.</template></category>
+<category><pattern>ERES UN HUMANO</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UN HUMANO *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UN HUMANO</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UN HUMANO *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UN HUMANO REAL</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UN HUMANO REAL *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UN HUMANO REAL</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UN HUMANO REAL *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UNA PERSONA REAL</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UNA PERSONA REAL *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UNA PERSONA REAL</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UNA PERSONA REAL *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES PERSONA</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES PERSONA *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES PERSONA</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES PERSONA *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES ROBOT</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES ROBOT *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES ROBOT</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES ROBOT *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES BOT</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES BOT *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES BOT</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES BOT *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>TU ERES UN BOT</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>TU ERES UN BOT *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* TU ERES UN BOT</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* TU ERES UN BOT *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UN PROGRAMA</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UN PROGRAMA *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UN PROGRAMA</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UN PROGRAMA *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>QUIEN ERES</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>QUIEN ERES *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* QUIEN ERES</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* QUIEN ERES *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>QUE ERES</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>QUE ERES *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* QUE ERES</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* QUE ERES *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>COMO TE LLAMAS</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>COMO TE LLAMAS *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* COMO TE LLAMAS</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* COMO TE LLAMAS *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>CUAL ES TU NOMBRE</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>CUAL ES TU NOMBRE *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* CUAL ES TU NOMBRE</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* CUAL ES TU NOMBRE *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UN BOT</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UN BOT *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UN BOT</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UN BOT *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UN ROBOT</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UN ROBOT *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UN ROBOT</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UN ROBOT *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES HUMANO</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES HUMANO *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES HUMANO</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES HUMANO *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UNA PERSONA</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UNA PERSONA *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UNA PERSONA</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UNA PERSONA *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UNA MAQUINA</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UNA MAQUINA *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UNA MAQUINA</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UNA MAQUINA *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES REAL</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES REAL *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES REAL</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES REAL *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UN CHATBOT</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UN CHATBOT *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UN CHATBOT</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UN CHATBOT *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UNA IA</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES UNA IA *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UNA IA</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES UNA IA *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES INTELIGENCIA ARTIFICIAL</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>ERES INTELIGENCIA ARTIFICIAL *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES INTELIGENCIA ARTIFICIAL</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* ERES INTELIGENCIA ARTIFICIAL *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>HABLO CON UN BOT</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>HABLO CON UN BOT *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* HABLO CON UN BOT</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* HABLO CON UN BOT *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>HABLO CON UN ROBOT</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>HABLO CON UN ROBOT *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* HABLO CON UN ROBOT</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* HABLO CON UN ROBOT *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>HABLO CON UNA PERSONA</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>HABLO CON UNA PERSONA *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* HABLO CON UNA PERSONA</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+<category><pattern>* HABLO CON UNA PERSONA *</pattern><template><srai>INTENCION IDENTIDAD</srai></template></category>
+
+<!-- CUMPLIDO -->
+<category><pattern>INTENCION CUMPLIDO</pattern><template><think><set name="topic">AYUDA</set><set name="fallos">0</set></think>¡Muchas gracias! Me da gusto poder ayudarte. Si tienes otra duda sobre tu pedido, envíos, pagos o cambios, aquí estoy.</template></category>
+<category><pattern>BUEN TRABAJO</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>BUEN TRABAJO *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* BUEN TRABAJO</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* BUEN TRABAJO *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>BUEN SERVICIO</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>BUEN SERVICIO *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* BUEN SERVICIO</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* BUEN SERVICIO *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>BUENA ATENCION</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>BUENA ATENCION *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* BUENA ATENCION</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* BUENA ATENCION *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>EXCELENTE SERVICIO</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>EXCELENTE SERVICIO *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* EXCELENTE SERVICIO</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* EXCELENTE SERVICIO *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>ERES GENIAL</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>ERES GENIAL *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* ERES GENIAL</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* ERES GENIAL *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>ERES MUY UTIL</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>ERES MUY UTIL *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* ERES MUY UTIL</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* ERES MUY UTIL *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>ME FUISTE DE AYUDA</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>ME FUISTE DE AYUDA *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* ME FUISTE DE AYUDA</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* ME FUISTE DE AYUDA *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>ME AYUDASTE MUCHO</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>ME AYUDASTE MUCHO *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* ME AYUDASTE MUCHO</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* ME AYUDASTE MUCHO *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>ME GUSTO</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>ME GUSTO *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* ME GUSTO</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* ME GUSTO *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>QUE GRACIOSO</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>QUE GRACIOSO *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* QUE GRACIOSO</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* QUE GRACIOSO *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>QUE CHISTOSO</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>QUE CHISTOSO *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* QUE CHISTOSO</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* QUE CHISTOSO *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>QUE BUENO</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>QUE BUENO *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* QUE BUENO</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* QUE BUENO *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>BUEN BOT</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>BUEN BOT *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* BUEN BOT</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>* BUEN BOT *</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>JAJA</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>JAJAJA</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>JEJE</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>JAJAJAJA</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>XD</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+<category><pattern>LOL</pattern><template><srai>INTENCION CUMPLIDO</srai></template></category>
+
+<!-- OPINION -->
+<category><pattern>INTENCION OPINION</pattern><template><think><set name="topic">AYUDA</set><set name="fallos">0</set></think>No tengo opiniones personales, pero sí puedo orientarte con tu pedido, envíos, pagos, cambios o con el catálogo de tenis. ¿Con qué te ayudo?</template></category>
+<category><pattern>QUE OPINAS</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>QUE OPINAS *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* QUE OPINAS</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* QUE OPINAS *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>QUE PIENSAS</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>QUE PIENSAS *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* QUE PIENSAS</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* QUE PIENSAS *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>QUE CREES</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>QUE CREES *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* QUE CREES</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* QUE CREES *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>CUAL ES TU OPINION</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>CUAL ES TU OPINION *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* CUAL ES TU OPINION</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* CUAL ES TU OPINION *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>TU QUE OPINAS</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>TU QUE OPINAS *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* TU QUE OPINAS</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* TU QUE OPINAS *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>NUNCA NADIE ME HABIA DICHO ESO</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>NUNCA NADIE ME HABIA DICHO ESO *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* NUNCA NADIE ME HABIA DICHO ESO</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* NUNCA NADIE ME HABIA DICHO ESO *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>TENGO RAZON</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>TENGO RAZON *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* TENGO RAZON</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* TENGO RAZON *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>YO TAMBIEN</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>YO TAMBIEN *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* YO TAMBIEN</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* YO TAMBIEN *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>TU TAMBIEN</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>TU TAMBIEN *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* TU TAMBIEN</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* TU TAMBIEN *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>QUE LOCO</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>QUE LOCO *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* QUE LOCO</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* QUE LOCO *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>QUE RARO</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>QUE RARO *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* QUE RARO</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* QUE RARO *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>NO MANCHES</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>NO MANCHES *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* NO MANCHES</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* NO MANCHES *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>EN SERIO</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>EN SERIO *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* EN SERIO</pattern><template><srai>INTENCION OPINION</srai></template></category>
+<category><pattern>* EN SERIO *</pattern><template><srai>INTENCION OPINION</srai></template></category>
+</aiml>

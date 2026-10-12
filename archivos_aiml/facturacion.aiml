@@ -1,18 +1,221 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 
-    <category>
-        <pattern>FACTURACION</pattern>
-        <template>Puedes emitir tu factura electrónica (CFDI) dentro del mes de tu compra ingresando tu número de ticket y RFC en nuestro portal: www.tiendatenis.com/facturacion.</template>
-    </category>
+<!-- Facturación y requisitos -->
 
-    <category><pattern>COMO FACTURO</pattern><template><srai>FACTURACION</srai></template></category>
-    <category><pattern>QUIERO FACTURA</pattern><template><srai>FACTURACION</srai></template></category>
-    <category><pattern>* FACTURA *</pattern><template><srai>FACTURACION</srai></template></category>
-    <category><pattern>* FACTURAR *</pattern><template><srai>FACTURACION</srai></template></category>
+<category><pattern>INTENCION FACTURA</pattern><template><think><set name="topic">FACTURA</set><set name="fallos">0</set></think>Puedes emitir tu factura electrónica (CFDI) dentro del mes de tu compra ingresando tu número de ticket y RFC en nuestro portal: <srai>INFO SITIO</srai>/facturacion.</template></category>
+<category><pattern>TIEMPO PARA FACTURAR</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>TIEMPO PARA FACTURAR *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* TIEMPO PARA FACTURAR</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* TIEMPO PARA FACTURAR *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>CUANTO TIEMPO TENGO PARA FACTURAR</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>CUANTO TIEMPO TENGO PARA FACTURAR *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* CUANTO TIEMPO TENGO PARA FACTURAR</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* CUANTO TIEMPO TENGO PARA FACTURAR *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>HASTA CUANDO PUEDO FACTURAR</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>HASTA CUANDO PUEDO FACTURAR *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* HASTA CUANDO PUEDO FACTURAR</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* HASTA CUANDO PUEDO FACTURAR *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>PLAZO PARA FACTURAR</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>PLAZO PARA FACTURAR *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* PLAZO PARA FACTURAR</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* PLAZO PARA FACTURAR *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>FACTURAR MI COMPRA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>FACTURAR MI COMPRA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* FACTURAR MI COMPRA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* FACTURAR MI COMPRA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>FACTURA DE MI COMPRA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>FACTURA DE MI COMPRA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* FACTURA DE MI COMPRA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* FACTURA DE MI COMPRA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>FACTURA DE MI PEDIDO</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>FACTURA DE MI PEDIDO *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* FACTURA DE MI PEDIDO</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* FACTURA DE MI PEDIDO *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>DONDE SACO MI FACTURA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>DONDE SACO MI FACTURA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* DONDE SACO MI FACTURA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* DONDE SACO MI FACTURA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>DONDE FACTURO</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>DONDE FACTURO *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* DONDE FACTURO</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* DONDE FACTURO *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>COMO FACTURO</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>COMO FACTURO *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* COMO FACTURO</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* COMO FACTURO *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>COMO FACTURAR</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>COMO FACTURAR *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* COMO FACTURAR</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* COMO FACTURAR *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>SOLICITAR FACTURA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>SOLICITAR FACTURA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* SOLICITAR FACTURA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* SOLICITAR FACTURA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>SOLICITAR MI FACTURA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>SOLICITAR MI FACTURA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* SOLICITAR MI FACTURA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* SOLICITAR MI FACTURA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>QUIERO FACTURA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>QUIERO FACTURA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* QUIERO FACTURA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* QUIERO FACTURA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>NECESITO FACTURA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>NECESITO FACTURA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* NECESITO FACTURA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* NECESITO FACTURA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>DATOS FISCALES</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>DATOS FISCALES *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* DATOS FISCALES</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* DATOS FISCALES *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>COMPROBANTE FISCAL</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>COMPROBANTE FISCAL *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* COMPROBANTE FISCAL</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* COMPROBANTE FISCAL *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>FACTURA ELECTRONICA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>FACTURA ELECTRONICA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* FACTURA ELECTRONICA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* FACTURA ELECTRONICA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>HAY FORMA DE TENER FACTURA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>HAY FORMA DE TENER FACTURA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* HAY FORMA DE TENER FACTURA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* HAY FORMA DE TENER FACTURA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>FACTURA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>FACTURA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* FACTURA</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* FACTURA *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>FACTURAS</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>FACTURAS *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* FACTURAS</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* FACTURAS *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>FACTURACION</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>FACTURACION *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* FACTURACION</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* FACTURACION *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>FACTURAR</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>FACTURAR *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* FACTURAR</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* FACTURAR *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>CFDI</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* CFDI</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* CFDI *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>RFC</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* RFC</pattern><template><srai>INTENCION FACTURA</srai></template></category>
+<category><pattern>* RFC *</pattern><template><srai>INTENCION FACTURA</srai></template></category>
 
-    <category>
-        <pattern>REQUISITOS PARA FACTURAR</pattern>
-        <template>Necesitas: 1) Número de folio del ticket/pedido, 2) RFC con homoclave, 3) Régimen fiscal y Código Postal registrado en el SAT.</template>
-    </category>
+<!-- REQUISITOS FACTURA  [tema: FACTURA] -->
+<category><pattern>INTENCION REQUISITOS FACTURA</pattern><template><think><set name="topic">FACTURA</set><set name="fallos">0</set></think>Necesitas: 1) Número de folio del ticket/pedido, 2) RFC con homoclave, 3) Régimen fiscal y Código Postal registrado en el SAT.</template></category>
+<category><pattern>REQUISITOS PARA LA FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>REQUISITOS PARA LA FACTURA *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* REQUISITOS PARA LA FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* REQUISITOS PARA LA FACTURA *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>REQUISITOS DE LA FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>REQUISITOS DE LA FACTURA *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* REQUISITOS DE LA FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* REQUISITOS DE LA FACTURA *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>REQUISITOS DE FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>REQUISITOS DE FACTURA *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* REQUISITOS DE FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* REQUISITOS DE FACTURA *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE OCUPO PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE OCUPO PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE OCUPO PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE OCUPO PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE OCUPO PARA LA FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE OCUPO PARA LA FACTURA *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE OCUPO PARA LA FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE OCUPO PARA LA FACTURA *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE OCUPO PARA MI FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE OCUPO PARA MI FACTURA *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE OCUPO PARA MI FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE OCUPO PARA MI FACTURA *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE DATOS REQUIERO</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE DATOS REQUIERO *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE DATOS REQUIERO</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE DATOS REQUIERO *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE REQUIERO PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE REQUIERO PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE REQUIERO PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE REQUIERO PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE DATOS FISCALES</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE DATOS FISCALES *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE DATOS FISCALES</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE DATOS FISCALES *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE ME PIDEN PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE ME PIDEN PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE ME PIDEN PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE ME PIDEN PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE SE NECESITA PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE SE NECESITA PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE SE NECESITA PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE SE NECESITA PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE REQUISITOS PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE REQUISITOS PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE REQUISITOS PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE REQUISITOS PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE NECESITO PARA LA FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE NECESITO PARA LA FACTURA *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE NECESITO PARA LA FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE NECESITO PARA LA FACTURA *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>REQUISITOS FISCALES</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>REQUISITOS FISCALES *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* REQUISITOS FISCALES</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* REQUISITOS FISCALES *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>REQUISITOS PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>REQUISITOS PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* REQUISITOS PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* REQUISITOS PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>REQUISITOS DE FACTURACION</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>REQUISITOS DE FACTURACION *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* REQUISITOS DE FACTURACION</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* REQUISITOS DE FACTURACION *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE NECESITO PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE NECESITO PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE NECESITO PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE NECESITO PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE DATOS NECESITO PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE DATOS NECESITO PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE DATOS NECESITO PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE DATOS NECESITO PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE DATOS PIDEN PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE DATOS PIDEN PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE DATOS PIDEN PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE DATOS PIDEN PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>DATOS PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>DATOS PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* DATOS PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* DATOS PARA FACTURAR *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE * PARA FACTURAR</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE * PARA MI FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE * PARA LA FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE * PARA FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE * PARA SACAR FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE * PARA SACAR MI FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE * PARA HACER MI FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE * PARA GENERAR FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE * PARA GENERAR MI FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE * PARA GENERAR LA FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE * PARA EMITIR FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE * PARA EMITIR MI FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE * PARA PEDIR FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE * PARA PEDIR MI FACTURA</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+
+<topic name="FACTURA">
+<category><pattern>REQUISITOS</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>REQUISITOS *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* REQUISITOS</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* REQUISITOS *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE NECESITO</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE NECESITO *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE NECESITO</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE NECESITO *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE DATOS NECESITO</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE DATOS NECESITO *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE DATOS NECESITO</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE DATOS NECESITO *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE DATOS PIDEN</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>QUE DATOS PIDEN *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE DATOS PIDEN</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+<category><pattern>* QUE DATOS PIDEN *</pattern><template><srai>INTENCION REQUISITOS FACTURA</srai></template></category>
+</topic>
 </aiml>

@@ -1,25 +1,249 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
-    <category>
-        <pattern>UBICACION</pattern>
-        <template>Nuestra bodega principal se encuentra en la Ciudad de México, pero operamos principalmente como tienda en línea con envíos a todo México.</template>
-    </category>
 
-    <!-- Variantes de ubicación y sucursales -->
-    <category><pattern>DONDE ESTAN UBICADOS</pattern><template><srai>UBICACION</srai></template></category>
-    <category><pattern>DONDE SE ENCUENTRAN</pattern><template><srai>UBICACION</srai></template></category>
-    <category><pattern>DONDE ES SU TIENDA</pattern><template><srai>UBICACION</srai></template></category>
-    <category><pattern>DIRECCION</pattern><template><srai>UBICACION</srai></template></category>
-    <category><pattern>* DIRECCION *</pattern><template><srai>UBICACION</srai></template></category>
-    <category><pattern>* SUCURSALES *</pattern><template><srai>UBICACION</srai></template></category>
-    <category><pattern>* SUCURSAL *</pattern><template><srai>UBICACION</srai></template></category>
-    <category><pattern>* SUCURSALES FISICAS *</pattern><template><srai>UBICACION</srai></template></category>
+<!-- Ubicación: bodega, showroom y pickup -->
 
-    <category>
-        <pattern>TIENEN TIENDA FISICA</pattern>
-        <template>Contamos con un showroom para probar tallas en Av. Insurgentes Sur 1200, CDMX. La venta de todo el catálogo completo es a través de nuestra web.</template>
-    </category>
+<!-- UBICACION -->
+<category><pattern>INTENCION UBICACION</pattern><template><think><set name="topic">UBICACION</set><set name="fallos">0</set></think>Nuestra bodega principal se encuentra en la Ciudad de México, pero operamos principalmente como tienda en línea con envíos a todo México.</template></category>
+<category><pattern>DONDE QUEDA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE QUEDA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE QUEDA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE QUEDA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE QUEDA SU BODEGA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE QUEDA SU BODEGA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE QUEDA SU BODEGA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE QUEDA SU BODEGA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE ESTA SU BODEGA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE ESTA SU BODEGA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE ESTA SU BODEGA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE ESTA SU BODEGA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE ESTA LA BODEGA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE ESTA LA BODEGA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE ESTA LA BODEGA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE ESTA LA BODEGA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>BODEGA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>BODEGA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* BODEGA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* BODEGA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>SU BODEGA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>SU BODEGA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* SU BODEGA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* SU BODEGA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE QUEDAN</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE QUEDAN *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE QUEDAN</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE QUEDAN *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE ESTAN UBICADOS</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE ESTAN UBICADOS *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE ESTAN UBICADOS</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE ESTAN UBICADOS *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE SE ENCUENTRAN</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE SE ENCUENTRAN *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE SE ENCUENTRAN</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE SE ENCUENTRAN *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE SE UBICAN</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE SE UBICAN *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE SE UBICAN</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE SE UBICAN *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE ES SU TIENDA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE ES SU TIENDA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE ES SU TIENDA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE ES SU TIENDA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE ESTA SU TIENDA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE ESTA SU TIENDA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE ESTA SU TIENDA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DONDE ESTA SU TIENDA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>SU UBICACION</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>SU UBICACION *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* SU UBICACION</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* SU UBICACION *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DIRECCION DE LA TIENDA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DIRECCION DE LA TIENDA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DIRECCION DE LA TIENDA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DIRECCION DE LA TIENDA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>COMO LLEGAR</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>COMO LLEGAR *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* COMO LLEGAR</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* COMO LLEGAR *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>UBICACION</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* UBICACION</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* UBICACION *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DIRECCION</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DIRECCION</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* DIRECCION *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>UBICADOS</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* UBICADOS</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>* UBICADOS *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE ESTAN</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE ESTAN USTEDES</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE ESTA LA TIENDA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
 
-    <category><pattern>PUEDO RECOGER EN TIENDA</pattern><template>Sí, al finalizar tu compra elige la opción "Pickup en Showroom Insurgentes" sin costo de envío.</template></category>
-    <category><pattern>* RECOGER EN SUCURSAL *</pattern><template><srai>PUEDO RECOGER EN TIENDA</srai></template></category>
+<!-- SHOWROOM -->
+<category><pattern>INTENCION SHOWROOM</pattern><template><think><set name="topic">UBICACION</set><set name="fallos">0</set></think>Contamos con un showroom para probar tallas en <srai>INFO SHOWROOM</srai>. La venta del catálogo completo es a través de nuestra web.</template></category>
+<category><pattern>LOCAL</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>LOCAL *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* LOCAL</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* LOCAL *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>LOCALES</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>LOCALES *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* LOCALES</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* LOCALES *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>ALGUN LOCAL</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>ALGUN LOCAL *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* ALGUN LOCAL</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* ALGUN LOCAL *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>TIENDA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>TIENDA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* TIENDA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* TIENDA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>TIENDAS</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>TIENDAS *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* TIENDAS</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* TIENDAS *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>DONDE QUEDA SU TIENDA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>DONDE QUEDA SU TIENDA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* DONDE QUEDA SU TIENDA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* DONDE QUEDA SU TIENDA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>DONDE QUEDA LA TIENDA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>DONDE QUEDA LA TIENDA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* DONDE QUEDA LA TIENDA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* DONDE QUEDA LA TIENDA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>PROBARME TENIS</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>PROBARME TENIS *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* PROBARME TENIS</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* PROBARME TENIS *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>PROBAR TENIS</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>PROBAR TENIS *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* PROBAR TENIS</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* PROBAR TENIS *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>EN PERSONA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>EN PERSONA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* EN PERSONA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* EN PERSONA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>PROBARME LOS TENIS EN PERSONA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>PROBARME LOS TENIS EN PERSONA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* PROBARME LOS TENIS EN PERSONA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* PROBARME LOS TENIS EN PERSONA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>VER LOS TENIS EN PERSONA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>VER LOS TENIS EN PERSONA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* VER LOS TENIS EN PERSONA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* VER LOS TENIS EN PERSONA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>VERLOS EN PERSONA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>VERLOS EN PERSONA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* VERLOS EN PERSONA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* VERLOS EN PERSONA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>TIENDA FISICA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>TIENDA FISICA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* TIENDA FISICA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* TIENDA FISICA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>TIENDAS FISICAS</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>TIENDAS FISICAS *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* TIENDAS FISICAS</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* TIENDAS FISICAS *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>LOCAL FISICO</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>LOCAL FISICO *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* LOCAL FISICO</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* LOCAL FISICO *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>TIENEN TIENDA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>TIENEN TIENDA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* TIENEN TIENDA</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* TIENEN TIENDA *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>TIENEN LOCAL</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>TIENEN LOCAL *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* TIENEN LOCAL</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* TIENEN LOCAL *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>VISITARLOS</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>VISITARLOS *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* VISITARLOS</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* VISITARLOS *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>PROBAR TALLAS</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>PROBAR TALLAS *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* PROBAR TALLAS</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* PROBAR TALLAS *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>PROBARME LOS TENIS</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>PROBARME LOS TENIS *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* PROBARME LOS TENIS</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* PROBARME LOS TENIS *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>PROBAR LOS TENIS</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>PROBAR LOS TENIS *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* PROBAR LOS TENIS</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* PROBAR LOS TENIS *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>SHOWROOM</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>SHOWROOM *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* SHOWROOM</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* SHOWROOM *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>SUCURSAL</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>SUCURSAL *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* SUCURSAL</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* SUCURSAL *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>SUCURSALES</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>SUCURSALES *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* SUCURSALES</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>* SUCURSALES *</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+<category><pattern>SUCURSALES FISICAS</pattern><template><srai>INTENCION SHOWROOM</srai></template></category>
+
+<!-- PICKUP -->
+<category><pattern>INTENCION PICKUP</pattern><template><think><set name="topic">UBICACION</set><set name="fallos">0</set></think>Sí, al finalizar tu compra elige la opción Pickup en Showroom Insurgentes (<srai>INFO SHOWROOM</srai>) sin costo de envío.</template></category>
+<category><pattern>RECOGER EN TIENDA</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>RECOGER EN TIENDA *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* RECOGER EN TIENDA</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* RECOGER EN TIENDA *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>RECOGER EN LA TIENDA</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>RECOGER EN LA TIENDA *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* RECOGER EN LA TIENDA</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* RECOGER EN LA TIENDA *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>RECOGER EN SUCURSAL</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>RECOGER EN SUCURSAL *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* RECOGER EN SUCURSAL</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* RECOGER EN SUCURSAL *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>RECOGER EN SHOWROOM</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>RECOGER EN SHOWROOM *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* RECOGER EN SHOWROOM</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* RECOGER EN SHOWROOM *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>RECOGER MI PEDIDO</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>RECOGER MI PEDIDO *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* RECOGER MI PEDIDO</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* RECOGER MI PEDIDO *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>PASAR POR MI PEDIDO</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>PASAR POR MI PEDIDO *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* PASAR POR MI PEDIDO</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* PASAR POR MI PEDIDO *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>PUNTO DE RECOLECCION</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>PUNTO DE RECOLECCION *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* PUNTO DE RECOLECCION</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* PUNTO DE RECOLECCION *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>PICKUP EN SHOWROOM</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>PICKUP EN SHOWROOM *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* PICKUP EN SHOWROOM</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* PICKUP EN SHOWROOM *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>PICKUP</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* PICKUP</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* PICKUP *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>PICK UP</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* PICK UP</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* PICK UP *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>RECOGER</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* RECOGER</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* RECOGER *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>OCURRE</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* OCURRE</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>* OCURRE *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>DONDE * RECOGER</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>DONDE * RECOGER *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>COMO * RECOGER</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>COMO * RECOGER *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>CUANDO * RECOGER</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>CUANDO * RECOGER *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>A QUE HORA * RECOGER</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>A QUE HORA * RECOGER *</pattern><template><srai>INTENCION PICKUP</srai></template></category>
+<category><pattern>DONDE * BODEGA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE * BODEGA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE * UBICAN</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE * UBICAN *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE * UBICADOS</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE * UBICADOS *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE * QUEDA</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE * QUEDA *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE * QUEDAN</pattern><template><srai>INTENCION UBICACION</srai></template></category>
+<category><pattern>DONDE * QUEDAN *</pattern><template><srai>INTENCION UBICACION</srai></template></category>
 </aiml>
